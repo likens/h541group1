@@ -1,11 +1,11 @@
-import LifeLineSoftware from "LifeLineSoftware";
+import LifeLineSoftware from "./LifeLineSoftware";
 
-function LifeLineDevice() {
+function LifeLineHardware() {
 	return (
-		<div className="device">
+		<div className="hardware">
             <LifeLineSoftware />
         </div>
 	);
 }
 
-export default LifeLineDevice;
+export default LifeLineHardware;

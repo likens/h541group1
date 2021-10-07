@@ -1,13 +1,11 @@
-import LifeLineHeader from "LifeLineHeader";
-import LifeLineApps from "LifeLineApps";
-import LifeLineFooter from "LifeLineFooter";
+import LifeLineHeader from "./LifeLineHeader";
+import LifeLineMain from "./LifeLineMain";
 
 function LifeLineSoftware() {
 	return (
 		<div className="software">
             <LifeLineHeader />
-            <LifeLineApps />
-            <LifeLineFooter />
+            <LifeLineMain />
         </div>
 	);
 }

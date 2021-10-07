@@ -1,4 +1,5 @@
-import LifeLineHardware from "LifeLineHardware";
+
+import LifeLineHardware from "./LifeLineHardware";
 import "../assets/css/LifeLine.css";
 
 function LifeLine() {

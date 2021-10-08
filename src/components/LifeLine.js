@@ -1,13 +1,23 @@
-
+import React, { Component } from "react";
 import LifeLineHardware from "./LifeLineHardware";
 import "../assets/css/LifeLine.css";
 
-function LifeLine() {
-	return (
-		<div className="lifeline">
-			<LifeLineHardware />
-		</div>
-	);
+class LifeLine extends Component {
+
+	constructor() {
+		super();
+		this.state = {
+			...this.state
+		}
+	}
+
+	render() {
+		return (
+			<div className="lifeline">
+				<LifeLineHardware />
+			</div>
+		);
+	}
 }
 
 export default LifeLine;

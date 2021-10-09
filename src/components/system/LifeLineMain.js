@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
-import { LifeLineAppsStructure } from "../Utils";
+import { LifeLineApps } from "../../Utils";
 import LifeLineMenus from "./LifeLineMenus";
 
 class LifeLineMain extends Component {
@@ -24,7 +24,7 @@ class LifeLineMain extends Component {
 						</div>
 						<div className="apps">
 							<Switch>
-								{LifeLineAppsStructure.map((app, i) => {
+								{LifeLineApps.structure.map((app, i) => {
 									return (
 										<Route key={i} path={`/${app.path}`}>
 											<div className="app">

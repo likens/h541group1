@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LifeLineHeader from "./LifeLineHeader";
-import LifeLineMain from "./LifeLineMain";
+import LifeLineHeader from "./system/LifeLineHeader";
+import LifeLineMain from "./system/LifeLineMain";
 
 class LifeLineSoftware extends Component {
 

@@ -3,6 +3,7 @@
 	--black: #000;
 	--white: #fff;
 	--charcoal: #222;
+	--darkCharcoal: #111;
 }
 
 *,
@@ -187,7 +188,8 @@ body {
 	box-shadow: 0 0 1rem #000;
 	position: absolute;
 	bottom: 0;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: visible;
 	transition: .25s ease all;
 	height: 100%;
 	z-index: 20;
@@ -280,7 +282,7 @@ body {
 }
 
 .menu__overlay:hover {
-	background: rgba(0, 0, 0, .9);
+	background: rgba(0, 0, 0, .825);
 }
 
 .menu__list {
@@ -324,4 +326,23 @@ body {
 
 .menu__drawer--settings .menu__link-name {
 	order: 1;
+}
+
+.menu__item {
+	position: relative;
+}
+
+.menu__sub {
+	background: var(--darkCharcoal);
+	top: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 0 1rem #000 inset;
+}
+
+.menu__sub .menu__link {
+	font-size: 1.6rem;
+	grid-gap: 1rem;
+	padding: 1rem 4rem;
 }

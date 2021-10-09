@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { LifeLineMenusStructure} from "../Utils";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { LifeLineMenusStructure, KEY_EMERGENCY } from "../../Utils";
+import { faTimes, faPhone, faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 class LifeLineMenus extends Component {
 
@@ -52,12 +51,11 @@ class LifeLineMenus extends Component {
 									</div>
 								</div>
 								<ul className="menu__list">
-									{menu.structure.map((item, i) => {
+									{menu.menu.structure.map((item, i) => {
 										return (
 											<li key={i} className="menu__item">
-												<Link className={`menu__link${item.extra ? ` menu__link--extra` : ``}`}
-													onClick={item.close ? () => this.openMenuDrawer() : ``}
-													to={item.close ? `/${item.path}` : ``}>
+												<div className={`menu__link${item.extra ? ` menu__link--extra` : ``}`}
+													onClick={item.close ? () => this.openMenuDrawer() : ``}>
 													{item.icon ? 
 														<span className="menu__link-icon">
 															<FontAwesomeIcon size="lg" icon={item.icon} />
@@ -69,7 +67,49 @@ class LifeLineMenus extends Component {
 															<FontAwesomeIcon size="lg" icon={item.extra} />
 														</span>
 													: ``}
-												</Link>
+												</div>
+												<ul className="menu__sub">
+													{menu.menu.key === KEY_EMERGENCY ?
+														<li className="menu__item">
+															<div className="menu__link">
+																<span className="menu__link-icon">
+																	<FontAwesomeIcon flip="horizontal" size="md" icon={faPhone} />
+																</span>
+																<span className="menu__link-name">Contact</span>
+															</div>
+														</li>
+													: ``} 
+													{menu.menu.key === KEY_EMERGENCY && item.edit ?
+														<li className="menu__item">
+															<div className="menu__link">
+																<span className="menu__link-icon">
+																	<FontAwesomeIcon flip="horizontal" size="md" icon={faPencilAlt} />
+																</span>
+																<span className="menu__link-name">Edit</span>
+															</div>
+														</li>
+													: ``}
+													{menu.menu.key === KEY_EMERGENCY && item.delete ?
+														<li className="menu__item">
+															<div className="menu__link">
+																<span className="menu__link-icon">
+																	<FontAwesomeIcon size="md" icon={faTrash} />
+																</span>
+																<span className="menu__link-name">Delete</span>
+															</div>
+														</li>
+													: ``}
+													{item.sub?.map((sub, i) => {
+														return (
+															<li key={i} className="menu__item">
+																<div className="menu__link">
+																	<span className="menu__link-icon"></span>
+																	<span className="menu__link-name">{sub.name}</span>
+																</div>
+															</li>
+														)
+													})}
+												</ul>
 											</li>
 										)
 									})}

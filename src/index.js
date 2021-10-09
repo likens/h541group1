@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import LifeLine from "./components/LifeLine";
 import reportWebVitals from "./reportWebVitals";
-import ReactGA from "react-ga";
-
-ReactGA.initialize("G-DH94BC13XN");
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
 	<React.StrictMode>

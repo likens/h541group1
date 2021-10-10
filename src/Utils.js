@@ -17,16 +17,16 @@ export const KEY_SETTINGS = 'settings';
 export const LifeLineApps = {
 	key: KEY_APPS,
 	structure: [
-		{ name: "Dashboard", path: "apps/dashboard", icon: faThLarge, component: <LifeLineDashboard id={"dashboard"} />, close: true },
-		{ name: "Blood Pressure", path: "apps/bp", icon: faStethoscope, component: <LifeLineBloodPressure id={"bp"} />, close: true },
-		{ name: "Oxygen", path: "apps/oxy", icon: faDotCircle, component: <LifeLineOxygen id={"oxy"} />, close: true },
-		{ name: "Electrocardiogram", path: "apps/ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram id={"ekg"} />, close: true },
-		{ name: "Heart Rate", path: "apps/hr", icon: faHeartbeat, component: <LifeLineHeartRate id={"hr"} />, close: true },
-		{ name: "Medications", path: "apps/meds", icon: faPrescription, component: <LifeLineMedications id={"meds"} />, close: true },
-		{ name: "Physical Therapy", path: "apps/pt", icon: faRunning, component: <LifeLinePhysicalTherapy id={"pt"} />, close: true },
-		{ name: "Alarms", path: "apps/alarms", icon: faBell, component: <LifeLineAlarms id={"alarms"} />, close: true },
-		{ name: "Messages", path: "apps/messages", icon: faCommentMedical, component: <LifeLineMessages id={"messages"} />, close: true },
-		{ name: "Your Information", path: "apps/info", icon: faInfo, component: <LifeLineInformation id={"info"} />, close: true }
+		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard id={"dashboard"} />, close: true },
+		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure id={"bp"} />, close: true },
+		{ name: "Oxygen", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen id={"oxy"} />, close: true },
+		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram id={"ekg"} />, close: true },
+		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate id={"hr"} />, close: true },
+		{ name: "Medications", key: "meds", icon: faPrescription, component: <LifeLineMedications id={"meds"} />, close: true },
+		{ name: "Physical Therapy", key: "pt", icon: faRunning, component: <LifeLinePhysicalTherapy id={"pt"} />, close: true },
+		{ name: "Alarms", key: "alarms", icon: faBell, component: <LifeLineAlarms id={"alarms"} />, close: true },
+		{ name: "Messages", key: "messages", icon: faCommentMedical, component: <LifeLineMessages id={"messages"} />, close: true },
+		{ name: "Your Information", key: "info", icon: faInfo, component: <LifeLineInformation id={"info"} />, close: true }
 	]
 }
 

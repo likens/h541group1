@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "../../assets/img/lifeline-logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faBell, faRunning } from '@fortawesome/free-solid-svg-icons'
+import { faLocationArrow, faWifi, faCloudSun, faPrescription, faBell, faRunning, faBatteryHalf } from '@fortawesome/free-solid-svg-icons'
 import { faBluetoothB } from '@fortawesome/free-brands-svg-icons'
 
 class LifeLineHeader extends Component {
@@ -18,13 +18,13 @@ class LifeLineHeader extends Component {
             <header className="header">
                 <div className="header__tray header__notifications">
                     <div className="header__pt">
-                        <FontAwesomeIcon icon={faRunning} />
+                        <FontAwesomeIcon size="lg" icon={faRunning} />
                     </div>
                     <div className="header__rx">
-                        <FontAwesomeIcon icon={faPrescription} />
+                        <FontAwesomeIcon size="lg" icon={faPrescription} />
                     </div>
                     <div className="header__alarms">
-                        <FontAwesomeIcon icon={faBell} />
+                        <FontAwesomeIcon size="lg" icon={faBell} />
                     </div>
                 </div>
                 <div className="header__logo">
@@ -32,17 +32,17 @@ class LifeLineHeader extends Component {
                 </div>
                 <div className="header__tray header__system">
                     <div className="header__gps">
-                        <FontAwesomeIcon icon={faLocationArrow} />
+                        <FontAwesomeIcon size="lg" icon={faLocationArrow} />
                     </div>
                     <div className="header__bluetooth">
-                        <FontAwesomeIcon icon={faBluetoothB} />
+                        <FontAwesomeIcon size="lg" icon={faBluetoothB} />
                     </div>
                     <div className="header__wifi">
-                        <FontAwesomeIcon icon={faWifi} />
+                        <FontAwesomeIcon size="lg" icon={faWifi} />
                     </div>
                     <div className="header__weather">
                         <span className="header__weather-icon">
-                            <FontAwesomeIcon icon={faCloudSun} />
+                            <FontAwesomeIcon size="lg" icon={faCloudSun} />
                         </span>
                         <span className="header__weather-degrees">75°</span>
                     </div>
@@ -52,10 +52,10 @@ class LifeLineHeader extends Component {
                     </div>
                     <div className="header__battery">
                         <span className="header__battery-icon">
-                            <FontAwesomeIcon icon={faBatteryFull} />
+                            <FontAwesomeIcon size="lg" icon={faBatteryHalf} />
                         </span>
                         <span className="header__battery-percent">
-                            <span className="header__battery-percent-value">95</span>
+                            <span className="header__battery-percent-value">50</span>
                             <span className="header__battery-percent-sign">%</span>
                         </span>
                     </div>

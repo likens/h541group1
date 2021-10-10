@@ -344,6 +344,12 @@ body {
 	margin: 0;
 	padding: 0;
 	box-shadow: 0 0 1rem #000 inset;
+	height: 0;
+	overflow: hidden;
+}
+
+.menu__sub--active {
+	height: auto;
 }
 
 .menu__sub .menu__link {

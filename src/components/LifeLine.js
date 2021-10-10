@@ -33,8 +33,9 @@ class LifeLine extends Component {
 							<li>
 								Menus/Nav
 								<ul>
-									<li>Finish Nav Buttons</li>
-									<li>Finish Submenus</li>
+									<li><s>Finish Nav Buttons</s></li>
+									<li><s>Finish Submenus</s></li>
+									<li>Hook Up Modals</li>
 								</ul>
 							</li>
 							<li>

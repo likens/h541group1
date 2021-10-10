@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { LifeLineApps, LifeLineMenusStructure, KEY_EMERGENCY } from "../../Utils";
+import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { LifeLineApps, LifeLineMenusStructure, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
 
@@ -15,6 +15,14 @@ class LifeLineMain extends Component {
 			},
 			menu: undefined,
 			submenu: undefined
+		}
+	}
+
+	menuItemClick(item) {
+		if (item.component) {
+			this.goToApp(item.key);
+		} else if (item.extra) {
+			this.toggleSubmenu(item.key);
 		}
 	}
 
@@ -52,6 +60,17 @@ class LifeLineMain extends Component {
 		this.setState({
 			menu: key
 		});
+		this.toggleSubmenu();
+	}
+
+	toggleSubmenu(key) {
+		if (key && key === this.state.submenu) {
+			this.toggleSubmenu();
+		} else {
+			this.setState({
+				submenu: key
+			})
+		}
 	}
 
 	render() {
@@ -105,23 +124,29 @@ class LifeLineMain extends Component {
 													<li key={i} className="menu__item">
 
 														<button className={`menu__link${item.extra ? ` menu__link--extra` : ``}`}
-															onClick={item.component ? () => {
-																this.goToApp(item.key);
-															} : () => {}}>
+															onClick={() => this.menuItemClick(item)}>
 															{item.icon ? 
 																<span className="menu__link-icon">
 																	<FontAwesomeIcon size="lg" icon={item.icon} />
 																</span>
 															: ``}
 															<span className="menu__link-name">{item.name}</span>
-															{item.extra ? 
+															{menu.menu.key === KEY_EMERGENCY ? 
 																<span className="menu__link-extra">
-																	<FontAwesomeIcon size="lg" icon={item.extra} />
+																	<FontAwesomeIcon size="lg" 
+																			icon={item.key === this.state.submenu ? faCaretDown : faCaretRight} />
+																</span>
+															: ``}
+															{menu.menu.key === KEY_SETTINGS ? 
+																<span className="menu__link-extra">
+																	{item?.sub?.length ?
+																		<FontAwesomeIcon size="lg" 
+																			icon={item.key === this.state.submenu ? faCaretDown : faCaretLeft} /> : ``}
 																</span>
 															: ``}
 														</button>
 															
-														<ul className="menu__sub">
+														<ul className={`menu__sub${item.key === this.state.submenu ? ` menu__sub--active` : ``}`}>
 															{menu.menu.key === KEY_EMERGENCY ?
 																<li className="menu__item">
 																	<div className="menu__link">

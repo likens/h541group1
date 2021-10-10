@@ -83,7 +83,7 @@ class LifeLineMain extends Component {
 						<FontAwesomeIcon size="7x" icon={faCaretLeft} />	
 					</div>
 					<div className="apps">
-						{this.state.app.key}
+						{this.state.app.component}
 					</div>
 					<div className="nav__item nav__item--next"
 						onClick={() => this.goToApp(this.getAppKey(true))}>

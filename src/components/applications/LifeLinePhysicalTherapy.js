@@ -12,7 +12,7 @@ class LifeLinePhysicalTherapy extends Component {
 	render() {
 		return (
 			<div className="physical-therapy">
-
+				PHYSICAL_THERAPY_GOES_HERE
 			</div>
 		);
 	}

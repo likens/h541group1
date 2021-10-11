@@ -17,7 +17,7 @@ class LifeLineElectrocardiogram extends Component {
 		return (
 			<div className="ekg">
 
-				<div className="graph">
+				<div className="graph graph--hr">
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
@@ -28,6 +28,25 @@ class LifeLineElectrocardiogram extends Component {
 						<FontAwesomeIcon size={"lg"} icon={faHeart} />
 					</div>
 				</div>
+
+				<div className="graph graph--o2">
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+				</div>
+
+				<div className="graph graph--rp">
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+				</div>
+
 			</div>
 		);
 	}

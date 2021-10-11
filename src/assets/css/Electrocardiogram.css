@@ -1,5 +1,7 @@
 :root {
-	--green: #37af8c;
+	--green: #35f575;
+	--cyan: #6ceef1;
+	--blue: #348ff2;
 }
 
 .ekg {
@@ -7,6 +9,7 @@
 	height: 100%;
 	background: var(--charcoal);
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	position: relative;
@@ -28,17 +31,32 @@
 
 .graph {
 	position: relative;
-	outline: .1rem var(--green) solid;
-	box-shadow: 0 0 .4rem var(--green);
 	padding: 0;
-	background: linear-gradient(90deg, var(--charcoal) 0, var(--green) 50%, var(--charcoal) 50%);
 	animation: travel 6s infinite linear;
 	display: flex;
 	background-size: 100% auto;
 	background-position: -38rem 0;
-	height: 20rem;
+	height: 15rem;
 	flex-basis: 83.3333%;
 	max-width: 83.3333%;
+}
+
+.graph--hr {
+	background: linear-gradient(90deg, var(--charcoal) 0, var(--green) 50%, var(--charcoal) 50%);
+	outline: .1rem var(--green) solid;
+	box-shadow: 0 0 .4rem var(--green);
+}
+
+.graph--o2 {
+	background: linear-gradient(90deg, var(--charcoal) 0, var(--cyan) 50%, var(--charcoal) 50%);
+	outline: .1rem var(--cyan) solid;
+	box-shadow: 0 0 .4rem var(--cyan);
+}
+
+.graph--rp {
+	background: linear-gradient(90deg, var(--charcoal) 0, var(--blue) 50%, var(--charcoal) 50%);
+	outline: .1rem var(--blue) solid;
+	box-shadow: 0 0 .4rem var(--blue);
 }
 
 .block {

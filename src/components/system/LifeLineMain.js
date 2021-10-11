@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { LifeLineApps, LifeLineMenusStructure, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
+import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
 
@@ -14,7 +14,8 @@ class LifeLineMain extends Component {
 				component: LifeLineApps.structure[0].component
 			},
 			menu: undefined,
-			submenu: undefined
+			submenu: undefined,
+			modal: undefined
 		}
 	}
 
@@ -73,8 +74,23 @@ class LifeLineMain extends Component {
 		}
 	}
 
+	toggleModal(key) {
+		this.setState({
+			menu: undefined,
+			submenu: undefined,
+			modal: key
+		})
+	}
+
+	toggleOverlay() {
+		this.setState({
+			menu: undefined,
+			submenu: undefined,
+			modal: undefined,
+		})
+	}
+
 	render() {
-		console.log("rendering...", this.state);
 		return (
 			<div className="main">
 				<div className="container">
@@ -95,12 +111,12 @@ class LifeLineMain extends Component {
 						<div className="menu__buttons">
 							{LifeLineMenusStructure.map((menu, i) => {
 								return (
-									<div key={i} className={`menu__button menu__button--${menu.key}`} onClick={() => this.toggleMenu(menu.key)}>
-										<div className="menu__button-icon">
+									<button key={i} className={`menu__btn menu__btn--${menu.key}`} onClick={() => this.toggleMenu(menu.key)}>
+										<div className="menu__btn-icon">
 											<FontAwesomeIcon size="lg" icon={menu.icon} />
 										</div>
-										<div className="menu__button-label">{menu.name}</div>
-									</div>
+										<div className="menu__btn-label">{menu.name}</div>
+									</button>
 								)
 							})}
 						</div>
@@ -149,12 +165,12 @@ class LifeLineMain extends Component {
 														<ul className={`menu__sub${item.key === this.state.submenu ? ` menu__sub--active` : ``}`}>
 															{menu.menu.key === KEY_EMERGENCY ?
 																<li className="menu__item">
-																	<div className="menu__link">
+																	<button className="menu__link" onClick={() => this.toggleModal("contact")}>
 																		<span className="menu__link-icon">
 																			<FontAwesomeIcon flip="horizontal" icon={faPhone} />
 																		</span>
 																		<span className="menu__link-name">Contact</span>
-																	</div>
+																	</button>
 																</li>
 															: ``} 
 															{menu.menu.key === KEY_EMERGENCY && item.edit ?
@@ -197,11 +213,36 @@ class LifeLineMain extends Component {
 							})}
 						</div>
 
-						<div className={`menu__overlay${this.state.menu ? ` menu__overlay--active` : ``}`}
-							onClick={() => this.toggleMenu()}></div>
+					</div>
+
+					<div className="modals">
+
+						<div className={`modal${this.state.modal ? ` modal--active` : ``}`}>
+							<div className="modal__header">
+								<div className="modal__heading">{LifeLineModals.find(modal => modal.key === this.state.modal)?.heading}</div>
+								<button className="modal__close" onClick={() => this.toggleOverlay()}>
+									<FontAwesomeIcon size={"lg"} icon={faTimes} />
+								</button>
+							</div>
+							<div className="modal__body">{LifeLineModals.find(modal => modal.key === this.state.modal)?.body}</div>
+							<div className="modal__footer">
+								<button className="modal__btn modal__cancel" onClick={() => this.toggleOverlay()}>
+									<span className="modal__btn-icon"><FontAwesomeIcon size={"lg"} icon={faTimesCircle} /></span>
+									<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.cancel}</span>
+								</button>
+								<button className="modal__btn modal__confirm" onClick={() => this.toggleOverlay()}>
+									<span className="modal__btn-icon"><FontAwesomeIcon size={"lg"} icon={faCheckCircle} /></span>
+									<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.confirm}</span>
+								</button>
+							</div>
+						</div>
 
 					</div>
 
+					<div className={`main__overlay${this.state.menu || this.state.modal ? ` main__overlay--active` : ``}`}
+							onClick={() => this.toggleOverlay()}></div>
+
+				
 				</div>
 
 			</div>

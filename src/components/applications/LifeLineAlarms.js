@@ -12,7 +12,7 @@ class LifeLineAlarms extends Component {
 	render() {
 		return (
 			<div className="alarms">
-
+				ALARMS_GOES_HERE
 			</div>
 		);
 	}

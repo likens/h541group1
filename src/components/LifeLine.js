@@ -35,7 +35,7 @@ class LifeLine extends Component {
 								<ul>
 									<li><s>Finish Nav Buttons</s></li>
 									<li><s>Finish Submenus</s></li>
-									<li>Hook Up Modals</li>
+									<li><s>Hook Up Modals</s></li>
 								</ul>
 							</li>
 							<li>
@@ -50,9 +50,9 @@ class LifeLine extends Component {
 							<li>
 								Modals
 								<ul>
-									<li>Confirm/Cancel Button</li>
-									<li>Close Button</li>
-									<li>Header/Body</li>
+									<li><s>Confirm/Cancel Button</s></li>
+									<li><s>Close Button</s></li>
+									<li><s>Header/Body</s></li>
 								</ul>
 							</li>
 							<li>

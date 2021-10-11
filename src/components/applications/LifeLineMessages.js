@@ -12,7 +12,7 @@ class LifeLineMessages extends Component {
 	render() {
 		return (
 			<div className="messages">
-
+				MESSAGES_GOES_HERE
 			</div>
 		);
 	}

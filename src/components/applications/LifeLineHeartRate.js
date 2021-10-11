@@ -12,7 +12,7 @@ class LifeLineHeartRate extends Component {
 	render() {
 		return (
 			<div className="heart-rate">
-
+				HEART_RATE_GOES_HERE
 			</div>
 		);
 	}

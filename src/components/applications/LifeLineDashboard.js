@@ -12,7 +12,7 @@ class LifeLineDashboard extends Component {
 	render() {
 		return (
 			<div className="dashboard">
-
+				DASHBOARD_GOES_HERE
 			</div>
 		);
 	}

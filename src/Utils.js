@@ -75,3 +75,33 @@ export const LifeLineMenusStructure = [
 	{ name: "Apps", key: "apps", icon: faListUl, menu: LifeLineApps },
 	{ name: "Settings", key: "settings", icon: faCog, menu: LifeLineSettings }
 ]
+
+export const LifeLineModals = [
+	{
+		key: "contact",
+		heading: "Test Modal",
+		body: "This is just a test modal. Please click Yes, No, or Close to verify functionality. This is just a test modal. Please click Yes, No, or Close to verify functionality. This is just a test modal. Please click Yes, No, or Close to verify functionality.",
+		confirm: "Yes",
+		cancel: "No"
+	}
+]
+
+export const BloodPressureHistoryData = [
+	{ date: '9/1', sys: 120, dia: 80, hr: 70 },
+	{ date: '9/2', sys: 110, dia: 90, hr: 70 },
+	{ date: '9/3', sys: 115, dia: 75, hr: 70 },
+	{ date: '9/4', sys: 125, dia: 85, hr: 70 },
+	{ date: '9/5', sys: 140, dia: 95, hr: 70 },
+	{ date: '9/6', sys: 130, dia: 80, hr: 70 },
+	{ date: '9/7', sys: 120, dia: 90, hr: 70 }
+];
+
+  export const OxygenHistoryData = [
+	{ date: '9/1', spo2: 99, hr: 70 },
+	{ date: '9/2', spo2: 100, hr: 70 },
+	{ date: '9/3', spo2: 99, hr: 70 },
+	{ date: '9/4', spo2: 98, hr: 70 },
+	{ date: '9/5', spo2: 95, hr: 70 },
+	{ date: '9/6', spo2: 97, hr: 70 },
+	{ date: '9/7', spo2: 99, hr: 70 }
+];

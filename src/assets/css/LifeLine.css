@@ -435,11 +435,23 @@ body {
 .oxygen {
 	display: grid;
 	height: 100%;
+	grid-gap: 3rem;
 	padding: 3rem 0;
+	width: 100%;
 }
 
 .chart {
 	align-self: flex-end;
+	/* visibility: hidden;
+	opacity: 0;
+	transition: all .25s ease; */
+	display: none;
+}
+
+.chart--active {
+	display: block;
+	/* opacity: 1;
+	visibility: visible; */
 }
 
 .chart-title {
@@ -449,13 +461,27 @@ body {
 	opacity: .5;
 }
 
+.measuring {
+	width: 100%;
+}
+
 .readings {
 	font-weight: var(--bold);
 	font-size: 2.5rem;
-	display: grid;
-	grid-gap: 3rem;
-	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 4rem;
 	padding: 0 3rem;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+.readings--active {
+	display: flex;
+}
+
+.reading {
+	width: 100%;
+	max-width: 33%;
 }
 
 .reading .label {
@@ -495,5 +521,24 @@ body {
 	display: flex;
 	width: 100%;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
+	grid-gap: 3rem;
+	flex-wrap: wrap;
+}
+
+.measuring {
+	font-size: 3rem;
+	text-align: center;
+	font-weight: var(--bold);
+	text-transform: uppercase;
+	display: none;
+}
+
+.measuring svg {
+	animation: beat 1s infinite;
+	margin-right: 1rem;
+}
+
+.measuring--active {
+	display: block;
 }

@@ -1,4 +1,4 @@
-import { faThLarge, faPrescription, faRunning, faBell, faHeartbeat, faDotCircle, faStethoscope, faLaptopMedical, faAmbulance, faHospital, faUserMd, faUserNurse, faUser, faExclamationTriangle, faListUl, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge, faPrescription, faRunning, faBell, faHeartbeat, faDotCircle, faStethoscope, faLaptopMedical, faAmbulance, faHospital, faUserMd, faUser, faExclamationTriangle, faListUl, faCog } from '@fortawesome/free-solid-svg-icons';
 import LifeLineDashboard from './components/applications/LifeLineDashboard';
 import LifeLineBloodPressure from './components/applications/LifeLineBloodPressure';
 import LifeLineOxygen from './components/applications/LifeLineOxygen';
@@ -17,9 +17,9 @@ export const LifeLineApps = {
 	structure: [
 		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard id={"dashboard"} /> },
 		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure id={"bp"} /> },
-		{ name: "Oxygen", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen id={"oxy"} /> },
-		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram id={"ekg"} /> },
+		{ name: "Oxygen Saturation", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen id={"oxy"} /> },
 		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate id={"hr"} /> },
+		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram id={"ekg"} /> },
 		{ name: "Medications", key: "meds", icon: faPrescription, component: <LifeLineMedications id={"meds"} /> },
 		{ name: "Physical Therapy", key: "pt", icon: faRunning, component: <LifeLinePhysicalTherapy id={"pt"} /> },
 		{ name: "Alarms", key: "alarms", icon: faBell, component: <LifeLineAlarms id={"alarms"} /> }
@@ -32,13 +32,11 @@ export const LifeLineEmergency = {
 		{ name: "911", key: "911", icon: faAmbulance, extra: true, edit: false, delete: false },
 		{ name: "hospital", key: "hospital", icon: faHospital, extra: true, edit: false, delete: false },
 		{ name: "doctor", key: "doctor", icon: faUserMd, extra: true, edit: false, delete: false },
-		{ name: "nurse", key: "nurse", icon: faUserNurse, extra: true, edit: false, delete: false },
 		{ name: "user1", key: "user1", icon: faUser, extra: true, edit: true, delete: true },
 		{ name: "user2", key: "user2", icon: faUser, extra: true, edit: true, delete: true },
 		{ name: "user3", key: "user3", icon: faUser, extra: true, edit: true, delete: true }
 	]
 }
-
 
 export const LifeLineSettings = {
 	key: KEY_SETTINGS,

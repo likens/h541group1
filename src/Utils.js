@@ -48,13 +48,9 @@ export const LifeLineSettings = {
 	key: KEY_SETTINGS,
 	structure:  [
 		{ name: "General", key: "general", extra: true, sub: [
-			{ name: "Subsettings 1" },
-			{ name: "Subsettings 2" },
-			{ name: "Subsettings 3" },
-		] },
-		{ name: "Connections", key: "connections", extra: true, sub: [
-			{ name: "Subsettings 1" },
-			{ name: "Subsettings 2" },
+			{ name: "Information" },
+			{ name: "Storage" },
+			{ name: "Linked Accounts" },
 		] },
 		{ name: "Accessibility", key: "accessibility", extra: true, sub: [
 			{ name: "Subsettings 1" },
@@ -64,9 +60,7 @@ export const LifeLineSettings = {
 			{ name: "Subsettings 5" },
 			{ name: "Subsettings 6" },
 		] },
-		{ name: "Another Setting" },
-		{ name: "And Another Setting" },
-		{ name: "Sure, Give Me Another Setting" },
+		{ name: "Connections" },
 	]
 }
 

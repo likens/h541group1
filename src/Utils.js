@@ -48,9 +48,9 @@ export const LifeLineSettings = {
 	key: KEY_SETTINGS,
 	structure:  [
 		{ name: "General", key: "general", extra: true, sub: [
-			{ name: "Subsettings 1" },
-			{ name: "Subsettings 2" },
-			{ name: "Subsettings 3" },
+			{ name: "Information" },
+			{ name: "Storage" },
+			{ name: "Linked Accounts" },
 		] },
 		{ name: "Connections", key: "connections", extra: true, sub: [
 			{ name: "Subsettings 1" },

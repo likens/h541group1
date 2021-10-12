@@ -40,19 +40,19 @@ class LifeLineBloodPressure extends Component {
 				<div className={`readings${!this.state.history ? ` readings--active` : ``}`}>
 					<div className="systolic reading">
 						<div className="label">Systolic</div>
-						<div className="value">---</div>
+						<div className="value">--</div>
 					</div>
 					<div className="diastolic reading">
 						<div className="label">Diastolic</div>
-						<div className="value">---</div>
+						<div className="value">--</div>
 					</div>
 					<div className="pulse reading">
 						<div className="label">Pulse</div>
-						<div className="value">---</div>
+						<div className="value">--</div>
 					</div>
 				</div>
 				<div className="actions">
-					<div className={`measuring${this.state.readings.active ? ` measuring--active` : ``}`}><FontAwesomeIcon icon={faHeart} /> Measuring</div>
+					<div className={`measuring${this.state.readings.active ? ` measuring--active` : ``}`}><FontAwesomeIcon size={"lg"} icon={faHeart} /> Measuring</div>
 					<button className="action__btn" onClick={() => this.toggleMeasure()}>
 						<div className="action__btn-icon">
 							<FontAwesomeIcon icon={this.state.readings.active ? faStopCircle : faPlayCircle} />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
@@ -230,11 +230,11 @@ class LifeLineMain extends Component {
 							<div className="modal__body">{LifeLineModals.find(modal => modal.key === this.state.modal)?.body}</div>
 							<div className="modal__footer">
 								<button className="modal__btn modal__cancel" onClick={() => this.toggleOverlay()}>
-									<span className="modal__btn-icon"><FontAwesomeIcon size={"lg"} icon={faTimesCircle} /></span>
+									<span className="modal__btn-icon"><FontAwesomeIcon icon={faTimes} /></span>
 									<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.cancel}</span>
 								</button>
 								<button className="modal__btn modal__confirm" onClick={() => this.toggleOverlay()}>
-									<span className="modal__btn-icon"><FontAwesomeIcon size={"lg"} icon={faCheckCircle} /></span>
+									<span className="modal__btn-icon"><FontAwesomeIcon icon={faCheck} /></span>
 									<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.confirm}</span>
 								</button>
 							</div>

@@ -381,11 +381,12 @@ body {
 	box-shadow: 0 0 1rem #000;
 	/* transform: skewX(-10deg); */
 	display: grid;
-	grid-gap: 2rem;
+	grid-gap: 4rem;
 	padding: 2rem;
 	opacity: 0;
 	visibility: hidden;
 	transition: all .25s ease;
+	width: 50%
 }
 
 .modal__header {
@@ -406,7 +407,17 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	grid-gap: 3rem;
+	grid-gap: 1rem;
+}
+
+.modal__cancel {
+	border-color: var(--charcoal);
+}
+
+.modal__cancel:hover {
+	border-color: var(--white);
+	background: 0;
+	color: var(--white);
 }
 
 .modal__close {
@@ -414,6 +425,7 @@ body {
 	background: 0;
 	padding: 0;
 	cursor: pointer;
+	color: var(--white);
 }
 
 .modal__close:hover {
@@ -432,7 +444,8 @@ body {
 }
 
 .blood-pressure,
-.oxygen {
+.oxygen,
+.heart-rate {
 	display: grid;
 	height: 100%;
 	grid-gap: 3rem;
@@ -484,12 +497,17 @@ body {
 	max-width: 33%;
 }
 
+.hr.reading {
+	max-width: 66%;
+}
+
 .reading .label {
 	grid-column: 1 / -1;
 	padding: 1rem 2rem;
 	transform: skew(-10deg);
 	font-style: normal;
 	text-transform: uppercase;
+	text-shadow: 0 0 5px var(--charcoal);
 }
 
 .systolic .label {
@@ -507,6 +525,10 @@ body {
 
 .spo2 .label {
 	background: #419cdd;
+}
+
+.hr .label {
+	background: var(--lifelineRed);
 }
 
 .reading .value {

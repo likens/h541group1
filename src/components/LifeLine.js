@@ -79,7 +79,7 @@ class LifeLine extends Component {
 								</ul>
 							</li>
 							<li>
-								Blood Pressure / Heart Rate
+								Blood Pressure
 								<ul>
 									<li>Start & Stop Measurement Button with Animations</li>
 									<li>Heart Rate "updates" with historical chart</li>
@@ -88,14 +88,21 @@ class LifeLine extends Component {
 							<li>
 								Oxygen Saturation
 								<ul>
-									<li>Start & Stop Measurement Button with Animations</li>
+									<li>Animations</li>
 								</ul>
 							</li>
 							<li>
-								Electrocardiogram
+								Blood Pressure
 								<ul>
-									<li>ADD TACHYCARDIA/SYNDROME THING</li>
-									<li>ADD ACTIVITY STATUS</li>
+									<li>Animations</li>
+								</ul>
+							</li>
+							<li>
+								Heart Rate
+								<ul>
+									<li>Start/Stop</li>
+									<li>History</li>
+									<li>Animations</li>
 								</ul>
 							</li>
 							<li>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { OxygenHistoryData } from "../../Utils";
-import { faChartLine, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine, faSignal } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle, faStopCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -39,15 +39,15 @@ class LifeLineOxygen extends Component {
 				<div className={`readings${!this.state.history ? ` readings--active` : ``}`}>
 					<div className="spo2 reading">
 						<div className="label">Oxy. Sat. (SpO2)</div>
-						<div className="value">99%</div>
+						<div className="value">--</div>
 					</div>
 					<div className="pulse reading">
 						<div className="label">Pulse</div>
-						<div className="value">70<span>bpm</span></div>
+						<div className="value">--</div>
 					</div>
 				</div>
 				<div className="actions">
-					<div className={`measuring${this.state.readings.active ? ` measuring--active` : ``}`}><FontAwesomeIcon icon={faHeart} /> Measuring</div>
+					<div className={`measuring${this.state.readings.active ? ` measuring--active` : ``}`}><FontAwesomeIcon size={"lg"} icon={faSignal} /> Measuring</div>
 					<button className="action__btn" onClick={() => this.toggleMeasure()}>
 						<div className="action__btn-icon">
 							<FontAwesomeIcon icon={this.state.readings.active ? faStopCircle : faPlayCircle} />

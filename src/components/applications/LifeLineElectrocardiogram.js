@@ -29,6 +29,7 @@ class LifeLineElectrocardiogram extends Component {
 					<div className="heartbeat">
 						<FontAwesomeIcon size={"lg"} icon={faHeart} />
 					</div>
+					<div className="status"><span>Status:</span> Resting, Tachycardia Detected</div>
 					<div className="graph-label">ECG</div>
 					<div className="graph-value">75<br/>bpm</div>
 				</div>

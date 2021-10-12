@@ -68,14 +68,14 @@ export const LifeLineModals = [
 	{
 		key: "contact",
 		heading: "Contact User",
-		body: "Would you like to contact this person?",
+		body: "Would you like to contact '{USER_DISPLAY_NAME}'?",
 		confirm: "Yes",
 		cancel: "No"
 	},
 	{
 		key: "delete",
 		heading: "Delete User",
-		body: "You are about to delete this user. Are you sure?",
+		body: "You are about to delete '{USER_DISPLAY_NAME}'. Proceed?",
 		confirm: "Delete",
 		cancel: "Cancel"
 	},
@@ -144,4 +144,21 @@ export const BloodPressureHistoryData = [
 	{ date: 'Sep 12', spo2: 97, hr: 70 },
 	{ date: 'Sep 13', spo2: 99, hr: 70 },
 	{ date: 'Sep 14', spo2: 99, hr: 70 }
+];
+
+export const HeartRateHistoryData = [
+	{ date: 'Sep 1', hr: 65 },
+	{ date: 'Sep 2', hr: 70 },
+	{ date: 'Sep 3', hr: 68 },
+	{ date: 'Sep 4', hr: 75 },
+	{ date: 'Sep 5', hr: 76 },
+	{ date: 'Sep 6', hr: 74 },
+	{ date: 'Sep 7', hr: 67 },
+	{ date: 'Sep 8', hr: 65 },
+	{ date: 'Sep 9', hr: 70 },
+	{ date: 'Sep 10', hr: 68 },
+	{ date: 'Sep 11', hr: 75 },
+	{ date: 'Sep 12', hr: 76 },
+	{ date: 'Sep 13', hr: 74 },
+	{ date: 'Sep 14', hr: 67 }
 ];

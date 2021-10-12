@@ -52,10 +52,6 @@ export const LifeLineSettings = {
 			{ name: "Storage" },
 			{ name: "Linked Accounts" },
 		] },
-		{ name: "Connections", key: "connections", extra: true, sub: [
-			{ name: "Subsettings 1" },
-			{ name: "Subsettings 2" },
-		] },
 		{ name: "Accessibility", key: "accessibility", extra: true, sub: [
 			{ name: "Subsettings 1" },
 			{ name: "Subsettings 2" },

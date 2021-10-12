@@ -101,8 +101,10 @@ class LifeLine extends Component {
 							<li>
 								Electrocardiogram
 								<ul>
-									<li>The Chart</li>
-									<li>Other stuff?</li>
+									<li><s>The Chart</s></li>
+									<li>ADD TACHYCARDIA THING</li>
+									<li>ADD ACTIVITY STATUS</li>
+									
 								</ul>
 							</li>
 							<li>

@@ -428,3 +428,66 @@ body {
 	visibility: visible;
 	transform: translate(-50%, calc(-50% + -3rem));
 }
+
+.blood-pressure,
+.oxygen {
+	display: grid;
+	height: 100%;
+	padding: 3rem 0;
+}
+
+.chart {
+	align-self: flex-end;
+}
+
+.chart-title {
+	text-transform: uppercase;
+	font-weight: var(--bold);
+	color: var(--white);
+	font-size: 2rem;
+	padding:0 0 1rem 3rem
+}
+
+.readings {
+	color: var(--white);
+	font-weight: var(--bold);
+	font-size: 3rem;
+	display: grid;
+	grid-gap: 3rem;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0 3rem;
+}
+
+.reading .label {
+	grid-column: 1 / -1;
+	color: var(--white);
+	padding: 1rem 2rem;
+	transform: skew(-10deg);
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.systolic .label {
+	background: #0029ff;
+}
+
+.diastolic .label {
+	background: #ff9400;
+}
+
+.pulse .label {
+	background: #444444;
+	color: #35f575;
+}
+
+.spo2 .label {
+	background: #419cdd;
+}
+
+.reading .value {
+	font-size: 6rem;
+}
+
+.reading .value span {
+	font-size: 3rem;
+}

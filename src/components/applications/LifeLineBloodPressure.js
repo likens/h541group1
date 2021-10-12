@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { XAxis, YAxis, CartesianGrid, Tooltip, LineChart, Line} from 'recharts';
+import { XAxis, YAxis, CartesianGrid, LineChart, Line} from 'recharts';
 import { BloodPressureHistoryData } from "../../Utils";
 
 
@@ -16,37 +16,44 @@ class LifeLineBloodPressure extends Component {
 		return (
 			<div className="blood-pressure">
 				<div className="readings">
-					<div className="systolic">
-						<div className="label">SYS</div>
-						<div className="unit">mmHg</div>
-						<div className="value">120</div>
+					<div className="systolic reading">
+						<div className="label">Systolic</div>
+						<div className="value">120<span>mmHg</span></div>
 					</div>
-					<div className="diastolic">
-						<div className="label">DIA</div>
-						<div className="unit">mmHg</div>
-						<div className="value">80</div>
+					<div className="diastolic reading">
+						<div className="label">Diastolic</div>
+						<div className="value">80<span>mmHg</span></div>
 					</div>
-					<div className="pulse">
-						<div className="label">PULSE</div>
-						<div className="unit">/min</div>
-						<div className="value">70</div>
+					<div className="pulse reading">
+						<div className="label">Pulse</div>
+						<div className="value">70<span>bpm</span></div>
 					</div>
-				</div>
-				<div className="chart">
-					<LineChart width={800} height={200} data={BloodPressureHistoryData}>
-						<XAxis dataKey="date" />
-						<YAxis />
-						<Tooltip />
-						<CartesianGrid strokeDasharray="3 3" />
-						<Line type="monotone" dataKey="sys" stroke="#ad0000" />
-						<Line type="monotone" dataKey="dia" stroke="#888888" />
-						<Line type="monotone" dataKey="hr" stroke="#aaaaaa" />
-					</LineChart>
 				</div>
 				<div className="actions">
-					<button>Start</button>
-					<button>Stop</button>
-					<button>History</button>
+					<button>Start Measurement</button>
+				</div>
+				<div className="chart">
+					<div className="chart-title">Last 2 Weeks</div>
+					<LineChart width={800} height={200} data={BloodPressureHistoryData} margin={{ right: 50 }}>
+						<XAxis dataKey="date" stroke={"#444444"} tick={{stroke: '#888888', fontSize: 12 }} />
+						<YAxis type="number" stroke={"#444444"} tick={{stroke: '#888888', fontSize: 12 }} domain={['dataMin - 10', 'dataMax + 10']} />
+						<CartesianGrid stroke={"#444444"} strokeDasharray="1" />
+						<Line type="monotone" 
+							dataKey="sys" 
+							stroke="#0029ff" 
+							label={{fill : '#fff', fontSize: 10, fontWeight: '700' }} 
+							dot={{ fill: '#0029ff', r: 8}} />
+						<Line type="monotone" 
+							dataKey="dia" 
+							stroke="#ff9400" 
+							label={{fill : '#fff', fontSize: 10, fontWeight: '700' }} 
+							dot={{ fill: '#ff9400', r: 8}} />
+						<Line type="monotone" 
+							dataKey="hr" 
+							stroke="#444444" 
+							label={{fill : '#35f575', fontSize: 10, fontWeight: '700' }} 
+							dot={{ fill: '#444444', r: 8}} />
+					</LineChart>
 				</div>
 			</div>
 		);

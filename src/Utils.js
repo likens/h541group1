@@ -79,43 +79,57 @@ export const LifeLineMenusStructure = [
 export const LifeLineModals = [
 	{
 		key: "contact",
-		heading: "Test Modal",
-		body: "This is just a test modal. Please click Yes, No, or Close to verify functionality. This is just a test modal. Please click Yes, No, or Close to verify functionality. This is just a test modal. Please click Yes, No, or Close to verify functionality.",
+		heading: "Contact",
+		body: "Would you like to call this person?",
 		confirm: "Yes",
 		cancel: "No"
+	},
+	{
+		key: "delete",
+		heading: "Delete User",
+		body: "You are about to delete this user. Are you sure?",
+		confirm: "Delete",
+		cancel: "Cancel"
+	},
+	{
+		key: "edit",
+		heading: "Change User Information",
+		body: "Do you want this change this person's information?",
+		confirm: "Edit",
+		cancel: "Cancel"
 	}
 ]
 
 export const BloodPressureHistoryData = [
-	{ date: '9/1', sys: 120, dia: 80, hr: 65 },
-	{ date: '9/2', sys: 110, dia: 90, hr: 70 },
-	{ date: '9/3', sys: 115, dia: 75, hr: 68 },
-	{ date: '9/4', sys: 125, dia: 85, hr: 75 },
-	{ date: '9/5', sys: 140, dia: 95, hr: 76 },
-	{ date: '9/6', sys: 130, dia: 80, hr: 74 },
-	{ date: '9/7', sys: 120, dia: 90, hr: 67 },
-	{ date: '9/8', sys: 120, dia: 80, hr: 65 },
-	{ date: '9/9', sys: 110, dia: 90, hr: 70 },
-	{ date: '9/10', sys: 115, dia: 75, hr: 68 },
-	{ date: '9/11', sys: 125, dia: 85, hr: 75 },
-	{ date: '9/12', sys: 140, dia: 95, hr: 76 },
-	{ date: '9/13', sys: 130, dia: 80, hr: 74 },
-	{ date: '9/14', sys: 120, dia: 90, hr: 67 },
-	{ date: '9/15', sys: 120, dia: 80, hr: 65 },
-	{ date: '9/16', sys: 110, dia: 90, hr: 70 },
-	{ date: '9/17', sys: 115, dia: 75, hr: 68 },
-	{ date: '9/18', sys: 125, dia: 85, hr: 75 },
-	{ date: '9/19', sys: 140, dia: 95, hr: 76 },
-	{ date: '9/20', sys: 130, dia: 80, hr: 74 },
-	{ date: '9/21', sys: 120, dia: 90, hr: 67 },
+	{ date: 'Sep 1', sys: 120, dia: 80, hr: 65 },
+	{ date: 'Sep 2', sys: 110, dia: 90, hr: 70 },
+	{ date: 'Sep 3', sys: 115, dia: 75, hr: 68 },
+	{ date: 'Sep 4', sys: 125, dia: 85, hr: 75 },
+	{ date: 'Sep 5', sys: 140, dia: 95, hr: 76 },
+	{ date: 'Sep 6', sys: 130, dia: 80, hr: 74 },
+	{ date: 'Sep 7', sys: 120, dia: 90, hr: 67 },
+	{ date: 'Sep 8', sys: 120, dia: 80, hr: 65 },
+	{ date: 'Sep 9', sys: 110, dia: 90, hr: 70 },
+	{ date: 'Sep 10', sys: 115, dia: 75, hr: 68 },
+	{ date: 'Sep 11', sys: 125, dia: 85, hr: 75 },
+	{ date: 'Sep 12', sys: 140, dia: 95, hr: 76 },
+	{ date: 'Sep 13', sys: 130, dia: 80, hr: 74 },
+	{ date: 'Sep 14', sys: 120, dia: 90, hr: 67 }
 ];
 
   export const OxygenHistoryData = [
-	{ date: '9/1', spo2: 99, hr: 70 },
-	{ date: '9/2', spo2: 100, hr: 70 },
-	{ date: '9/3', spo2: 99, hr: 70 },
-	{ date: '9/4', spo2: 98, hr: 70 },
-	{ date: '9/5', spo2: 95, hr: 70 },
-	{ date: '9/6', spo2: 97, hr: 70 },
-	{ date: '9/7', spo2: 99, hr: 70 }
+	{ date: 'Sep 1', spo2: 99, hr: 70 },
+	{ date: 'Sep 2', spo2: 100, hr: 70 },
+	{ date: 'Sep 3', spo2: 99, hr: 70 },
+	{ date: 'Sep 4', spo2: 98, hr: 70 },
+	{ date: 'Sep 5', spo2: 95, hr: 70 },
+	{ date: 'Sep 6', spo2: 97, hr: 70 },
+	{ date: 'Sep 7', spo2: 99, hr: 70 },
+	{ date: 'Sep 8', spo2: 100, hr: 70 },
+	{ date: 'Sep 9', spo2: 99, hr: 70 },
+	{ date: 'Sep 10', spo2: 98, hr: 70 },
+	{ date: 'Sep 11', spo2: 95, hr: 70 },
+	{ date: 'Sep 12', spo2: 97, hr: 70 },
+	{ date: 'Sep 13', spo2: 99, hr: 70 },
+	{ date: 'Sep 14', spo2: 99, hr: 70 }
 ];

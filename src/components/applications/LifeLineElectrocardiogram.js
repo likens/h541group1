@@ -27,6 +27,8 @@ class LifeLineElectrocardiogram extends Component {
 					<div className="heartbeat">
 						<FontAwesomeIcon size={"lg"} icon={faHeart} />
 					</div>
+					<div className="graph-label">ECG</div>
+					<div className="graph-value">75<br/>bpm</div>
 				</div>
 
 				<div className="graph graph--o2">
@@ -36,6 +38,8 @@ class LifeLineElectrocardiogram extends Component {
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="graph-label">SPO2</div>
+					<div className="graph-value">100%</div>
 				</div>
 
 				<div className="graph graph--rp">
@@ -45,6 +49,8 @@ class LifeLineElectrocardiogram extends Component {
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
 					<div className="block" style={{backgroundImage:`url(${ekgHR})`}}></div>
+					<div className="graph-label">RESP</div>
+					<div className="graph-value">10<br/>rpm</div>
 				</div>
 
 			</div>

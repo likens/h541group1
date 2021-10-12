@@ -87,13 +87,27 @@ export const LifeLineModals = [
 ]
 
 export const BloodPressureHistoryData = [
-	{ date: '9/1', sys: 120, dia: 80, hr: 70 },
+	{ date: '9/1', sys: 120, dia: 80, hr: 65 },
 	{ date: '9/2', sys: 110, dia: 90, hr: 70 },
-	{ date: '9/3', sys: 115, dia: 75, hr: 70 },
-	{ date: '9/4', sys: 125, dia: 85, hr: 70 },
-	{ date: '9/5', sys: 140, dia: 95, hr: 70 },
-	{ date: '9/6', sys: 130, dia: 80, hr: 70 },
-	{ date: '9/7', sys: 120, dia: 90, hr: 70 }
+	{ date: '9/3', sys: 115, dia: 75, hr: 68 },
+	{ date: '9/4', sys: 125, dia: 85, hr: 75 },
+	{ date: '9/5', sys: 140, dia: 95, hr: 76 },
+	{ date: '9/6', sys: 130, dia: 80, hr: 74 },
+	{ date: '9/7', sys: 120, dia: 90, hr: 67 },
+	{ date: '9/8', sys: 120, dia: 80, hr: 65 },
+	{ date: '9/9', sys: 110, dia: 90, hr: 70 },
+	{ date: '9/10', sys: 115, dia: 75, hr: 68 },
+	{ date: '9/11', sys: 125, dia: 85, hr: 75 },
+	{ date: '9/12', sys: 140, dia: 95, hr: 76 },
+	{ date: '9/13', sys: 130, dia: 80, hr: 74 },
+	{ date: '9/14', sys: 120, dia: 90, hr: 67 },
+	{ date: '9/15', sys: 120, dia: 80, hr: 65 },
+	{ date: '9/16', sys: 110, dia: 90, hr: 70 },
+	{ date: '9/17', sys: 115, dia: 75, hr: 68 },
+	{ date: '9/18', sys: 125, dia: 85, hr: 75 },
+	{ date: '9/19', sys: 140, dia: 95, hr: 76 },
+	{ date: '9/20', sys: 130, dia: 80, hr: 74 },
+	{ date: '9/21', sys: 120, dia: 90, hr: 67 },
 ];
 
   export const OxygenHistoryData = [

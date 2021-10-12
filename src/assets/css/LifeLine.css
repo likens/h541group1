@@ -131,7 +131,7 @@ body {
 
 .apps {
 	width: 100%;
-	background: #eee;
+	background: var(--charcoal);
 	height: 100%;
 	display: flex;
 	align-items: center;

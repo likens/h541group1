@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, LineChart, Line} from 'recharts';
 import { BloodPressureHistoryData } from "../../Utils";
 
 
@@ -33,23 +33,15 @@ class LifeLineBloodPressure extends Component {
 					</div>
 				</div>
 				<div className="chart">
-					<AreaChart width={800} height={200} data={BloodPressureHistoryData}>
-						<defs>
-							<linearGradient id="colorSys" x1="0" y1="0" x2="0" y2="1">
-								<stop offset="5%" stopColor="#ad0000" stopOpacity={0.5}/>
-								<stop offset="95%" stopColor="#ad0000" stopOpacity={0}/>
-							</linearGradient>
-							<linearGradient id="colorDia" x1="0" y1="0" x2="0" y2="1">
-								<stop offset="5%" stopColor="#888888" stopOpacity={0.5}/>
-								<stop offset="95%" stopColor="#888888" stopOpacity={0}/>
-							</linearGradient>
-						</defs>
+					<LineChart width={800} height={200} data={BloodPressureHistoryData}>
 						<XAxis dataKey="date" />
 						<YAxis />
+						<Tooltip />
 						<CartesianGrid strokeDasharray="3 3" />
-						<Area type="monotone" dataKey="sys" stroke="#ad0000" fillOpacity={1} fill="url(#colorSys)" />
-						<Area type="monotone" dataKey="dia" stroke="#888888" fillOpacity={1} fill="url(#colorDia)" />
-					</AreaChart>
+						<Line type="monotone" dataKey="sys" stroke="#ad0000" />
+						<Line type="monotone" dataKey="dia" stroke="#888888" />
+						<Line type="monotone" dataKey="hr" stroke="#aaaaaa" />
+					</LineChart>
 				</div>
 				<div className="actions">
 					<button>Start</button>

@@ -1,14 +1,23 @@
 import React, { Component } from "react";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { OxygenHistoryData } from "../../Utils";
+import { faPlayCircle, faStopCircle } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class LifeLineOxygen extends Component {
 
 	constructor() {
 		super();
 		this.state = {
-			...this.state
+			...this.state,
+			active: false
 		}
+	}
+
+	toggleMeasure() {
+		this.setState({
+			active: !this.state.active
+		})
 	}
 
 	render() {
@@ -25,34 +34,30 @@ class LifeLineOxygen extends Component {
 					</div>
 				</div>
 				<div className="actions">
-					<button>Start Measurement</button>
+					<button className="action__btn" onClick={() => this.toggleMeasure()}>
+						<div className="action__btn-icon">
+							<FontAwesomeIcon icon={this.state.active ? faStopCircle : faPlayCircle} />
+						</div>
+						<div className="action__btn-label">{this.state.active ? `Stop` : `Start`} Measurement</div>
+					</button>
 				</div>
 				<div className="chart">
 					<div className="chart-title">Last 2 Weeks</div>
-					<AreaChart width={800} height={200} data={OxygenHistoryData} margin={{ top: 20, right: 50 }}>
-						<defs>
-							<linearGradient id="colorSpo2" x1="0" y1="0" x2="0" y2="1">
-								<stop offset="5%" stopColor="#419cdd" stopOpacity={0.5}/>
-								<stop offset="95%" stopColor="#419cdd" stopOpacity={0}/>
-							</linearGradient>
-						</defs>
+					<LineChart width={800} height={200} data={OxygenHistoryData} margin={{ top: 20, right: 50 }}>
 						<XAxis dataKey="date" stroke={"#444444"} tick={{stroke: '#888888', fontSize: 12 }} />
 						<YAxis type="number" stroke={"#444444"} tick={{stroke: '#888888', fontSize: 12 }} domain={[45, 100]} />
 						<CartesianGrid stroke={"#444444"} strokeDasharray="1" />
-						<Area type="monotone" 
+						<Line type="monotone" 
 							label={{fill : '#fff', fontSize: 10, fontWeight: '700' }}
 							dot={{ fill: '#419cdd', r: 8}} 
 							dataKey="spo2" 
-							stroke="#419cdd" 
-							fillOpacity={1} 
-							fill="url(#colorSpo2)" />
-						<Area type="monotone" 
+							stroke="#419cdd" />
+						<Line type="monotone" 
 							label={{fill : '#35f575', fontSize: 10, fontWeight: '700' }}
 							dot={{ fill: '#444444', r: 8}} 
 							dataKey="hr" 
-							stroke="#444444" 
-							fillOpacity={0} />
-					</AreaChart>
+							stroke="#444444" />
+					</LineChart>
 				</div>
 			</div>
 		);

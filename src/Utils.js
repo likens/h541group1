@@ -69,8 +69,8 @@ export const LifeLineMenusStructure = [
 export const LifeLineModals = [
 	{
 		key: "contact",
-		heading: "Contact",
-		body: "Would you like to call this person?",
+		heading: "Contact User",
+		body: "Would you like to contact this person?",
 		confirm: "Yes",
 		cancel: "No"
 	},
@@ -83,10 +83,34 @@ export const LifeLineModals = [
 	},
 	{
 		key: "edit",
-		heading: "Change User Information",
-		body: "Do you want this change this person's information?",
-		confirm: "Edit",
-		cancel: "Cancel"
+		heading: "Edit User",
+		confirm: "Save",
+		cancel: "Cancel",
+		form: "edit"
+	},
+	{
+		key: "add",
+		heading: "Add User",
+		confirm: "Add",
+		cancel: "Cancel",
+		form: "add"
+	}
+]
+
+export const LifeLineForms = [
+	{
+		key: "edit",
+		fields: [
+			{ type: "text", label: "Display As" },
+			{ type: "text", label: "Phone Number" }
+		]
+	},
+	{
+		key: "add",
+		fields: [
+			{ type: "text", label: "Display As" },
+			{ type: "text", label: "Phone Number" }
+		]
 	}
 ]
 

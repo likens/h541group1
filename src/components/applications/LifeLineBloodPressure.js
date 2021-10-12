@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { XAxis, YAxis, CartesianGrid, LineChart, Line} from 'recharts';
 import { BloodPressureHistoryData } from "../../Utils";
+import { faPlayCircle, faStopCircle } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class LifeLineBloodPressure extends Component {
@@ -8,8 +10,15 @@ class LifeLineBloodPressure extends Component {
 	constructor() {
 		super();
 		this.state = {
-			...this.state
+			...this.state,
+			active: false
 		}
+	}
+
+	toggleMeasure() {
+		this.setState({
+			active: !this.state.active
+		})
 	}
 
 	render() {
@@ -30,7 +39,12 @@ class LifeLineBloodPressure extends Component {
 					</div>
 				</div>
 				<div className="actions">
-					<button>Start Measurement</button>
+					<button className="action__btn" onClick={() => this.toggleMeasure()}>
+						<div className="action__btn-icon">
+							<FontAwesomeIcon icon={this.state.active ? faStopCircle : faPlayCircle} />
+						</div>
+						<div className="action__btn-label">{this.state.active ? `Stop` : `Start`} Measurement</div>
+					</button>
 				</div>
 				<div className="chart">
 					<div className="chart-title">Last 2 Weeks</div>

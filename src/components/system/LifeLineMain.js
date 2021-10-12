@@ -165,7 +165,8 @@ class LifeLineMain extends Component {
 														<ul className={`menu__sub${item.key === this.state.submenu ? ` menu__sub--active` : ``}`}>
 															{menu.menu.key === KEY_EMERGENCY ?
 																<li className="menu__item">
-																	<button className="menu__link" onClick={() => this.toggleModal("contact")}>
+																	<button className="menu__link"
+																			onClick={() => this.toggleModal("contact")}>
 																		<span className="menu__link-icon">
 																			<FontAwesomeIcon flip="horizontal" icon={faPhone} />
 																		</span>
@@ -175,22 +176,24 @@ class LifeLineMain extends Component {
 															: ``} 
 															{menu.menu.key === KEY_EMERGENCY && item.edit ?
 																<li className="menu__item">
-																	<div className="menu__link">
+																	<button className="menu__link" 
+																			onClick={() => this.toggleModal("edit")}>
 																		<span className="menu__link-icon">
 																			<FontAwesomeIcon flip="horizontal" icon={faPencilAlt} />
 																		</span>
 																		<span className="menu__link-name">Edit</span>
-																	</div>
+																	</button>
 																</li>
 															: ``}
 															{menu.menu.key === KEY_EMERGENCY && item.delete ?
 																<li className="menu__item">
-																	<div className="menu__link">
+																	<button className="menu__link"
+																			onClick={() => this.toggleModal("delete")}>
 																		<span className="menu__link-icon">
 																			<FontAwesomeIcon icon={faTrash} />
 																		</span>
 																		<span className="menu__link-name">Delete</span>
-																	</div>
+																	</button>
 																</li>
 															: ``}
 															{item.sub?.map((sub, i) => {

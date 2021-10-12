@@ -81,30 +81,21 @@ class LifeLine extends Component {
 							<li>
 								Blood Pressure / Heart Rate
 								<ul>
-									<li>Systolic/Diastolic Numbers</li>
-									<li>Start & Stop Measurement Button</li>
-									<li>Historical Button & Data</li>
-									<li>Fake Line Chart</li>
-									<li>Other stuff?</li>
+									<li>Start & Stop Measurement Button with Animations</li>
+									<li>Heart Rate "updates" with historical chart</li>
 								</ul>
 							</li>
 							<li>
 								Oxygen Saturation
 								<ul>
-									<li>Numbers</li>
-									<li>Start & Stop Measurement Button</li>
-									<li>Historical Button</li>
-									<li>Fake Line Chart</li>
-									<li>Other stuff?</li>
+									<li>Start & Stop Measurement Button with Animations</li>
 								</ul>
 							</li>
 							<li>
 								Electrocardiogram
 								<ul>
-									<li><s>The Chart</s></li>
-									<li>ADD TACHYCARDIA THING</li>
+									<li>ADD TACHYCARDIA/SYNDROME THING</li>
 									<li>ADD ACTIVITY STATUS</li>
-									
 								</ul>
 							</li>
 							<li>
@@ -127,18 +118,6 @@ class LifeLine extends Component {
 							</li>
 							<li>
 								Alarms
-								<ul>
-									<li>ADD_SOMETHING</li>
-								</ul>
-							</li>
-							<li>
-								Messages
-								<ul>
-									<li>ADD_SOMETHING</li>
-								</ul>
-							</li>
-							<li>
-								Your Information (move to Settings?)
 								<ul>
 									<li>ADD_SOMETHING</li>
 								</ul>

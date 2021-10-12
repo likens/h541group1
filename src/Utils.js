@@ -1,4 +1,4 @@
-import { faThLarge, faPrescription, faRunning, faCommentMedical, faInfo, faBell, faHeartbeat, faDotCircle, faStethoscope, faLaptopMedical, faAmbulance, faHospital, faUserMd, faUserNurse, faUser, faExclamationTriangle, faListUl, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge, faPrescription, faRunning, faBell, faHeartbeat, faDotCircle, faStethoscope, faLaptopMedical, faAmbulance, faHospital, faUserMd, faUserNurse, faUser, faExclamationTriangle, faListUl, faCog } from '@fortawesome/free-solid-svg-icons';
 import LifeLineDashboard from './components/applications/LifeLineDashboard';
 import LifeLineBloodPressure from './components/applications/LifeLineBloodPressure';
 import LifeLineOxygen from './components/applications/LifeLineOxygen';
@@ -7,8 +7,6 @@ import LifeLineHeartRate from './components/applications/LifeLineHeartRate';
 import LifeLineMedications from './components/applications/LifeLineMedications';
 import LifeLinePhysicalTherapy from './components/applications/LifeLinePhysicalTherapy';
 import LifeLineAlarms from './components/applications/LifeLineAlarms';
-import LifeLineMessages from './components/applications/LifeLineMessages';
-import LifeLineInformation from './components/applications/LifeLineInformation';
 
 export const KEY_APPS = 'apps';
 export const KEY_EMERGENCY = 'emergency';
@@ -24,9 +22,7 @@ export const LifeLineApps = {
 		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate id={"hr"} /> },
 		{ name: "Medications", key: "meds", icon: faPrescription, component: <LifeLineMedications id={"meds"} /> },
 		{ name: "Physical Therapy", key: "pt", icon: faRunning, component: <LifeLinePhysicalTherapy id={"pt"} /> },
-		{ name: "Alarms", key: "alarms", icon: faBell, component: <LifeLineAlarms id={"alarms"} /> },
-		{ name: "Messages", key: "messages", icon: faCommentMedical, component: <LifeLineMessages id={"messages"} /> },
-		{ name: "Your Information", key: "info", icon: faInfo, component: <LifeLineInformation id={"info"} /> }
+		{ name: "Alarms", key: "alarms", icon: faBell, component: <LifeLineAlarms id={"alarms"} /> }
 	]
 }
 

@@ -60,9 +60,7 @@ export const LifeLineSettings = {
 			{ name: "Subsettings 5" },
 			{ name: "Subsettings 6" },
 		] },
-		{ name: "Another Setting" },
-		{ name: "And Another Setting" },
-		{ name: "Sure, Give Me Another Setting" },
+		{ name: "Connections" },
 	]
 }
 

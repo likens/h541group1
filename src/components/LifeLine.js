@@ -39,13 +39,10 @@ class LifeLine extends Component {
 								</ul>
 							</li>
 							<li>
-								Forms
+								Settings
 								<ul>
-									<li>Checkbox</li>
-									<li>Radio Button</li>
-									<li>Textbox</li>
-									<li>Dropdown Box</li>
-									<li>Simple Button</li>
+									<li>Flesh out as best as possible</li>
+									<li>Need forms created for it</li>
 								</ul>
 							</li>
 						</ul>

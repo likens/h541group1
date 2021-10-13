@@ -64,27 +64,27 @@ export const LifeLineModals = [
 	{
 		key: "contact",
 		heading: "Contact User",
-		body: "Would you like to contact '{USER_DISPLAY_NAME}'?",
+		body: "Would you like to contact '{Contact_DISPLAY_NAME}'?",
 		confirm: "Yes",
 		cancel: "No"
 	},
 	{
 		key: "delete",
-		heading: "Delete User",
-		body: "You are about to delete '{USER_DISPLAY_NAME}'. Proceed?",
+		heading: "Delete Contact",
+		body: "You are about to delete '{Contact_DISPLAY_NAME}'. Proceed?",
 		confirm: "Delete",
 		cancel: "Cancel"
 	},
 	{
 		key: "edit",
-		heading: "Edit User",
+		heading: "Edit Contact",
 		confirm: "Save",
 		cancel: "Cancel",
 		form: "edit"
 	},
 	{
 		key: "add",
-		heading: "Add User",
+		heading: "Add Contact",
 		confirm: "Add",
 		cancel: "Cancel",
 		form: "add"

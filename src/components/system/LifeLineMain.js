@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
-import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
+import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
 
@@ -15,7 +15,8 @@ class LifeLineMain extends Component {
 			},
 			menu: undefined,
 			submenu: undefined,
-			modal: undefined
+			modal: undefined,
+			form: undefined
 		}
 	}
 
@@ -78,7 +79,8 @@ class LifeLineMain extends Component {
 		this.setState({
 			menu: undefined,
 			submenu: undefined,
-			modal: key
+			modal: key,
+			form: key ? LifeLineModals.find(modal => modal.key === key)?.form : undefined
 		})
 	}
 
@@ -87,6 +89,7 @@ class LifeLineMain extends Component {
 			menu: undefined,
 			submenu: undefined,
 			modal: undefined,
+			form: undefined
 		})
 	}
 
@@ -210,6 +213,16 @@ class LifeLineMain extends Component {
 													</li>
 												)
 											})}
+											{menu.menu.key === KEY_EMERGENCY ?
+												<li key={i} className="menu__item">
+													<button className={`add__btn`} onClick={() => this.toggleModal("add")}>
+														<span className="add__btn-icon">
+															<FontAwesomeIcon size="lg" icon={faPlus} />
+														</span>
+														<span className="add__btn-label">Add</span>
+													</button>
+												</li>
+											: ``}
 										</ul>
 									</div>
 								)
@@ -229,6 +242,33 @@ class LifeLineMain extends Component {
 							</div>
 							<div className="modal__body">
 								{LifeLineModals.find(modal => modal.key === this.state.modal)?.body}
+									{LifeLineModals.find(modal => modal.key === this.state.modal)?.form ? 
+								
+										<div className="form">
+											{LifeLineForms.find(form => form?.key === this.state.form)?.fields.map((field, i) => {
+												console.log(field.type, i);
+												return (
+													<div key={i} className="field">
+														{field.type === "text" || field.type === "ddl" ? 
+															<label className="field__label">{field.label}</label>
+														: ``}
+														{field.type === "text" ? <input type="text" className="field__text" /> : ``}
+														{field.type === "ddl" ? 
+															<select className="field__ddl">
+																<option>Option1</option>
+																<option>Option2</option>
+																<option>Option3</option>
+															</select> : ``}
+														{field.type === "check" ? <input type="check" className="field__text" /> : ``}
+														{field.type === "radio" ? <input type="radio" className="field__text" /> : ``}
+														{field.type === "check" || field.type === "radio" ? 
+															<label className="field__label">{field.label}</label>
+														: ``}
+													</div>
+												)
+											})}
+										</div>
+									: ``}
 							</div>
 							<div className="modal__footer">
 								<button className="modal__btn modal__cancel" onClick={() => this.toggleOverlay()}>

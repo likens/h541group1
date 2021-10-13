@@ -163,7 +163,8 @@ body {
 
 .menu__btn,
 .modal__btn,
-.action__btn {
+.action__btn,
+.add__btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -181,20 +182,23 @@ body {
 
 .menu__btn:hover,
 .modal__btn:hover,
-.action__btn:hover {
+.action__btn:hover,
+.add__btn:hover {
 	color: var(--charcoal);
 	background: var(--white);
 }
 
 .menu__btn-icon,
 .modal__btn-icon,
-.action__btn-icon {
+.action__btn-icon,
+.add__btn-icon {
 	transform: skewX(10deg);
 }
 
 .menu__btn-label,
 .modal__btn-label,
-.action__btn-label {
+.action__btn-label,
+.add__btn-label {
 	font-weight: var(--bold);
 	font-style: italic;
 	text-transform: uppercase;
@@ -362,7 +366,7 @@ body {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	box-shadow: 0 0 1rem #000 inset;
+	box-shadow: 0 0 1rem var(--black) inset;
 	height: 0;
 	overflow: hidden;
 }
@@ -384,7 +388,7 @@ body {
 	z-index: 20;
 	transform: translate(-50%, -50%);
 	background: var(--charcoal);
-	box-shadow: 0 0 1rem #000;
+	box-shadow: 0 0 1rem var(--black);
 	display: grid;
 	grid-gap: 4rem;
 	padding: 2rem;
@@ -439,7 +443,7 @@ body {
 
 .modal__btn {
 	padding: 0.75rem 1.5rem 0.75rem 1.25rem;
-	min-width: 12rem;
+	min-width: 10rem;
 }
 
 .modal--active {
@@ -568,4 +572,45 @@ body {
 
 .measuring--active {
 	display: block;
+}
+
+.form {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: max-content 1fr;
+	align-items: center;
+}
+
+.field {
+	text-transform: uppercase;
+	font-weight: var(--bold);
+	font-style: italic;
+	display: contents;
+}
+
+.field__label {
+	opacity: .5;
+	padding-right: 1rem;
+}
+
+.field__text,
+.field__ddl {
+	background: 0;
+	color: var(--white);
+	border: .2rem solid var(--white);
+	padding: .5rem 1rem;
+	font-family: inherit;
+	text-transform: uppercase;
+	font-weight: var(--bold);
+	font-size: 1.8rem;
+	transform: skew(-10deg);
+	outline: 0;
+}
+
+.field__text:focus {
+	box-shadow: 0 0 1rem inset var(--black);
+}
+
+.add__btn {
+	margin: 2rem auto;
 }

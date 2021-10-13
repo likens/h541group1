@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "../../assets/img/lifeline-logo-full-dark.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faBell, faRunning, faBatteryHalf } from "@fortawesome/free-solid-svg-icons";
+import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faBell, faRunning } from "@fortawesome/free-solid-svg-icons";
 import { faBluetoothB } from "@fortawesome/free-brands-svg-icons";
 
 class LifeLineHeader extends Component {

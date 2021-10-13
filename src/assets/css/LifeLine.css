@@ -5,6 +5,10 @@
 	--charcoal: #222;
 	--darkCharcoal: #111;
 	--lifelineRed: #ad0000;
+	--systolic: #0029ff;
+	--diastolic: #ff9400;
+	--pulse: #34f575;
+	--oxygen: #419cdd;
 }
 
 *,
@@ -145,6 +149,7 @@ body {
 	justify-content: center;
 	font-style: italic;
 	grid-area: apps;
+	position: relative;
 }
 
 .menus {
@@ -409,6 +414,7 @@ body {
 }
 
 .modal__body {
+	text-align: center;
 	padding: 1rem 0;
 }
 
@@ -520,20 +526,20 @@ body {
 }
 
 .systolic .label {
-	background: #0029ff;
+	background: var(--systolic);
 }
 
 .diastolic .label {
-	background: #ff9400;
+	background: var(--diastolic);
 }
 
 .pulse .label {
 	background: #444444;
-	color: #35f575;
+	color: var(--pulse);
 }
 
 .spo2 .label {
-	background: #419cdd;
+	background: var(--oxygen);
 }
 
 .hr .label {
@@ -591,6 +597,7 @@ body {
 .field__label {
 	opacity: .5;
 	padding-right: 1rem;
+	text-align: right;
 }
 
 .field__text,
@@ -609,6 +616,30 @@ body {
 
 .field__text:focus {
 	box-shadow: 0 0 1rem inset var(--black);
+}
+
+.field__check {
+	margin-left: auto;
+	background: 0;
+	border: .2rem solid var(--white);
+	transform: skew(-10deg);
+	width: 2rem;
+	height: 2rem;
+	appearance: none;
+	cursor: pointer;
+}
+
+.field__check:hover {
+	opacity: .5;
+}
+
+.field__check:checked {
+	background: var(--lifelineRed);
+}
+
+.field__check + .field__label,
+.field__radio + .field__label {
+	text-align: left;
 }
 
 .add__btn {

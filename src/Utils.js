@@ -64,14 +64,14 @@ export const LifeLineModals = [
 	{
 		key: "contact",
 		heading: "Contact User",
-		body: "Would you like to contact '{Contact_DISPLAY_NAME}'?",
+		body: "Would you like to contact '{CONTACT_DISPLAY_NAME}'?",
 		confirm: "Yes",
 		cancel: "No"
 	},
 	{
 		key: "delete",
 		heading: "Delete Contact",
-		body: "You are about to delete '{Contact_DISPLAY_NAME}'. Proceed?",
+		body: "You are about to delete '{CONTACT_DISPLAY_NAME}'. Proceed?",
 		confirm: "Delete",
 		cancel: "Cancel"
 	},
@@ -88,6 +88,13 @@ export const LifeLineModals = [
 		confirm: "Add",
 		cancel: "Cancel",
 		form: "add"
+	},
+	{
+		key: "snap",
+		heading: "Send Snapshot",
+		body: "Send a snapshot of your current heart health to your doctor, hospital, and other contacts that have been approved to receive it?",
+		confirm: "Send",
+		cancel: "Cancel"
 	}
 ]
 
@@ -96,14 +103,16 @@ export const LifeLineForms = [
 		key: "edit",
 		fields: [
 			{ type: "text", label: "Display As" },
-			{ type: "text", label: "Phone Number" }
+			{ type: "text", label: "Phone Number" },
+			{ type: "check", label: "Receive Heart Health Snapshot"}
 		]
 	},
 	{
 		key: "add",
 		fields: [
 			{ type: "text", label: "Display As" },
-			{ type: "text", label: "Phone Number" }
+			{ type: "text", label: "Phone Number" },
+			{ type: "check", label: "Receive Heart Health Snapshot"}
 		]
 	}
 ]

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck, faPlus, faCamera } from '@fortawesome/free-solid-svg-icons';
 import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
@@ -103,6 +103,14 @@ class LifeLineMain extends Component {
 					</div>
 					<div className="apps">
 						{this.state.app.component}
+						{this.state.app.key === "dashboard" ? 
+						<div className="dash dash--snap">
+							<button className="snap__btn" onClick={() => this.toggleModal("snap")}>
+								<FontAwesomeIcon size={"4x"} icon={faCamera} />
+								<br/>
+								Snapshot
+							</button>
+						</div> : ``}
 					</div>
 					<div className="nav__item nav__item--next"
 						onClick={() => this.goToApp(this.getAppKey(true))}>
@@ -259,8 +267,8 @@ class LifeLineMain extends Component {
 																<option>Option2</option>
 																<option>Option3</option>
 															</select> : ``}
-														{field.type === "check" ? <input type="check" className="field__text" /> : ``}
-														{field.type === "radio" ? <input type="radio" className="field__text" /> : ``}
+														{field.type === "check" ? <input type="checkbox" className="field__check" /> : ``}
+														{field.type === "radio" ? <input type="radio" className="field__radio" /> : ``}
 														{field.type === "check" || field.type === "radio" ? 
 															<label className="field__label">{field.label}</label>
 														: ``}

@@ -32,8 +32,9 @@ class LifeLine extends Component {
 							<li>
 								Menus/Nav
 								<ul>
-									<li>Finish Nav Buttons</li>
-									<li>Finish Submenus</li>
+									<li><s>Finish Nav Buttons</s></li>
+									<li><s>Finish Submenus</s></li>
+									<li><s>Hook Up Modals</s></li>
 								</ul>
 							</li>
 							<li>
@@ -48,9 +49,9 @@ class LifeLine extends Component {
 							<li>
 								Modals
 								<ul>
-									<li>Confirm/Cancel Button</li>
-									<li>Close Button</li>
-									<li>Header/Body</li>
+									<li><s>Confirm/Cancel Button</s></li>
+									<li><s>Close Button</s></li>
+									<li><s>Header/Body</s></li>
 								</ul>
 							</li>
 							<li>
@@ -77,30 +78,30 @@ class LifeLine extends Component {
 								</ul>
 							</li>
 							<li>
-								Blood Pressure / Heart Rate
+								Blood Pressure
 								<ul>
-									<li>Systolic/Diastolic Numbers</li>
-									<li>Start & Stop Measurement Button</li>
-									<li>Historical Button & Data</li>
-									<li>Fake Line Chart</li>
-									<li>Other stuff?</li>
+									<li>Start & Stop Measurement Button with Animations</li>
+									<li>Heart Rate "updates" with historical chart</li>
 								</ul>
 							</li>
 							<li>
 								Oxygen Saturation
 								<ul>
-									<li>Numbers</li>
-									<li>Start & Stop Measurement Button</li>
-									<li>Historical Button</li>
-									<li>Fake Line Chart</li>
-									<li>Other stuff?</li>
+									<li>Animations</li>
 								</ul>
 							</li>
 							<li>
-								Electrocardiogram
+								Blood Pressure
 								<ul>
-									<li>The Chart</li>
-									<li>Other stuff?</li>
+									<li>Animations</li>
+								</ul>
+							</li>
+							<li>
+								Heart Rate
+								<ul>
+									<li>Start/Stop</li>
+									<li>History</li>
+									<li>Animations</li>
 								</ul>
 							</li>
 							<li>
@@ -123,18 +124,6 @@ class LifeLine extends Component {
 							</li>
 							<li>
 								Alarms
-								<ul>
-									<li>ADD_SOMETHING</li>
-								</ul>
-							</li>
-							<li>
-								Messages
-								<ul>
-									<li>ADD_SOMETHING</li>
-								</ul>
-							</li>
-							<li>
-								Your Information (move to Settings?)
 								<ul>
 									<li>ADD_SOMETHING</li>
 								</ul>

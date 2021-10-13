@@ -1,18 +1,31 @@
 import React, { Component } from "react";
 import logo from "../../assets/img/lifeline-logo-full-dark.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faBell, faRunning } from "@fortawesome/free-solid-svg-icons";
+import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faBell, faRunning, faBatteryHalf } from "@fortawesome/free-solid-svg-icons";
 import { faBluetoothB } from "@fortawesome/free-brands-svg-icons";
 
 class LifeLineHeader extends Component {
 	constructor() {
 		super();
 		this.state = {
-			...this.state
+			...this.state,
+			now: new Date(),
+			nowString: "",
+			timeString: "",
+			meridiemString: "",
+			zoneString: ""
 		};
 	}
 
-	render() {
+	componentDidMount() {
+		this.timerID = setInterval(() => this.tick(), 1000);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.timerID);
+	}
+
+	tick() {
 		/**
 		 * Build out clock data
 		 */
@@ -22,17 +35,27 @@ class LifeLineHeader extends Component {
 		let meridiemString = nowString.toString().split(" ")[1];
 		let zoneString = now.toLocaleTimeString("en-us", { timeZoneName: "short" }).split(" ")[2];
 
+		this.setState({
+			now: now,
+			nowString: nowString,
+			timeString: timeString,
+			meridiemString: meridiemString,
+			zoneString: zoneString
+		});
+	}
+
+	render() {
 		return (
 			<header className="header">
 				<div className="header__tray header__notifications">
 					<div className="header__pt">
-						<FontAwesomeIcon icon={faRunning} />
+						<FontAwesomeIcon size="lg" icon={faRunning} />
 					</div>
 					<div className="header__rx">
-						<FontAwesomeIcon icon={faPrescription} />
+						<FontAwesomeIcon size="lg" icon={faPrescription} />
 					</div>
 					<div className="header__alarms">
-						<FontAwesomeIcon icon={faBell} />
+						<FontAwesomeIcon size="lg" icon={faBell} />
 					</div>
 				</div>
 				<div className="header__logo">
@@ -40,31 +63,31 @@ class LifeLineHeader extends Component {
 				</div>
 				<div className="header__tray header__system">
 					<div className="header__gps">
-						<FontAwesomeIcon icon={faLocationArrow} />
+						<FontAwesomeIcon size="lg" icon={faLocationArrow} />
 					</div>
 					<div className="header__bluetooth">
-						<FontAwesomeIcon icon={faBluetoothB} />
+						<FontAwesomeIcon size="lg" icon={faBluetoothB} />
 					</div>
 					<div className="header__wifi">
-						<FontAwesomeIcon icon={faWifi} />
+						<FontAwesomeIcon size="lg" icon={faWifi} />
 					</div>
 					<div className="header__weather">
 						<span className="header__weather-icon">
-							<FontAwesomeIcon icon={faCloudSun} />
+							<FontAwesomeIcon size="lg" icon={faCloudSun} />
 						</span>
 						<span className="header__weather-degrees">75°</span>
 					</div>
 					<div className="header__clock">
-						<span className="header__clock-time">{timeString}</span>
+						<span className="header__clock-time">{this.state.timeString}</span>
 						<span className="header__clock-meridiem">
-							{meridiemString}
+							{this.state.meridiemString}
 							<br />
-							{zoneString}
+							{this.state.zoneString}
 						</span>
 					</div>
 					<div className="header__battery">
 						<span className="header__battery-icon">
-							<FontAwesomeIcon icon={faBatteryFull} />
+							<FontAwesomeIcon size="lg" icon={faBatteryFull} />
 						</span>
 						<span className="header__battery-percent">
 							<span className="header__battery-percent-value">95</span>

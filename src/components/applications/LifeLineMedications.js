@@ -12,7 +12,7 @@ class LifeLineMedication extends Component {
 	render() {
 		return (
 			<div className="medications">
-
+				MEDICATIONS_GOES_HERE
 			</div>
 		);
 	}

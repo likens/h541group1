@@ -112,53 +112,26 @@ export const LifeLineForms = [
 	}
 ]
 
-export const BloodPressureHistoryData = [
-	{ date: 'Sep 1', sys: 120, dia: 80, hr: 65 },
-	{ date: 'Sep 2', sys: 110, dia: 90, hr: 70 },
-	{ date: 'Sep 3', sys: 115, dia: 75, hr: 68 },
-	{ date: 'Sep 4', sys: 125, dia: 85, hr: 75 },
-	{ date: 'Sep 5', sys: 140, dia: 95, hr: 76 },
-	{ date: 'Sep 6', sys: 130, dia: 80, hr: 74 },
-	{ date: 'Sep 7', sys: 120, dia: 90, hr: 67 },
-	{ date: 'Sep 8', sys: 120, dia: 80, hr: 65 },
-	{ date: 'Sep 9', sys: 110, dia: 90, hr: 70 },
-	{ date: 'Sep 10', sys: 115, dia: 75, hr: 68 },
-	{ date: 'Sep 11', sys: 125, dia: 85, hr: 75 },
-	{ date: 'Sep 12', sys: 140, dia: 95, hr: 76 },
-	{ date: 'Sep 13', sys: 130, dia: 80, hr: 74 },
-	{ date: 'Sep 14', sys: 120, dia: 90, hr: 67 }
-];
+export const BloodPressureHistoryData = generateTestData(14, "sys", [110, 150], "dia", [70, 100], "hr", [45, 100]);
+export const OxygenHistoryData = generateTestData(14, "spo2", [90, 100], "hr", [45, 100]);
+export const HeartRateHistoryData = generateTestData(14, "hr", [50, 150]);
 
-  export const OxygenHistoryData = [
-	{ date: 'Sep 1', spo2: 99, hr: 70 },
-	{ date: 'Sep 2', spo2: 100, hr: 70 },
-	{ date: 'Sep 3', spo2: 99, hr: 70 },
-	{ date: 'Sep 4', spo2: 98, hr: 70 },
-	{ date: 'Sep 5', spo2: 95, hr: 70 },
-	{ date: 'Sep 6', spo2: 97, hr: 70 },
-	{ date: 'Sep 7', spo2: 99, hr: 70 },
-	{ date: 'Sep 8', spo2: 100, hr: 70 },
-	{ date: 'Sep 9', spo2: 99, hr: 70 },
-	{ date: 'Sep 10', spo2: 98, hr: 70 },
-	{ date: 'Sep 11', spo2: 95, hr: 70 },
-	{ date: 'Sep 12', spo2: 97, hr: 70 },
-	{ date: 'Sep 13', spo2: 99, hr: 70 },
-	{ date: 'Sep 14', spo2: 99, hr: 70 }
-];
-
-export const HeartRateHistoryData = [
-	{ date: 'Sep 1', hr: 65 },
-	{ date: 'Sep 2', hr: 70 },
-	{ date: 'Sep 3', hr: 68 },
-	{ date: 'Sep 4', hr: 75 },
-	{ date: 'Sep 5', hr: 76 },
-	{ date: 'Sep 6', hr: 74 },
-	{ date: 'Sep 7', hr: 67 },
-	{ date: 'Sep 8', hr: 65 },
-	{ date: 'Sep 9', hr: 70 },
-	{ date: 'Sep 10', hr: 68 },
-	{ date: 'Sep 11', hr: 75 },
-	{ date: 'Sep 12', hr: 76 },
-	{ date: 'Sep 13', hr: 74 },
-	{ date: 'Sep 14', hr: 67 }
-];
+function generateTestData(days, key1, data1, key2, data2, key3, data3) {
+	const data = [];
+	for(let i = 0; i <= days; i++) {
+		let obj = {
+			date: `Sep ${i}`,
+		}
+		if (key1) {
+			obj[key1] = Math.floor(Math.random() * (data1[1] - data1[0] + 1)) + data1[0];
+		}
+		if (key2) {
+			obj[key2] = Math.floor(Math.random() * (data2[1] - data2[0] + 1)) + data2[0];
+		}
+		if (key3) {
+			obj[key3] = Math.floor(Math.random() * (data3[1] - data3[0] + 1)) + data3[0];
+		}
+		data.push(obj);
+	}
+	return data;
+}

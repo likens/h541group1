@@ -35,6 +35,7 @@ class LifeLineBloodPressure extends Component {
 	}
 
 	render() {
+		console.log(BloodPressureHistoryData);
 		return (
 			<div className="blood-pressure">
 				<div className={`readings${!this.state.history ? ` readings--active` : ``}`}>

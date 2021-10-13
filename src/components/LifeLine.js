@@ -30,28 +30,12 @@ class LifeLine extends Component {
 								</ul>
 							</li>
 							<li>
-								Menus/Nav
-								<ul>
-									<li><s>Finish Nav Buttons</s></li>
-									<li><s>Finish Submenus</s></li>
-									<li><s>Hook Up Modals</s></li>
-								</ul>
-							</li>
-							<li>
 								Notifications
 								<ul>
 									<li>Icons</li>
 									<li>Messages</li>
 									<li>Clear Button</li>
 									<li>Button To Launch Different Notifications</li>
-								</ul>
-							</li>
-							<li>
-								Modals
-								<ul>
-									<li><s>Confirm/Cancel Button</s></li>
-									<li><s>Close Button</s></li>
-									<li><s>Header/Body</s></li>
 								</ul>
 							</li>
 							<li>
@@ -74,14 +58,12 @@ class LifeLine extends Component {
 								<ul>
 									<li>4 Sections</li>
 									<li>Snapshot Button</li>
-									<li>Other stuff?</li>
 								</ul>
 							</li>
 							<li>
 								Blood Pressure
 								<ul>
-									<li>Start & Stop Measurement Button with Animations</li>
-									<li>Heart Rate "updates" with historical chart</li>
+									<li>Animations</li>
 								</ul>
 							</li>
 							<li>
@@ -91,16 +73,8 @@ class LifeLine extends Component {
 								</ul>
 							</li>
 							<li>
-								Blood Pressure
-								<ul>
-									<li>Animations</li>
-								</ul>
-							</li>
-							<li>
 								Heart Rate
 								<ul>
-									<li>Start/Stop</li>
-									<li>History</li>
 									<li>Animations</li>
 								</ul>
 							</li>
@@ -125,7 +99,9 @@ class LifeLine extends Component {
 							<li>
 								Alarms
 								<ul>
-									<li>ADD_SOMETHING</li>
+									<li>Calendar</li>
+									<li>PT Info</li>
+									<li>Other stuff?</li>
 								</ul>
 							</li>
 						</ul>

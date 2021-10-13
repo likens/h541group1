@@ -227,7 +227,9 @@ class LifeLineMain extends Component {
 									<FontAwesomeIcon size={"lg"} icon={faTimes} />
 								</button>
 							</div>
-							<div className="modal__body">{LifeLineModals.find(modal => modal.key === this.state.modal)?.body}</div>
+							<div className="modal__body">
+								{LifeLineModals.find(modal => modal.key === this.state.modal)?.body}
+							</div>
 							<div className="modal__footer">
 								<button className="modal__btn modal__cancel" onClick={() => this.toggleOverlay()}>
 									<span className="modal__btn-icon"><FontAwesomeIcon icon={faTimes} /></span>

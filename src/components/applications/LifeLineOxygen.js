@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
-import { OxygenHistoryData } from "../../Utils";
+import { OxygenHistoryData, OxygenSpo2, OxygenHr } from "../../Utils";
 import { faChartLine, faSignal } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle, faStopCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +24,10 @@ class LifeLineOxygen extends Component {
 				active: !this.state.readings.active
 			},
 			history: false
-		})
+		});
+		if (!this.state.readings.active) {
+			this.generateReadings();
+		}
 	}
 
 	toggleHistory() {
@@ -33,17 +36,47 @@ class LifeLineOxygen extends Component {
 		})
 	}
 
+	generateReadings() {
+		this.oxyInterval = setInterval(() => this.updateReading(), 500);
+		setTimeout(() => {
+			this.setState({
+				readings: { 
+					active: false,
+					spo2: this.state.readings.spo2,
+					hr: this.state.readings.hr
+				}
+			})
+			clearInterval(this.oxyInterval);
+		}, 5000);
+	}
+
+	updateReading() {
+		this.setState({
+			readings: {
+				active: true,
+				spo2: Math.floor(Math.random() * (OxygenSpo2[1] - OxygenSpo2[0] + 1)) + OxygenSpo2[0],
+				hr: Math.floor(Math.random() * (OxygenHr[1] - OxygenHr[0] + 1)) + OxygenHr[0]
+			}
+		});
+	}
+
 	render() {
 		return (
 			<div className="oxygen">
 				<div className={`readings${!this.state.history ? ` readings--active` : ``}`}>
 					<div className="spo2 reading">
 						<div className="label">Oxy. Sat. (SpO2)</div>
-						<div className="value">--</div>
+						<div className="value">
+							{this.state.readings.spo2 ? `${this.state.readings.spo2}` : `--`}
+							{this.state.readings.spo2 ? <span>%</span> : ``}
+						</div>
 					</div>
 					<div className="pulse reading">
 						<div className="label">Pulse</div>
-						<div className="value">--</div>
+						<div className="value">
+							{this.state.readings.hr ? `${this.state.readings.hr}` : `--`}
+							{this.state.readings.hr ? <span>bpm</span> : ``}
+						</div>
 					</div>
 				</div>
 				<div className="actions">

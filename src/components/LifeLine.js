@@ -79,29 +79,9 @@ class LifeLine extends Component {
 								</ul>
 							</li>
 							<li>
-								Medications
+								Calendar
 								<ul>
-									<li>Calendar</li>
-									<li>Streak</li>
-									<li>Medication Info</li>
-									<li>Other stuff?</li>
-								</ul>
-							</li>
-							<li>
-								Physical Therapy
-								<ul>
-									<li>Calendar</li>
-									<li>Streak</li>
-									<li>PT Info</li>
-									<li>Other stuff?</li>
-								</ul>
-							</li>
-							<li>
-								Alarms
-								<ul>
-									<li>Calendar</li>
-									<li>PT Info</li>
-									<li>Other stuff?</li>
+									<li>do it</li>
 								</ul>
 							</li>
 						</ul>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { XAxis, YAxis, CartesianGrid, LineChart, Line} from 'recharts';
-import { BloodPressureHistoryData } from "../../Utils";
+import { BloodPressureHistoryData, BloodPressureDia, BloodPressureSys, BloodPressureHr } from "../../Utils";
 import { faChartLine, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle, faStopCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +25,10 @@ class LifeLineBloodPressure extends Component {
 				active: !this.state.readings.active
 			},
 			history: false
-		})
+		});
+		if (!this.state.readings.active) {
+			this.generateReadings();
+		}
 	}
 
 	toggleHistory() {
@@ -34,22 +37,56 @@ class LifeLineBloodPressure extends Component {
 		})
 	}
 
+	generateReadings() {
+		this.bpInterval = setInterval(() => this.updateReading(), 500);
+		setTimeout(() => {
+			this.setState({
+				readings: { 
+					active: false,
+					sys: this.state.readings.sys,
+					dia: this.state.readings.dia,
+					hr: this.state.readings.hr
+				}
+			})
+			clearInterval(this.bpInterval);
+		}, 5000);
+	}
+
+	updateReading() {
+		this.setState({
+			readings: {
+				active: true,
+				sys: Math.floor(Math.random() * (BloodPressureSys[1] - BloodPressureSys[0] + 1)) + BloodPressureSys[0],
+				dia: Math.floor(Math.random() * (BloodPressureDia[1] - BloodPressureDia[0] + 1)) + BloodPressureDia[0],
+				hr: Math.floor(Math.random() * (BloodPressureHr[1] - BloodPressureHr[0] + 1)) + BloodPressureHr[0]
+			}
+		});
+	}
+
 	render() {
-		console.log(BloodPressureHistoryData);
 		return (
 			<div className="blood-pressure">
 				<div className={`readings${!this.state.history ? ` readings--active` : ``}`}>
 					<div className="systolic reading">
 						<div className="label">Systolic</div>
-						<div className="value">--</div>
+						<div className="value">
+							{this.state.readings.sys ? `${this.state.readings.sys}` : `--`}
+							{this.state.readings.sys ? <span>mmHg</span> : ``}
+						</div>
 					</div>
 					<div className="diastolic reading">
 						<div className="label">Diastolic</div>
-						<div className="value">--</div>
+						<div className="value">
+							{this.state.readings.dia ? `${this.state.readings.dia}` : `--`}
+							{this.state.readings.dia ? <span>mmHg</span> : ``}
+						</div>
 					</div>
 					<div className="pulse reading">
 						<div className="label">Pulse</div>
-						<div className="value">--</div>
+						<div className="value">
+							{this.state.readings.hr ? `${this.state.readings.hr}` : `--`}
+							{this.state.readings.hr ? <span>bpm</span> : ``}
+						</div>
 					</div>
 				</div>
 				<div className="actions">

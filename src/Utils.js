@@ -1,12 +1,10 @@
-import { faThLarge, faPrescription, faRunning, faBell, faHeartbeat, faDotCircle, faStethoscope, faLaptopMedical, faAmbulance, faHospital, faUserMd, faUser, faExclamationTriangle, faListUl, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge, faHeartbeat, faDotCircle, faStethoscope, faLaptopMedical, faAmbulance, faHospital, faUserMd, faUser, faExclamationTriangle, faListUl, faCog, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import LifeLineDashboard from './components/applications/LifeLineDashboard';
 import LifeLineBloodPressure from './components/applications/LifeLineBloodPressure';
 import LifeLineOxygen from './components/applications/LifeLineOxygen';
 import LifeLineElectrocardiogram from './components/applications/LifeLineElectrocardiogram';
 import LifeLineHeartRate from './components/applications/LifeLineHeartRate';
-import LifeLineMedications from './components/applications/LifeLineMedications';
-import LifeLinePhysicalTherapy from './components/applications/LifeLinePhysicalTherapy';
-import LifeLineAlarms from './components/applications/LifeLineAlarms';
+import LifeLineCalendar from './components/applications/LifeLineCalendar';
 
 export const KEY_APPS = 'apps';
 export const KEY_EMERGENCY = 'emergency';
@@ -15,14 +13,12 @@ export const KEY_SETTINGS = 'settings';
 export const LifeLineApps = {
 	key: KEY_APPS,
 	structure: [
-		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard id={"dashboard"} /> },
-		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure id={"bp"} /> },
-		{ name: "Oxygen Saturation", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen id={"oxy"} /> },
-		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate id={"hr"} /> },
-		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram id={"ekg"} /> },
-		{ name: "Medications", key: "meds", icon: faPrescription, component: <LifeLineMedications id={"meds"} /> },
-		{ name: "Physical Therapy", key: "pt", icon: faRunning, component: <LifeLinePhysicalTherapy id={"pt"} /> },
-		{ name: "Alarms", key: "alarms", icon: faBell, component: <LifeLineAlarms id={"alarms"} /> }
+		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard /> },
+		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure /> },
+		{ name: "Oxygen Saturation", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen /> },
+		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate /> },
+		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram /> },
+		{ name: "Calendar", key: "calendar", icon: faCalendarAlt, component: <LifeLineCalendar /> }
 	]
 }
 
@@ -112,9 +108,17 @@ export const LifeLineForms = [
 	}
 ]
 
-export const BloodPressureHistoryData = generateTestData(14, "sys", [110, 150], "dia", [70, 100], "hr", [45, 100]);
-export const OxygenHistoryData = generateTestData(14, "spo2", [90, 100], "hr", [45, 100]);
-export const HeartRateHistoryData = generateTestData(14, "hr", [50, 150]);
+export const BloodPressureSys = [110, 150];
+export const BloodPressureDia = [70, 100];
+export const BloodPressureHr = [45, 100];
+export const BloodPressureHistoryData = generateTestData(14, "sys", BloodPressureSys, "dia", BloodPressureDia, "hr", BloodPressureHr);
+
+export const OxygenSpo2 = [90, 100];
+export const OxygenHr = [45, 100];
+export const OxygenHistoryData = generateTestData(14, "spo2", OxygenSpo2, "hr", OxygenHr);
+
+export const HeartRateHr = [50, 150];
+export const HeartRateHistoryData = generateTestData(14, "hr", HeartRateHr);
 
 function generateTestData(days, key1, data1, key2, data2, key3, data3) {
 	const data = [];

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { XAxis, YAxis, CartesianGrid, LineChart, Line} from 'recharts';
-import { HeartRateHistoryData } from "../../Utils";
+import { HeartRateHistoryData, HeartRateHr } from "../../Utils";
 import { faChartLine, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faPlayCircle, faStopCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +24,10 @@ class LifeLineHeartRate extends Component {
 				active: !this.state.readings.active
 			},
 			history: false
-		})
+		});
+		if (!this.state.readings.active) {
+			this.generateReadings();
+		}
 	}
 
 	toggleHistory() {
@@ -33,13 +36,38 @@ class LifeLineHeartRate extends Component {
 		})
 	}
 
+	generateReadings() {
+		this.hrInterval = setInterval(() => this.updateReading(), 500);
+		setTimeout(() => {
+			this.setState({
+				readings: { 
+					active: false,
+					hr: this.state.readings.hr
+				}
+			})
+			clearInterval(this.hrInterval);
+		}, 5000);
+	}
+
+	updateReading() {
+		this.setState({
+			readings: {
+				active: true,
+				hr: Math.floor(Math.random() * (HeartRateHr[1] - HeartRateHr[0] + 1)) + HeartRateHr[0]
+			}
+		});
+	}
+
 	render() {
 		return (
 			<div className="heart-rate">
 				<div className={`readings${!this.state.history ? ` readings--active` : ``}`}>
 					<div className="hr reading">
 						<div className="label">Heart Rate</div>
-						<div className="value">--</div>
+						<div className="value">
+							{this.state.readings.hr ? `${this.state.readings.hr}` : `--`}
+							{this.state.readings.hr ? <span>bpm</span> : ``}
+						</div>
 					</div>
 				</div>
 				<div className="actions">

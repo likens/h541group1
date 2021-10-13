@@ -3,12 +3,11 @@ import LifeLineHardware from "./LifeLineHardware";
 import "../assets/css/LifeLine.css";
 
 class LifeLine extends Component {
-
 	constructor() {
 		super();
 		this.state = {
 			...this.state
-		}
+		};
 	}
 
 	render() {

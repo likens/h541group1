@@ -14,16 +14,16 @@
 }
 
 html {
-	font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-	font-size:62.5%;
-	-webkit-text-size-adjust:100%
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-	font-size:1.6rem;
-	line-height:1.25;
-	margin:0;
-	padding:0;
+	font-size: 1.6rem;
+	line-height: 1.25;
+	margin: 0;
+	padding: 0;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -35,10 +35,9 @@ body {
 }
 
 .software {
-	border: .3rem solid var(--charcoal);
+	/* border: 0.3rem solid var(--charcoal); */
 	width: 100rem;
 	height: 60rem;
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -54,7 +53,8 @@ body {
 	align-items: center;
 	padding: 0 1.5rem;
 	font-weight: var(--bold);
-	font-size: 1.4rem;
+	font-size: 2rem;
+	min-height: 6rem;
 }
 
 .header__tray {
@@ -66,7 +66,8 @@ body {
 
 .header__logo-img {
 	display: block;
-	max-height: 3rem;
+	max-height: 100%;
+	height: 5rem;
 }
 
 .header__system {
@@ -76,12 +77,16 @@ body {
 .header__weather,
 .header__battery {
 	display: grid;
-	grid-gap: .25rem;
+	grid-gap: 1.5rem;
 	grid-template-columns: 2rem 1fr;
 }
 
 .header__clock-meridiem {
 	font-size: 1rem;
+	float: right;
+	line-height: 90%;
+	margin-left: 0.5rem;
+	transform: translateY(0.5rem);
 }
 
 .header__battery-percent-sign {
@@ -99,7 +104,7 @@ body {
 }
 
 .nav__item:hover {
-	opacity: .75;
+	opacity: 0.75;
 }
 
 .nav__item--prev {
@@ -119,7 +124,7 @@ body {
 	width: 100%;
 	height: 100%;
 	display: grid;
-	grid-template-areas: 
+	grid-template-areas:
 		"prev apps next"
 		"prev menus next";
 	grid-template-columns: 9rem 1fr 9rem;
@@ -160,7 +165,7 @@ body {
 	align-items: center;
 	grid-gap: 1rem;
 	padding: 1rem 2.5rem 1rem 2rem;
-	border: .2rem solid var(--white);
+	border: 0.2rem solid var(--white);
 	cursor: pointer;
 	transform: skewX(-10deg);
 	min-width: 17rem;
@@ -190,13 +195,13 @@ body {
 	bottom: 0;
 	overflow-y: auto;
 	overflow-x: visible;
-	transition: .25s ease all;
+	transition: 0.25s ease all;
 	height: 100%;
 	z-index: 20;
 }
 
 .menu__drawer::-webkit-scrollbar {
-	width: .5rem;
+	width: 0.5rem;
 	z-index: 20;
 }
 
@@ -244,7 +249,7 @@ body {
 }
 
 .menu__drawer-icon {
-	opacity: .1;
+	opacity: 0.1;
 	position: absolute;
 	left: 2rem;
 	top: 1rem;
@@ -259,11 +264,11 @@ body {
 }
 
 .menu__drawer-close:hover {
-	opacity: .5;
+	opacity: 0.5;
 }
 
 .menu__overlay {
-	background: rgba(0, 0, 0, .8);
+	background: rgba(0, 0, 0, 0.8);
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -272,7 +277,7 @@ body {
 	opacity: 0;
 	visibility: hidden;
 	z-index: 10;
-	transition: .25s all ease;
+	transition: 0.25s all ease;
 	cursor: pointer;
 }
 
@@ -282,7 +287,7 @@ body {
 }
 
 .menu__overlay:hover {
-	background: rgba(0, 0, 0, .825);
+	background: rgba(0, 0, 0, 0.825);
 }
 
 .menu__list {
@@ -307,7 +312,7 @@ body {
 }
 
 .menu__link:hover {
-	opacity: .5;
+	opacity: 0.5;
 }
 
 .menu__link--extra {

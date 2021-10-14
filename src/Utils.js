@@ -150,6 +150,7 @@ function generateTestData(days, key1, data1, key2, data2, key3, data3) {
 
 export const CalendarData = {
 	hours: [1, 12],
+	meridiem: ["am", "pm"],
 	doses: [5, 50],
 	lengths: [10, 120],
 	meds: ["Aspirin", "Clopidogrel", "Warfarin", "Lisinopril", "Benazepril", "Losartan"],

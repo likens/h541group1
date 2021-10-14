@@ -8,33 +8,73 @@ class LifeLineCalendar extends Component {
 	constructor() {
 		super();
 		this.state = {
-			...this.state
+			...this.state,
+			today: 15,
+			day: undefined,
+			med: undefined,
+			pt: undefined,
+			appts: undefined
 		}
 	}
 
-	getMedPtAppt() {
-		console.log(CalendarData);
-		this.getMed();
-		this.getPt();
-		this.getAppt();
+	getMedPtAppt(day) {
+		this.setState({
+			day: day,
+			meds: this.getMeds(),
+			pt: this.getPt(),
+			appts: this.getAppt()
+		})
 	}
 
-	getMed() {
-		const numberOf = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-		console.log(numberOf);
+	getMeds() {
+		const numberOf = Math.floor(Math.random() * (2 - -1 + 1) + -1);
+		const items = [];
+		for (let i = 0; i <= numberOf; i++) {
+			const dose = Math.floor(Math.random() * (CalendarData.doses[1] - CalendarData.doses[0] + 1)) + CalendarData.doses[0];
+			const med = CalendarData.meds[Math.floor(Math.random() * (CalendarData.meds.length - 1 + 1)) + 0];
+			const hour = Math.floor(Math.random() * (CalendarData.hours[1] - CalendarData.hours[0] + 1)) + CalendarData.hours[0];
+			const meridiem = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			items.push(`${dose}mg ${med} @ ${hour}:00${CalendarData.meridiem[meridiem]}`)
+		}
+		return items;
 	}
 
 	getPt() {
-		const numberOf = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-		console.log(numberOf);
+		const numberOf = Math.floor(Math.random() * (2 - -1 + 1) + -1);
+		const items = [];
+		for (let i = 0; i <= numberOf; i++) {
+			const length = Math.floor(Math.random() * (CalendarData.lengths[1] - CalendarData.lengths[0] + 1)) + CalendarData.lengths[0];
+			const exercise = CalendarData.exercises[Math.floor(Math.random() * (CalendarData.exercises.length - 1 + 1)) + 0];
+			const hour = Math.floor(Math.random() * (CalendarData.hours[1] - CalendarData.hours[0] + 1)) + CalendarData.hours[0];
+			const meridiem = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			items.push(`${length} minutes of ${exercise} @ ${hour}:00${CalendarData.meridiem[meridiem]}`)
+		}
+		return items;
 	}
 
 	getAppt() {
-		const numberOf = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-		console.log(numberOf);
+		const numberOf = Math.floor(Math.random() * (2 - -1 + 1) + -1);
+		const items = [];
+		for (let i = 0; i <= numberOf; i++) {
+			const appt = CalendarData.appointments[Math.floor(Math.random() * (CalendarData.appointments.length - 1 + 1)) + 0];
+			const hour = Math.floor(Math.random() * (CalendarData.hours[1] - CalendarData.hours[0] + 1)) + CalendarData.hours[0];
+			const meridiem = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+			items.push(`${appt} appointment @ ${hour}:00${CalendarData.meridiem[meridiem]}`)
+		}
+		return items;
 	}
 
 	render() {
+
+		const weeks = [
+			[-29, -30, -31, 1, 2, 3, 4],
+			[5, 6, 7, 8, 9, 10, 11],
+			[12, 13, 14, 15, 16, 17, 18],
+			[19, 20, 21, 22, 23, 24, 25],
+			[26, 27, 28, 29, 30, -1, -2]
+		]
+	
+
 		return (
 			<div className="calendar">
 				<div className="calendar-actual">
@@ -52,114 +92,24 @@ class LifeLineCalendar extends Component {
 							</div>
 						</div>
 						<div className="days-body">
-							<div className="days-row">
-								<div className="days-cell days-cell--invalid">29</div>
-								<div className="days-cell days-cell--invalid">30</div>
-								<div className="days-cell days-cell--invalid">31</div>
-								<div className="days-cell">
-									<button className="days-button">1</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">2</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">3</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">4</button>
-								</div>
-							</div>
-							<div className="days-row">
-								<div className="days-cell">
-									<button className="days-button">5</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">6</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">7</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">8</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">9</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">10</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">11</button>
-								</div>
-							</div>
-							<div className="days-row">
-								<div className="days-cell">
-									<button className="days-button">12</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">13</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">14</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button days-button--today" onClick={() => this.getMedPtAppt()}>15</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">16</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">17</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">18</button>
-								</div>
-							</div>
-							<div className="days-row">
-								<div className="days-cell">
-									<button className="days-button">19</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button days-button--active">20</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">21</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">22</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">23</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">24</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">25</button>
-								</div>
-							</div>
-							<div className="days-row">
-								<div className="days-cell">
-									<button className="days-button">26</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">27</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">28</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">29</button>
-								</div>
-								<div className="days-cell">
-									<button className="days-button">30</button>
-								</div>
-								<div className="days-cell days-cell--invalid">1</div>
-								<div className="days-cell days-cell--invalid">2</div>
-							</div>
+							{weeks.map((week, i) => {
+								return (
+									<div key={i} className="days-row">
+										{week.map(w => {
+											return (
+												<div key={w} className={`days-cell${Math.sign(w) === -1 ? ` days-cell--invalid` : ``}`}>
+													{Math.sign(w) === -1 ? `${Math.abs(w)}` 
+													: <button onClick={() => this.getMedPtAppt(w)} 
+														className={`days-button${this.state.day === w ? ` days-button--active` : ``}${this.state.today === w ? ` days-button--today` : ``}`}>{w}</button>}
+												</div>
+											)
+										})}
+									</div>
+								)
+							})}
 						</div>
 					</div>
-					<div className="calendar-selected">September 20</div>
+					{this.state.day ? <div className="calendar-selected">September {this.state.day}</div> : ``}
 				</div>
 				<div className="calendar-panel">
 					<div className="panel-panel panel-meds">
@@ -171,8 +121,7 @@ class LifeLineCalendar extends Component {
 						</div>
 						<div className="panel-content">
 							<ul>
-								<li>25mg Lisinopril @ 7:00am</li>
-								<li>5mg Hydrocloxine @ 7:00am</li>
+								{this.state?.meds ? this.state.meds.map((med, i) => <li key={i}>{med}</li>) : ``}
 							</ul>
 						</div>
 					</div>
@@ -185,8 +134,7 @@ class LifeLineCalendar extends Component {
 						</div>
 						<div className="panel-content">
 							<ul>
-								<li>2 mile walk with cooldown @ 9:00am</li>
-								<li>2 mile walk with cooldown @ 4:00pm</li>
+								{this.state?.pt ? this.state.pt.map((pt, i) => <li key={i}>{pt}</li>) : ``}
 							</ul>
 						</div>
 					</div>
@@ -199,7 +147,7 @@ class LifeLineCalendar extends Component {
 						</div>
 						<div className="panel-content">
 							<ul>
-								<li>Dr. Stanielson Appointment @ 2:00pm</li>
+								{this.state?.appts ? this.state.appts.map((appt, i) => <li key={i}>{appt}</li>) : ``}
 							</ul>
 						</div>
 					</div>

@@ -69,7 +69,7 @@ class LifeLineDashboard extends Component {
 							<div className="dash-event-icon">
 								<FontAwesomeIcon size={"lg"} icon={faCalendarDay} />
 							</div>
-							<div className="dash-event-value">Doctor's Appointment<span>Tomorrow @ 2:00pm</span></div>
+							<div className="dash-event-value">Dr. Stanielson Appointment<span>Tomorrow @ 2:00pm</span></div>
 						</div>
 					</div>
 				</div>

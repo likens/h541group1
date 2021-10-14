@@ -148,3 +148,12 @@ function generateTestData(days, key1, data1, key2, data2, key3, data3) {
 	}
 	return data;
 }
+
+export const CalendarData = {
+	hours: [1, 12],
+	doses: [5, 50],
+	lengths: [10, 120],
+	meds: ["Aspirin", "Clopidogrel", "Warfarin", "Lisinopril", "Benazepril", "Losartan"],
+	exercises: ["walking", "running", "cycling", "swimming", "stretching", "cardio"],
+	appointments: ["Dr. Stanielson", "Cardiologist", "Nurse LaGuardia", "Hospital Admin", "Dietician", "Personal Trainer"]
+}

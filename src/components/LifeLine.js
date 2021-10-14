@@ -71,7 +71,7 @@ class LifeLine extends Component {
 							<li>
 								Calendar
 								<ul>
-									<li>do it</li>
+									<li>Add click events with random data</li>
 								</ul>
 							</li>
 						</ul>

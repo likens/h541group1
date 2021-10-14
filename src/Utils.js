@@ -52,7 +52,15 @@ export const LifeLineSettings = {
 		{ name: "Connections" },
 	]
 }
-
+export const LifeLinesettingsModals = [
+	{
+		key: "Connections",
+		heading: "Contact User",
+		body: "Connect to Wifi",
+		confirm: "Yes",
+		cancel: "No"
+	}
+]
 export const LifeLineMenusStructure = [
 	{ name: "Emergency", key: "emergency", icon: faExclamationTriangle, menu: LifeLineEmergency },
 	{ name: "Apps", key: "apps", icon: faListUl, menu: LifeLineApps },

@@ -13,7 +13,33 @@ class LifeLine extends Component {
 	render() {
 		return (
 			<div className="lifeline">
+				<div className="instructions">This prototype is best viewed on a computer running Google Chrome... etc etc etc fill this out!</div>
+				<br />
+				<br />
 				<LifeLineHardware />
+				<br />
+				<div className="clickables">
+					<ul>
+						<li>
+							<button>Click To Get Med Notification</button>
+						</li>
+						<li>
+							<button>Click To Get PT Notification</button>
+						</li>
+						<li>
+							<button>Click To Get Appt Notification</button>
+						</li>
+						<li>
+							<button>Click To Get Med Modal</button>
+						</li>
+						<li>
+							<button>Click To Get PT Modal</button>
+						</li>
+						<li>
+							<button>Click To Get Appt Modal</button>
+						</li>
+					</ul>
+				</div>
 				<br />
 				TODO ---
 				<ul>
@@ -32,10 +58,9 @@ class LifeLine extends Component {
 							<li>
 								Notifications
 								<ul>
+									<li>Layout</li>
 									<li>Icons</li>
-									<li>Messages</li>
-									<li>Clear Button</li>
-									<li>Button To Launch Different Notifications</li>
+									<li>Copy</li>
 								</ul>
 							</li>
 							<li>
@@ -48,37 +73,11 @@ class LifeLine extends Component {
 						</ul>
 					</li>
 					<li>
-						Applications
-						<ul>
-							<li>
-								Blood Pressure
-								<ul>
-									<li>Animations</li>
-								</ul>
-							</li>
-							<li>
-								Oxygen Saturation
-								<ul>
-									<li>Animations</li>
-								</ul>
-							</li>
-							<li>
-								Heart Rate
-								<ul>
-									<li>Animations</li>
-								</ul>
-							</li>
-							<li>
-								Calendar
-								<ul>
-									<li>Add click events with random data</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
 						Nice Stuff
 						<ul>
+							<li>Three Across Emergency (911/hospital/nurse)</li>
+							<li>Three Across Emergency Sub (contact/edit/delete)</li>
+							<li>Three Across Applications</li>
 							<li>3D Hardware</li>
 							<li>Splash Animations</li>
 						</ul>

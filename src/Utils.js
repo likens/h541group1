@@ -91,7 +91,7 @@ export const LifeLineModals = [
 	{
 		key: "snap",
 		heading: "Send Snapshot",
-		body: "Send a snapshot of your current heart health to your doctor, hospital, and other contacts that have been approved to receive it?",
+		body: "Send a snapshot of your current heart health to your doctor, hospital, and other contacts that have been authorized to receive the report?",
 		confirm: "Send",
 		cancel: "Cancel"
 	}

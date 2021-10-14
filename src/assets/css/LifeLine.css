@@ -416,7 +416,7 @@ body {
 
 .modal__body {
 	text-align: center;
-	padding: 1rem 0;
+	padding: 1rem;
 }
 
 .modal__footer {
@@ -464,23 +464,22 @@ body {
 .heart-rate {
 	display: grid;
 	height: 100%;
-	grid-gap: 3rem;
+	/* grid-gap: 3rem; */
 	padding: 3rem 0;
 	width: 100%;
 }
 
 .chart {
 	align-self: flex-end;
-	/* visibility: hidden;
+	height: 0;
 	opacity: 0;
-	transition: all .25s ease; */
-	display: none;
+	overflow: hidden;
+	transition: all .25s ease;
 }
 
 .chart--active {
-	display: block;
-	/* opacity: 1;
-	visibility: visible; */
+	height: 30.5rem;
+	opacity: 1;
 }
 
 .chart-title {
@@ -490,10 +489,6 @@ body {
 	opacity: 0.5;
 }
 
-.measuring {
-	width: 100%;
-}
-
 .readings {
 	font-weight: var(--bold);
 	font-size: 2.5rem;
@@ -501,11 +496,16 @@ body {
 	padding: 0 3rem;
 	align-items: center;
 	justify-content: center;
-	display: none;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: all .25s ease;
+	display: flex;
 }
 
 .readings--active {
-	display: flex;
+	opacity: 1;
+	height: 21rem;
 }
 
 .reading {
@@ -569,7 +569,11 @@ body {
 	text-align: center;
 	font-weight: var(--bold);
 	text-transform: uppercase;
-	display: none;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: all .25s ease;
 }
 
 .measuring svg {
@@ -578,7 +582,8 @@ body {
 }
 
 .measuring--active {
-	display: block;
+	height: 4rem;
+	opacity: 1;
 }
 
 .form {

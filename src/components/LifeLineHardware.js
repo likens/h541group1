@@ -12,6 +12,7 @@ class LifeLineHardware extends Component {
 	render() {
 		return (
 			<div className="hardware">
+				<div className="hardware__background" />
 				<LifeLineSoftware />
 			</div>
 		);

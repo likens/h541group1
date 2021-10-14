@@ -55,7 +55,7 @@ export const LifeLineSettings = {
 export const LifeLinesettingsModals = [
 	{
 		key: "Connections",
-		heading: "Contact User",
+		heading: "Wifi Connect",
 		body: "Connect to Wifi",
 		confirm: "Yes",
 		cancel: "No"

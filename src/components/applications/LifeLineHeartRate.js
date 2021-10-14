@@ -18,15 +18,17 @@ class LifeLineHeartRate extends Component {
 		}
 	}
 
-	toggleMeasure() {
+	toggleMeasure(active) {
 		this.setState({
 			readings: {
-				active: !this.state.readings.active
+				active: active
 			},
 			history: false
 		});
-		if (!this.state.readings.active) {
+		if (active) {
 			this.generateReadings();
+		} else {
+			this.stopReadings();
 		}
 	}
 
@@ -39,14 +41,18 @@ class LifeLineHeartRate extends Component {
 	generateReadings() {
 		this.hrInterval = setInterval(() => this.updateReading(), 500);
 		setTimeout(() => {
-			this.setState({
-				readings: { 
-					active: false,
-					hr: this.state.readings.hr
-				}
-			})
-			clearInterval(this.hrInterval);
+			this.stopReadings();
 		}, 5000);
+	}
+
+	stopReadings() {
+		this.setState({
+			readings: { 
+				active: false,
+				hr: this.state.readings.hr
+			}
+		})
+		clearInterval(this.hrInterval);
 	}
 
 	updateReading() {
@@ -72,7 +78,7 @@ class LifeLineHeartRate extends Component {
 				</div>
 				<div className="actions">
 					<div className={`measuring${this.state.readings.active ? ` measuring--active` : ``}`}><FontAwesomeIcon size={"lg"} icon={faHeart} /> Measuring</div>
-					<button className="action__btn" onClick={() => this.toggleMeasure()}>
+					<button className="action__btn" onClick={() => this.toggleMeasure(!this.state.readings.active)}>
 						<div className="action__btn-icon">
 							<FontAwesomeIcon icon={this.state.readings.active ? faStopCircle : faPlayCircle} />
 						</div>

@@ -11,7 +11,11 @@ class LifeLineMain extends Component {
 			app: {
 				key: LifeLineApps.structure[0].key,
 				idx: 0,
-				component: LifeLineApps.structure[0].component
+				component: LifeLineApps.structure[0].component,
+				instructions: {
+					title: undefined,
+					body: undefined
+				}
 			},
 			menu: undefined,
 			submenu: undefined,
@@ -355,7 +359,38 @@ class LifeLineMain extends Component {
 				
 				</div>
 
+					<div className="instructions">
+						<div className="instructions__header">
+							<div className="instructions__title"></div>
+							<div className="instructions__body"></div>
+						</div>
+						<div className="instructions__footer">
+							
+						</div>
+						{/* <ul>
+							<li>
+								<button>Click To Get A Med Notification</button>
+							</li>
+							<li>
+								<button>Click To Get APT Notification</button>
+							</li>
+							<li>
+								<button>Click To Get A Appt Notification</button>
+							</li>
+							<li>
+								<button>Click To Get A Med Modal</button>
+							</li>
+							<li>
+								<button>Click To Get A PT Modal</button>
+							</li>
+							<li>
+								<button>Click To Get A Appt Modal</button>
+							</li>
+						</ul> */}
+					</div>
+
 			</div>
+
 		);
 	}
 }

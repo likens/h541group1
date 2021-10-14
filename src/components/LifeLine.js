@@ -13,34 +13,10 @@ class LifeLine extends Component {
 	render() {
 		return (
 			<div className="lifeline">
-				<div className="instructions">This prototype is best viewed on a computer running Google Chrome... etc etc etc fill this out!</div>
-				<br />
-				<br />
+
 				<LifeLineHardware />
-				<br />
-				<div className="clickables">
-					<ul>
-						<li>
-							<button>Click To Get Med Notification</button>
-						</li>
-						<li>
-							<button>Click To Get PT Notification</button>
-						</li>
-						<li>
-							<button>Click To Get Appt Notification</button>
-						</li>
-						<li>
-							<button>Click To Get Med Modal</button>
-						</li>
-						<li>
-							<button>Click To Get PT Modal</button>
-						</li>
-						<li>
-							<button>Click To Get Appt Modal</button>
-						</li>
-					</ul>
-				</div>
-				<br />
+				
+				{/*
 				TODO ---
 				<ul>
 					<li>
@@ -82,7 +58,7 @@ class LifeLine extends Component {
 							<li>Splash Animations</li>
 						</ul>
 					</li>
-				</ul>
+				</ul> */}
 			</div>
 		);
 	}

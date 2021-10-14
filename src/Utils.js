@@ -46,6 +46,7 @@ export const LifeLineSettings = {
 			{ name: "Light mode" },
 			{ name: "Dark mode" },
 			{ name: "Easy mode" },
+			{ name: "Test" },
 			{ name: "Mode Suggestions" },
 			{ name: "Enhancements" },
 		] },

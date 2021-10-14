@@ -16,7 +16,6 @@ class LifeLine extends Component {
 	}
 
 	demoBtnCLick() {
-		console.log(this.state);
 		let videoPlayer = document.getElementById("hardware__demo_video_player");
 		let newViewVideoState = !this.state.viewVideo;
 		this.setState({ viewVideo: newViewVideoState });

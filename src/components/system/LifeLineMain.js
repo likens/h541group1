@@ -254,7 +254,6 @@ class LifeLineMain extends Component {
 								
 										<div className="form">
 											{LifeLineForms.find(form => form?.key === this.state.form)?.fields.map((field, i) => {
-												console.log(field.type, i);
 												return (
 													<div key={i} className="field">
 														{field.type === "text" || field.type === "ddl" ? 

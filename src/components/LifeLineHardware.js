@@ -5,7 +5,8 @@ class LifeLineHardware extends Component {
 	constructor() {
 		super();
 		this.state = {
-			...this.state
+			...this.state,
+			viewVideo: false
 		};
 	}
 

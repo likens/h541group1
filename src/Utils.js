@@ -61,7 +61,7 @@ export const LifeLineMenusStructure = [
 
 export const LifeLineModals = [
 	{
-		key: "Connections",
+		key: "contact",
 		heading: "Contact User",
 		body: "Would you like to contact '{CONTACT_DISPLAY_NAME}'?",
 		confirm: "Yes",

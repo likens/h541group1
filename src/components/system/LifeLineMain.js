@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck, faPlus, faCamera } from '@fortawesome/free-solid-svg-icons';
-import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
+import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, LifeLineNotificationCenter, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
 
@@ -16,7 +16,11 @@ class LifeLineMain extends Component {
 			menu: undefined,
 			submenu: undefined,
 			modal: undefined,
-			form: undefined
+			form: undefined,
+			notifications: {
+				center: false,
+				notifs: LifeLineNotificationCenter
+			}
 		}
 	}
 
@@ -89,8 +93,40 @@ class LifeLineMain extends Component {
 			menu: undefined,
 			submenu: undefined,
 			modal: undefined,
-			form: undefined
+			form: undefined,
+			notifications: {
+				center: false,
+				notifs: this.state.notifications.notifs
+			}
 		})
+	}
+
+	toggleNotificationCenter() {
+		this.setState({
+			notifications: {
+				center: true,
+				notifs: this.state.notifications.notifs
+			}
+		});
+	}
+
+	removeNotification(key, center) {
+
+		let notifs = [];
+		let remove = {};
+
+		if (center) {
+			notifs = LifeLineNotificationCenter;
+			remove = notifs.findIndex(notif => notif.key === key);
+			notifs.splice(remove, 1);
+			this.setState({
+				notifications: {
+					center: notifs.length > 0 && this.state.notifications.center,
+					notifs: notifs
+				}
+			});
+		}
+
 	}
 
 	render() {
@@ -117,8 +153,34 @@ class LifeLineMain extends Component {
 						<FontAwesomeIcon size="7x" icon={faCaretRight} />	
 					</div>
 
-					<div className="menus">
+					<div className="notifications">
 
+						<div className="notifications-fake" onClick={() => this.toggleNotificationCenter()}></div>
+
+						<div className={`notification-center${this.state.notifications.center ? ` notification-center--active`: ``}`}>
+							{this.state?.notifications?.notifs?.map((n, i) => {
+								return (
+									<div key={i} className={`notify`}>
+										<div className="notify__icon">
+											<FontAwesomeIcon size={"3x"} icon={n.icon} />
+										</div>
+										<div className="notify__body">
+											<div className="notify__header">{n.title}</div>
+											<div className="notify__content">{n.body}</div>
+										</div>
+										<div className="notify__close">
+											<button className="notify__close-btn" onClick={() => this.removeNotification(n.key, true)}>
+												<FontAwesomeIcon size={"2x"} icon={faTimes} />
+											</button>
+										</div>
+									</div>
+								)
+							})}
+						</div>
+
+					</div>
+
+					<div className="menus">
 						<div className="menu__buttons">
 							{LifeLineMenusStructure.map((menu, i) => {
 								return (
@@ -131,7 +193,6 @@ class LifeLineMain extends Component {
 								)
 							})}
 						</div>
-						
 						<div className="menu__drawers">
 							{LifeLineMenusStructure.map((menu, i) => {
 								return (
@@ -240,7 +301,6 @@ class LifeLineMain extends Component {
 					</div>
 
 					<div className="modals">
-
 						<div className={`modal${this.state.modal ? ` modal--active` : ``}`}>
 							<div className="modal__header">
 								<div className="modal__heading">{LifeLineModals.find(modal => modal.key === this.state.modal)?.heading}</div>
@@ -251,7 +311,6 @@ class LifeLineMain extends Component {
 							<div className="modal__body">
 								{LifeLineModals.find(modal => modal.key === this.state.modal)?.body}
 									{LifeLineModals.find(modal => modal.key === this.state.modal)?.form ? 
-								
 										<div className="form">
 											{LifeLineForms.find(form => form?.key === this.state.form)?.fields.map((field, i) => {
 												return (
@@ -288,10 +347,9 @@ class LifeLineMain extends Component {
 								</button>
 							</div>
 						</div>
-
 					</div>
 
-					<div className={`main__overlay${this.state.menu || this.state.modal ? ` main__overlay--active` : ``}`}
+					<div className={`main__overlay${this.state.menu || this.state.modal || this.state.notifications.center ? ` main__overlay--active` : ``}`}
 							onClick={() => this.toggleOverlay()}></div>
 
 				

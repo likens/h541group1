@@ -57,7 +57,7 @@ class LifeLineDashboard extends Component {
 							<div className="dash-event-icon">
 								<FontAwesomeIcon size={"lg"} icon={faPrescription} />
 							</div>
-							<div className="dash-event-value">25mg Lisinopril, 5mg Hydrocloxine<span>Tomorrow @ 7:00am</span></div>
+							<div className="dash-event-value">25mg Lisinopril, 5mg Aspirin<span>Tomorrow @ 7:00am</span></div>
 						</div>
 						<div className="dash-event dash-event--pt">
 							<div className="dash-event-icon">

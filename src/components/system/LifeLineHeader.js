@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "../../assets/img/lifeline-logo-full-dark.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faBell, faRunning } from "@fortawesome/free-solid-svg-icons";
+import { faLocationArrow, faBatteryFull, faWifi, faCloudSun, faPrescription, faRunning, faCalendarDay } from "@fortawesome/free-solid-svg-icons";
 import { faBluetoothB } from "@fortawesome/free-brands-svg-icons";
 
 class LifeLineHeader extends Component {
@@ -48,14 +48,17 @@ class LifeLineHeader extends Component {
 		return (
 			<header className="header">
 				<div className="header__tray header__notifications">
-					<div className="header__pt">
-						<FontAwesomeIcon size="lg" icon={faRunning} />
-					</div>
-					<div className="header__rx">
+					<div className="header__rx header__notif">
 						<FontAwesomeIcon size="lg" icon={faPrescription} />
+						<div className="header__dot">2</div>
 					</div>
-					<div className="header__alarms">
-						<FontAwesomeIcon size="lg" icon={faBell} />
+					<div className="header__pt header__notif">
+						<FontAwesomeIcon size="lg" icon={faRunning} />
+						<div className="header__dot">1</div>
+					</div>
+					<div className="header__alarms header__notif">
+						<FontAwesomeIcon size="lg" icon={faCalendarDay} />
+						<div className="header__dot">1</div>
 					</div>
 				</div>
 				<div className="header__logo">

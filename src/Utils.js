@@ -43,12 +43,11 @@ export const LifeLineSettings = {
 			{ name: "Linked Accounts" },
 		] },
 		{ name: "Accessibility", key: "accessibility", extra: true, sub: [
-			{ name: "Subsettings 1" },
-			{ name: "Subsettings 2" },
-			{ name: "Subsettings 3" },
-			{ name: "Subsettings 4" },
-			{ name: "Subsettings 5" },
-			{ name: "Subsettings 6" },
+			{ name: "Light mode" },
+			{ name: "Dark mode" },
+			{ name: "Easy mode" },
+			{ name: "Mode Suggestions" },
+			{ name: "Enhancements" },
 		] },
 		{ name: "Connections" },
 	]

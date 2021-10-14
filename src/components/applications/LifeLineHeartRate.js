@@ -66,7 +66,7 @@ class LifeLineHeartRate extends Component {
 						<div className="label">Heart Rate</div>
 						<div className="value">
 							{this.state.readings.hr ? `${this.state.readings.hr}` : `--`}
-							{this.state.readings.hr ? <span>bpm</span> : ``}
+							{this.state.readings.hr ? <span>BPM</span> : ``}
 						</div>
 					</div>
 				</div>

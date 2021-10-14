@@ -51,13 +51,6 @@ class LifeLine extends Component {
 						Applications
 						<ul>
 							<li>
-								Dashboard
-								<ul>
-									<li>4 Sections</li>
-									<li>Snapshot Button</li>
-								</ul>
-							</li>
-							<li>
 								Blood Pressure
 								<ul>
 									<li>Animations</li>

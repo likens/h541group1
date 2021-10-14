@@ -75,7 +75,7 @@ class LifeLineOxygen extends Component {
 						<div className="label">Pulse</div>
 						<div className="value">
 							{this.state.readings.hr ? `${this.state.readings.hr}` : `--`}
-							{this.state.readings.hr ? <span>bpm</span> : ``}
+							{this.state.readings.hr ? <span>BPM</span> : ``}
 						</div>
 					</div>
 				</div>

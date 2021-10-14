@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ekgHR from "../../assets/img/ekg-hr.svg";
 import "../../assets/css/Dashboard.css";
 import { BloodPressureSys, BloodPressureDia, OxygenSpo2 } from "../../Utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPrescription, faRunning, faCalendarDay } from "@fortawesome/free-solid-svg-icons";
 
 class LifeLineDashboard extends Component {
 
@@ -51,7 +53,24 @@ class LifeLineDashboard extends Component {
 				<div className="dash dash--cal">
 					<div className="dash-title">Upcoming Events</div>
 					<div className="dash-app dash-app--cal">
-						
+						<div className="dash-event dash-event--med">
+							<div className="dash-event-icon">
+								<FontAwesomeIcon size={"lg"} icon={faPrescription} />
+							</div>
+							<div className="dash-event-value">25mg Lisinopril, 5mg Hydrocloxine<span>Tomorrow @ 7:00am</span></div>
+						</div>
+						<div className="dash-event dash-event--pt">
+							<div className="dash-event-icon">
+								<FontAwesomeIcon size={"lg"} icon={faRunning} />
+							</div>
+							<div className="dash-event-value">2 mile walk with cooldown<span>Tomorrow @ 9:00am</span></div>
+						</div>
+						<div className="dash-event dash-event--cal">
+							<div className="dash-event-icon">
+								<FontAwesomeIcon size={"lg"} icon={faCalendarDay} />
+							</div>
+							<div className="dash-event-value">Doctor's Appointment<span>Tomorrow @ 2:00pm</span></div>
+						</div>
 					</div>
 				</div>
 			</div>

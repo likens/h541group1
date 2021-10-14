@@ -168,3 +168,26 @@
 .snap__btn:hover {
 	opacity: .5;
 }
+
+.dash-app--cal {
+	display: grid;
+	grid-gap: 1rem;
+	padding-top: 2rem;
+	padding-left: 6rem;
+}
+
+.dash-event {
+	display: grid;
+	font-style: normal;
+	grid-gap: 1rem;
+	grid-template-columns: max-content 1fr;
+}
+
+.dash-event span {
+	display: block;
+	padding-top: .5rem;
+	font-weight: var(--bold);
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	font-style: italic;
+}

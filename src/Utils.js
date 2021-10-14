@@ -46,22 +46,13 @@ export const LifeLineSettings = {
 			{ name: "Light mode" },
 			{ name: "Dark mode" },
 			{ name: "Easy mode" },
-			{ name: "Test" },
 			{ name: "Mode Suggestions" },
 			{ name: "Enhancements" },
 		] },
 		{ name: "Connections" },
 	]
 }
-export const LifeLinesettingsModals = [
-	{
-		key: "Connections",
-		heading: "Wifi Connect",
-		body: "Connect to Wifi",
-		confirm: "Yes",
-		cancel: "No"
-	}
-]
+
 export const LifeLineMenusStructure = [
 	{ name: "Emergency", key: "emergency", icon: faExclamationTriangle, menu: LifeLineEmergency },
 	{ name: "Apps", key: "apps", icon: faListUl, menu: LifeLineApps },
@@ -70,7 +61,7 @@ export const LifeLineMenusStructure = [
 
 export const LifeLineModals = [
 	{
-		key: "contact",
+		key: "Connections",
 		heading: "Contact User",
 		body: "Would you like to contact '{CONTACT_DISPLAY_NAME}'?",
 		confirm: "Yes",

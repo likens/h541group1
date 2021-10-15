@@ -40,14 +40,50 @@
 			.instructions__title {
 				font-weight: 700;
 				text-transform: uppercase;
-				font-style:italic;
+				font-style: italic;
 				font-size: 2rem;
+			}
+
+			.notifGenBtn,
+			.modalGenBtn {
+				background-color: var(--lifelineRed);
+				width: 210px;
+				height: auto;
+				z-index: 1000002;
+				position: fixed;
+				top: 15%;
+				left: 100%;
+				transform: translate(-75%, -100%) skew(-10deg);
+				border: 0.2em solid;
+				border-color: var(--darkCharcoal);
+				border-right: unset;
+				cursor: pointer;
+				font-weight: var(--bold);
+				font-size: 1.75rem;
+				color: var(--white);
+				font-style: italic;
+				text-transform: uppercase;
+				text-shadow: 0 0 5px var(--charcoal);
+				max-width: max-content;
+				padding: 0.5em 3.5em 0.5em 0.75em;
+				text-align: center !important;
+			}
+
+			.modalGenBtn {
+				transform: translate(-75%, 25%) skew(-10deg);
+			}
+
+			.notifGenBtn:hover,
+			.modalGenBtn:hover {
+				color: var(--lifelineRed);
+				background-color: var(--white);
+				text-shadow: unset;
+				border-color: var(--darkCharcoal);
 			}
 		</style>
 	</head>
 
 	<body>
-
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 
 		<div id="root"></div>
@@ -59,22 +95,20 @@
 				<div class="instructions__interactions" id="interactions"></div>
 			</div>
 			<div class="instructions__clickables">
-				<button id="testNotify">Test A Random Notification</button>
-				<button id="testModal">Test A Random Modal</button>
+				<button class="notifGenBtn">Generate Notification</button>
+				<button class="modalGenBtn">Generate Modal</button>
 			</div>
 		</div>
 
 		<script>
 			const testModal = document.getElementById("testModal");
 			const testNotify = document.getElementById("testNotify");
-			testModal.addEventListener("click", function() {
+			testModal.addEventListener("click", function () {
 				document.getElementById("modalTest").click();
 			});
-			testNotify.addEventListener("click", function() {
+			testNotify.addEventListener("click", function () {
 				document.getElementById("notifyTest").click();
 			});
 		</script>
-
 	</body>
-
 </html>

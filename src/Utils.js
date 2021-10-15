@@ -80,7 +80,8 @@ export const LifeLineApps = {
 			icon: faCalendarAlt,
 			component: <LifeLineCalendar />,
 			description:
-				"An application that displays a calendar and list view of events regarding	medications, physical therapy, and any other upcoming events (such as doctor appointments)."
+				"An application that displays a calendar and list view of events regarding	medications, physical therapy, and any other upcoming events (such as doctor appointments).",
+			interactions: "<ul><li>Calendar days – located on the left side of the screen, each day is clickable and updates the list view of events on the right.</li></ul>"
 		}
 	]
 };

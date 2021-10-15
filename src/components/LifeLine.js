@@ -11,7 +11,7 @@ class LifeLine extends Component {
 		this.state = {
 			...this.state,
 			viewVideo: true,
-			demoButtonText: "View Product Demo"
+			demoButtonText: "View 3D Product Render"
 		};
 	}
 

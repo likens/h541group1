@@ -227,7 +227,7 @@ body {
 }
 
 .nav__item:hover {
-	opacity: 0.75;
+	background: #ccc;
 }
 
 .nav__item--prev {

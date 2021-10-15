@@ -13,7 +13,8 @@ class LifeLineMain extends Component {
 				idx: 0,
 				component: LifeLineApps.structure[0].component,
 				name: LifeLineApps.structure[0].name,
-				instructions: LifeLineApps.structure[0].instructions
+				description: LifeLineApps.structure[0].description,
+				interactions: LifeLineApps.structure[0].interactions,
 			},
 			menu: undefined,
 			submenu: undefined,
@@ -24,7 +25,9 @@ class LifeLineMain extends Component {
 				notifs: LifeLineNotificationCenter
 			}
 		}
-		this.setInstructions(LifeLineApps.structure[0].name, LifeLineApps.structure[0].instructions);
+		this.setInstructions(LifeLineApps.structure[0].name, 
+							LifeLineApps.structure[0].description,
+							LifeLineApps.structure[0].interactions);
 	}
 
 	menuItemClick(item) {
@@ -42,11 +45,14 @@ class LifeLineMain extends Component {
 				idx: LifeLineApps.structure.findIndex(app => app.key === key),
 				component: LifeLineApps.structure.find(app => app.key === key).component,
 				name: LifeLineApps.structure.find(app => app.key === key).name,
-				instructions: LifeLineApps.structure.find(app => app.key === key).instructions
+				description: LifeLineApps.structure.find(app => app.key === key).description,
+				interactions: LifeLineApps.structure.find(app => app.key === key).interactions,
 			}
 		});
 		this.toggleMenu();
-		this.setInstructions(LifeLineApps.structure.find(app => app.key === key).name, LifeLineApps.structure.find(app => app.key === key).instructions);
+		this.setInstructions(LifeLineApps.structure.find(app => app.key === key).name,
+							LifeLineApps.structure.find(app => app.key === key).description,
+							LifeLineApps.structure.find(app => app.key === key).interactions);
 	}
 
 	getAppKey(next) {
@@ -107,10 +113,10 @@ class LifeLineMain extends Component {
 		})
 	}
 
-	toggleNotificationCenter() {
+	toggleNotificationCenter(active) {
 		this.setState({
 			notifications: {
-				center: true,
+				center: active,
 				notifs: this.state.notifications.notifs
 			}
 		});
@@ -135,9 +141,26 @@ class LifeLineMain extends Component {
 
 	}
 
-	setInstructions(name, body) {
+	setInstructions(name, description, interactions) {
 		document.getElementById("title").innerHTML = name ? name : ``;
-		document.getElementById("body").innerHTML = body ? body : ``;
+		document.getElementById("description").innerHTML = description ? description : ``;
+		document.getElementById("interactions").innerHTML = interactions ? interactions : ``;
+	}
+
+	getRandomModal() {
+		const idx = Math.floor(Math.random() * LifeLineModals.length);
+		const key = LifeLineModals[idx].key;
+		this.toggleModal(key);
+	}
+
+	getRandomNotification() {
+		const idx = Math.floor(Math.random() * LifeLineNotificationCenter.length);
+		const key = LifeLineNotificationCenter[idx].key;
+		this.toggleNotification(key);
+	}
+
+	toggleNotification(key) {
+		console.log(key);
 	}
 
 	render() {
@@ -166,7 +189,7 @@ class LifeLineMain extends Component {
 
 					<div className="notifications">
 
-						<div className="notifications-fake" onClick={() => this.toggleNotificationCenter()}></div>
+						<div className="notifications-fake" onClick={() => this.toggleNotificationCenter(!this.state.active)}></div>
 
 						<div className={`notification-center${this.state.notifications.center ? ` notification-center--active`: ``}`}>
 							{this.state?.notifications?.notifs?.map((n, i) => {
@@ -348,10 +371,12 @@ class LifeLineMain extends Component {
 									: ``}
 							</div>
 							<div className="modal__footer">
-								<button className="modal__btn modal__cancel" onClick={() => this.toggleOverlay()}>
-									<span className="modal__btn-icon"><FontAwesomeIcon icon={faTimes} /></span>
-									<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.cancel}</span>
-								</button>
+								{LifeLineModals.find(modal => modal.key === this.state.modal)?.cancel ? 
+									<button className="modal__btn modal__cancel" onClick={() => this.toggleOverlay()}>
+										<span className="modal__btn-icon"><FontAwesomeIcon icon={faTimes} /></span>
+										<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.cancel}</span>
+									</button>
+									: ``}
 								<button className="modal__btn modal__confirm" onClick={() => this.toggleOverlay()}>
 									<span className="modal__btn-icon"><FontAwesomeIcon icon={faCheck} /></span>
 									<span className="modal__btn-label">{LifeLineModals.find(modal => modal.key === this.state.modal)?.confirm}</span>
@@ -363,6 +388,8 @@ class LifeLineMain extends Component {
 					<div className={`main__overlay${this.state.menu || this.state.modal || this.state.notifications.center ? ` main__overlay--active` : ``}`}
 							onClick={() => this.toggleOverlay()}></div>
 
+					<div id="modalTest" onClick={() => this.getRandomModal()}></div>
+					<div id="notifyTest" onClick={() => this.toggleNotification()}></div>
 				
 				</div>
 

@@ -10,17 +10,56 @@ export const KEY_APPS = 'apps';
 export const KEY_EMERGENCY = 'emergency';
 export const KEY_SETTINGS = 'settings';
 
-export const CONTACT_DISPLAY_NAME = "CONTACT_DISPLAY_NAME";
-
 export const LifeLineApps = {
 	key: KEY_APPS,
 	structure: [
-		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard />, instructions: "hello world" },
-		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure /> },
-		{ name: "Oxygen Saturation", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen /> },
-		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate /> },
-		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram /> },
-		{ name: "Calendar", key: "calendar", icon: faCalendarAlt, component: <LifeLineCalendar /> }
+		{ 
+			name: "Dashboard", 
+			key: "dashboard", 
+			icon: faThLarge,
+			component: <LifeLineDashboard />, 
+			description: "The default view for the device once fully booted. Contains live or most recent reading of Electrocardiogram (specifically heart rate), Blood Pressure (Systolic & Diastolic), Blood Oxygen saturation (SP02), and a list of upcoming events/reminder.", 
+			interactions: "<ul><li>Snapshot- located in the center of the app, is a feature to send current or most recent health info to your doctor,hospital, or other authorized contact. When clicked, displays pop up prompt. </li><li>Notification Tray – located in top left corner of screen. When clicked, displays  current notifications, reminders, and events.</li><li>Navigation arrows – Located on the left and right sides of the screen. When clicked, cycles either forward or backward through apps.</li><li>Navigation Menus – Located at the bottom of the screen. When clicked opens up menus (and submenus) of the respective features (emergency contacts, apps list, and settings).</li></ul>" 
+		},
+		{ 
+			name: "Blood Pressure",
+			key: "bp", 
+			icon: faStethoscope, 
+			component: <LifeLineBloodPressure />,
+			description: "Application for measuring current systolic and diastolic blood pressure, as well as bpm.", 
+			interactions: "<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>" 
+		},
+		{ 
+			name: "Oxygen Saturation",
+			key: "oxy",
+			icon: faDotCircle,
+			component: <LifeLineOxygen />,
+			description: "Application for measuring current Oxygen saturation (SP02), as well as bpm.", 
+			interactions: "<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+		},
+		{ 
+			name: "Heart Rate", 
+			key: "hr", 
+			icon: faHeartbeat, 
+			component: <LifeLineHeartRate />,
+			description: "Application for measuring heart rate (bpm).", 
+			interactions: "<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+
+		},
+		{ 
+			name: "Electrocardiogram", 
+			key: "ekg", 
+			icon: faLaptopMedical, 
+			component: <LifeLineElectrocardiogram />,
+			description: "Application that displays what we consider to be a traditional ECG display (also displays BPM, SP02, and Respiratory count by minute."
+		},
+		{
+			name: "Calendar",
+			key: "calendar",
+			icon: faCalendarAlt,
+			component: <LifeLineCalendar />,
+			description: "An application that displays a calendar and list view of events regarding	medications, physical therapy, and any other upcoming events (such as doctor appointments)."
+		}
 	]
 }
 
@@ -33,9 +72,7 @@ export const LifeLineEmergency = {
 		{ name: "Hospital Admin", key: "user1", icon: faUser, extra: true, edit: true, delete: true },
 		{ name: "Cardiologist Office", key: "user2", icon: faUser, extra: true, edit: true, delete: true },
 		{ name: "CVS Pharmacy", key: "user3", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "Spouse", key: "user4", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "Child", key: "user5", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "Grandchild", key: "user6", icon: faUser, extra: true, edit: true, delete: true }
+		{ name: "Spouse", key: "user4", icon: faUser, extra: true, edit: true, delete: true }
 	]
 }
 
@@ -43,18 +80,23 @@ export const LifeLineSettings = {
 	key: KEY_SETTINGS,
 	structure:  [
 		{ name: "General", key: "general", extra: true, sub: [
-			{ name: "Information" },
-			{ name: "Storage" },
-			{ name: "Linked Accounts" },
+			{ name: "Information", form: "settingsInfo" },
+			{ name: "Storage", form: "settingsStorage" },
+			{ name: "Connections", form: "settingsConnections" },
+			{ name: "Languages", form: "settingsLanguages" }
 		] },
 		{ name: "Accessibility", key: "accessibility", extra: true, sub: [
-			{ name: "Light mode" },
-			{ name: "Dark mode" },
-			{ name: "Easy mode" },
-			{ name: "Mode Suggestions" },
-			{ name: "Enhancements" },
+			{ name: "Visual Modes", form: "settingsVisualModes" },
+			{ name: "Visibility Enhancements", form: "settingsVisibilityEnhancements" },
+			{ name: "Hearing Enhancements", form: "settingsHearingEnhancements" },
+			{ name: "Interaction Controls", form: "settingsInteractionControls" },
 		] },
-		{ name: "Connections" },
+		{ name: "Applications", key: "applications", extra: true, sub: [
+			{ name: "Blood Pressure", form: "settingsBloodPressure" },
+			{ name: "Oxygen Saturation", form: "settingsOxygenSaturation" },
+			{ name: "Heart Rate", form: "settingsHeartRate" },
+			{ name: "Calendar", form: "settingsCalendar" },
+		] },
 	]
 }
 
@@ -68,14 +110,14 @@ export const LifeLineModals = [
 	{
 		key: "contact",
 		heading: "Contact User",
-		body: `Would you like to contact '${CONTACT_DISPLAY_NAME}'?`,
+		body: `Would you like to contact 'name_goes_here'?`,
 		confirm: "Yes",
 		cancel: "No"
 	},
 	{
 		key: "delete",
 		heading: "Delete Contact",
-		body: `You are about to delete '${CONTACT_DISPLAY_NAME}'. Proceed?`,
+		body: `You are about to delete 'name_goes_here'. Proceed?`,
 		confirm: "Delete",
 		cancel: "Cancel"
 	},
@@ -136,6 +178,96 @@ export const LifeLineForms = [
 			{ type: "text", label: "Phone Number" },
 			{ type: "check", label: "Receive Heart Health Snapshot"}
 		]
+	},
+	{
+		key: "settingsInfo",
+		fields: [
+			{ type: "label", label: "Name", value: "Jimmothy Jimmothy" },
+			{ type: "label", label: "Email", value: "jimmothy@jimmothy.com" },
+			{ type: "label", label: "Phone", value: "(123) 456 - 7890"},
+			{ type: "label", label: "Address", value: "123 Smiley Lane, Happiness, HN, 12345-6789"}
+		]
+	},
+	{
+		key: "settingsStorage",
+		fields: [
+			{ type: "label", label: "Last Data Transfer", value: "7 days ago" },
+			{ type: "label", label: "Next Data Transfer", value: "7 days" },
+			{ type: "label", label: "Space Available", value: "20 GB / 120 GB"}
+		]
+	},
+	{
+		key: "settingsConnections",
+		fields: [
+			{ type: "text", label: "WiFi Name" },
+			{ type: "text", label: "WiFi Password" },
+			{ type: "button", label: "Bluetooth", value: "Pair Bluetooth" },
+			{ type: "check", label: "Enable GPS"}
+		]
+	},
+	{
+		key: "settingsLanguage",
+		fields: [
+			{ type: "radio", label: "Language", options: ["English", "Spanish", "Chinese", "Arabic", "French"] }
+		]
+	},
+	{
+		key: "settingsBloodPressure",
+		fields: [
+			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+		]
+	},
+	{
+		key: "settingsOxygenSaturation",
+		fields: [
+			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+		]
+	},
+	{
+		key: "settingsHeartRate",
+		fields: [
+			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+		]
+	},
+	{
+		key: "settingsCalendar",
+		fields: [
+			{ type: "radio", label: "Military Time", options: ["Yes", "No"] },
+			{ type: "radio", label: "Start Day of Week", options: ["Sunday", "Monday"]},
+			{ type: "check", label: "Enable Medications"},
+			{ type: "check", label: "Enable Physical Therapy" },
+			{ type: "check", label: "Appointments" }
+		]
+	},
+	{
+		key: "settingsVisualModes",
+		fields: [
+			{ type: "radio", label: "Color Mode", options: ["Dark", "Light", "Easy"] },
+			{ type: "button", label: "Mode Suggestion", value: "Take Quiz" },
+		]
+	},
+	{
+		key: "settingsVisibilityEnhancements",
+		fields: [
+			{ type: "radio", label: "Contrast", options: ["Standard", "High", "Low"] },
+			{ type: "radio", label: "Color Lens", options: ["Deuteranomaly", "Protanomaly", "Protanopia", "Deuteranopia", "Tritanomaly", "Tritanopia"] },
+			{ type: "radio", label: "Font Size", options: ["Normal", "Larger", "Largest"] },
+		]
+	},
+	{
+		key: "settingsHearingEnhancements",
+		fields: [
+			{ type: "radio", label: "Hearing Aid Support", options: ["No", "Yes"] },
+			{ type: "radio", label: "Amplify Sounds", options: ["No", "Yes"] },
+			{ type: "radio", label: "Narration", options: ["No", "Yes"] }
+		]
+	},
+	{
+		key: "settingsInteractionControls",
+		fields: [
+			{ type: "radio", label: "Enable Swiping", options: ["No", "Yes"] },
+			{ type: "radio", label: "Touch Delay", options: ["No", "Yes"] }
+		]
 	}
 ]
 
@@ -170,17 +302,15 @@ export const BloodPressureSys = [110, 150];
 export const BloodPressureDia = [70, 100];
 export const BloodPressureHr = [45, 100];
 export const BloodPressureHistoryData = generateTestData(14, "sys", BloodPressureSys, "dia", BloodPressureDia, "hr", BloodPressureHr);
-
 export const OxygenSpo2 = [90, 100];
 export const OxygenHr = [45, 100];
 export const OxygenHistoryData = generateTestData(14, "spo2", OxygenSpo2, "hr", OxygenHr);
-
 export const HeartRateHr = [50, 150];
 export const HeartRateHistoryData = generateTestData(14, "hr", HeartRateHr);
 
 function generateTestData(days, key1, data1, key2, data2, key3, data3) {
 	const data = [];
-	for(let i = 0; i <= days; i++) {
+	for(let i = 1; i <= days; i++) {
 		let obj = {
 			date: `Sep ${i}`,
 		}

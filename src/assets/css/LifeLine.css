@@ -964,10 +964,19 @@ body {
 	width: calc(100% - 10rem);
 	z-index: 15;
 	box-shadow: 0 0 1rem var(--black);
-	transform: translateX(-50%);
+	transform: translate(-50%, -25rem);
 	/* skew(-10deg) */
 	display: grid;
 	grid-template-columns: max-content 1fr max-content;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .25s ease;
+}
+
+.notify--active {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%);
 }
 
 .notify + .notify {
@@ -1050,4 +1059,10 @@ body {
 	opacity: 1;
 	visibility: visible;
 	transform: translate(-50%, 0);
+}
+
+.test__btn {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
 }

@@ -380,6 +380,33 @@ export const LifeLineNotificationCenter = [
 	}
 ]
 
+export const LifeLineNotifications = [
+	{
+		key: "med1",
+		icon: faPrescription,
+		title: "Medication Reminder",
+		body: "25mg Lisinopril is due to be taken in 60 minutes (7:00am)"
+	}, 
+	{
+		key: "med2",
+		icon: faPrescription,
+		title: "Medication Reminder",
+		body: "5mg Aspirin is due to be taken in 60 minutes (7:00am)"
+	}, 
+	{
+		key: "pt",
+		icon: faRunning,
+		title: "Physical Therapy Reminder",
+		body: "Start 2 mile walk in 120 minutes (9:00am)"
+	}, 
+	{
+		key: "appt",
+		icon: faCalendarDay,
+		title: "Appointment Reminder",
+		body: "Appointment with Dr. Stanielson today (2:00pm)"
+	}
+]
+
 export const BloodPressureSys = [110, 150];
 export const BloodPressureDia = [70, 100];
 export const BloodPressureHr = [45, 100];

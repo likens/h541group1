@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck, faPlus, faCamera } from '@fortawesome/free-solid-svg-icons';
-import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, LifeLineNotificationCenter, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
+import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, LifeLineNotificationCenter, LifeLineNotifications, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
 
 class LifeLineMain extends Component {
 
@@ -20,6 +20,7 @@ class LifeLineMain extends Component {
 			submenu: undefined,
 			modal: undefined,
 			form: undefined,
+			notification: undefined,
 			notifications: {
 				center: false,
 				notifs: LifeLineNotificationCenter
@@ -82,7 +83,6 @@ class LifeLineMain extends Component {
 	}
 
 	toggleSubmenu(key) {
-		console.log(key);
 		if (key && key === this.state.submenu) {
 			this.toggleSubmenu();
 		} else {
@@ -115,10 +115,11 @@ class LifeLineMain extends Component {
 	}
 
 	toggleNotificationCenter(active) {
+		const notifs = this.state.notifications.notifs.length ? this.state.notifications.notifs : [...LifeLineNotificationCenter];
 		this.setState({
 			notifications: {
 				center: active,
-				notifs: this.state.notifications.notifs
+				notifs: notifs
 			}
 		});
 	}
@@ -129,7 +130,7 @@ class LifeLineMain extends Component {
 		let remove = {};
 
 		if (center) {
-			notifs = LifeLineNotificationCenter;
+			notifs = this.state.notifications.notifs;
 			remove = notifs.findIndex(notif => notif.key === key);
 			notifs.splice(remove, 1);
 			this.setState({
@@ -138,6 +139,10 @@ class LifeLineMain extends Component {
 					notifs: notifs
 				}
 			});
+		} else {
+			this.setState({
+				notification: undefined
+			})
 		}
 
 	}
@@ -155,13 +160,15 @@ class LifeLineMain extends Component {
 	}
 
 	getRandomNotification() {
-		const idx = Math.floor(Math.random() * LifeLineNotificationCenter.length);
-		const key = LifeLineNotificationCenter[idx].key;
+		const idx = Math.floor(Math.random() * LifeLineNotifications.length);
+		const key = LifeLineNotifications[idx].key;
 		this.toggleNotification(key);
 	}
 
 	toggleNotification(key) {
-		console.log(key);
+		this.setState({
+			notification: key
+		})
 	}
 
 	render() {
@@ -195,7 +202,7 @@ class LifeLineMain extends Component {
 						<div className={`notification-center${this.state.notifications.center ? ` notification-center--active`: ``}`}>
 							{this.state?.notifications?.notifs?.map((n, i) => {
 								return (
-									<div key={i} className={`notify`}>
+									<div key={i} className={`notify notify--active`}>
 										<div className="notify__icon">
 											<FontAwesomeIcon size={"3x"} icon={n.icon} />
 										</div>
@@ -211,6 +218,21 @@ class LifeLineMain extends Component {
 									</div>
 								)
 							})}
+						</div>
+
+						<div className={`notify${this.state.notification ? ` notify--active` : ``}`}>
+							<div className="notify__icon">
+								{this.state.notification ? <FontAwesomeIcon size={"3x"} icon={LifeLineNotifications.find(notif => notif.key === this.state.notification)?.icon} /> : ``}
+							</div>
+							<div className="notify__body">
+								<div className="notify__header">{LifeLineNotifications.find(notif => notif.key === this.state.notification)?.title}</div>
+								<div className="notify__content">{LifeLineNotifications.find(notif => notif.key === this.state.notification)?.body}</div>
+							</div>
+							<div className="notify__close">
+								<button className="notify__close-btn" onClick={() => this.removeNotification(LifeLineNotifications.find(notif => notif.key === this.state.notification)?.key, false)}>
+									<FontAwesomeIcon size={"2x"} icon={faTimes} />
+								</button>
+							</div>
 						</div>
 
 					</div>
@@ -356,7 +378,7 @@ class LifeLineMain extends Component {
 														field.type === "radio" ||
 														field.type === "label" ||
 														field.type === "button" ? 
-															<label for={i} className="field__label">{field.label}</label>
+															<label htmlFor={i} className="field__label">{field.label}</label>
 														: ``}
 														{field.type === "text" ? <input id={i} type="text" className="field__text" /> : ``}
 														{field.type === "label" ? <div className="field__value">{field.value}</div> : ``}
@@ -367,7 +389,7 @@ class LifeLineMain extends Component {
 																	return (
 																		<Fragment>
 																			<input id={field.label+i} type="radio" name={field.label} className="field__radio" /> 
-																			<label for={field.label+i} key={i} className="field__radio-lbl">{o}</label>
+																			<label htmlFor={field.label+i} key={i} className="field__radio-lbl">{o}</label>
 																		</Fragment>
 																	)
 																})}
@@ -376,7 +398,7 @@ class LifeLineMain extends Component {
 														{field.type === "check" ? 
 															<Fragment>
 																<input id={i} checked={field.checked} type="checkbox" className="field__check" /> 
-																<label for={i} className="field__label">{field.label}</label>
+																<label htmlFor={i} className="field__label">{field.label}</label>
 															</Fragment>
 														: ``}
 													</div>
@@ -403,8 +425,8 @@ class LifeLineMain extends Component {
 					<div className={`main__overlay${this.state.menu || this.state.modal || this.state.notifications.center ? ` main__overlay--active` : ``}`}
 							onClick={() => this.toggleOverlay()}></div>
 
-					<div id="modalTest" onClick={() => this.getRandomModal()}></div>
-					<div id="notifyTest" onClick={() => this.toggleNotification()}></div>
+					<button className="test__btn" id="modalTest" onClick={() => this.getRandomModal()}></button>
+					<button className="test__btn" id="notifyTest" onClick={() => this.getRandomNotification()}></button>
 				
 				</div>
 

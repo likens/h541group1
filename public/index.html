@@ -24,11 +24,11 @@
 			.instructions {
 				position: fixed;
 				top: 0;
-				left: -250px;
+				left: -275px;
 				background: #222;
 				color: white;
 				padding: 2rem;
-				width: 250px;
+				width: 275px;
 				height: 100%;
 				transition: left 0.75s ease-in-out;
 			}
@@ -72,6 +72,9 @@
 				padding: 0 0 1rem;
 				display: grid;
 				grid-gap: 1rem;
+				align-items: flex-start;
+				overflow-y: auto;
+				max-height: calc(100% + 2rem);
 			}
 
 			.instructions__title {
@@ -89,7 +92,7 @@
 				z-index: 1000002;
 				position: fixed;
 				top: 15%;
-				left: 100%;
+				left: calc(100% + 210px);
 				transform: translate(-75%, -100%) skew(-10deg);
 				border: 0.2em solid;
 				border-color: var(--darkCharcoal);
@@ -104,10 +107,13 @@
 				max-width: max-content;
 				padding: 0.5em 3.5em 0.5em 0.75em;
 				text-align: center !important;
+				transition: left 0.75s ease-in-out;
+				transition-delay: 0.2s;
 			}
 
 			.modalGenBtn {
 				transform: translate(-75%, 25%) skew(-10deg);
+				transition-delay: 0.1s;
 			}
 
 			.notifGenBtn:hover,
@@ -126,10 +132,11 @@
 		<div id="root"></div>
 
 		<div class="instructions" id="instructions">
-			<button id="infoToggleBtn" class="infoToggleBtn">&laquo;</button>
+			<button id="infoToggleBtn" class="infoToggleBtn">&raquo;</button>
 			<div class="instructions__app">
 				<div class="instructions__title" id="title"></div>
 				<div class="instructions__description" id="description"></div>
+				<div class="instructions__title" style="margin-top: 1.5em">Interactions</div>
 				<div class="instructions__interactions" id="interactions"></div>
 			</div>
 			<div class="instructions__clickables">
@@ -148,16 +155,27 @@
 				document.getElementById("notifyTest").click();
 			});
 
-			var expanded = false;
+			window.expanded = false;
 			const infoToggleBtn = document.getElementById("infoToggleBtn");
 			infoToggleBtn.addEventListener("click", function () {
 				if (expanded) {
-					document.getElementById("instructions").style.left = "-250px";
+					document.getElementById("instructions").style.left = "-275px";
+					document.getElementById("infoToggleBtn").innerHTML = "&raquo;";
+
+					document.getElementById("testNotify").style.left = "calc(100% + 210px)";
+					document.getElementById("testModal").style.left = "calc(100% + 210px)";
+					document.getElementById("demoBtn").style.left = "calc(100% + 275px)";
 				} else {
 					document.getElementById("instructions").style.left = "0";
+					document.getElementById("infoToggleBtn").innerHTML = "&laquo;";
+
+					document.getElementById("testNotify").style.left = "100%";
+					document.getElementById("testModal").style.left = "100%";
+					document.getElementById("demoBtn").style.left = "100%";
 				}
 
 				expanded = !expanded;
+				window.dispatchEvent(new Event("resize"));
 			});
 		</script>
 	</body>

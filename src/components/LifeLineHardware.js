@@ -8,19 +8,34 @@ class LifeLineHardware extends Component {
 			...this.state,
 			viewVideo: false,
 			scaleBufferX: 1250,
-			scaleBufferY: 500
+			scaleBufferY: 750
 		};
 	}
 
 	componentDidMount() {
 		setTimeout(() => {
 			document.getElementById("splashGif").style.opacity = 0;
+
+			setTimeout(() => {
+				if (!window.expanded) {
+					document.getElementById("infoToggleBtn").click();
+				}
+			}, 200);
+
 			setTimeout(() => {
 				document.getElementById("splashGif").style.display = "none";
 			}, 1500);
 		}, 6500);
 
 		window.addEventListener("resize", () => {
+			if (window.expanded) {
+				this.setState({ scaleBufferX: 1250, scaleBufferY: 750 });
+			} else {
+				this.setState({ scaleBufferX: 250, scaleBufferY: 500 });
+			}
+
+			this.forceUpdate();
+
 			let winWidth = window.outerWidth;
 			let winHeight = window.outerHeight;
 			let hwElm = document.getElementById("hardwareFrame");

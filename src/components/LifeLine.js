@@ -21,13 +21,23 @@ class LifeLine extends Component {
 		this.setState({ viewVideo: newViewVideoState });
 
 		if (this.state.viewVideo) {
-			this.setState({ demoButtonText: "Exit Product Demo" });
-			videoPlayer.style.display = "initial";
+			this.setState({ demoButtonText: "Exit 3D Product Render" });
 			videoPlayer.play();
+
+			setTimeout(() => {
+				videoPlayer.style.opacity = 1;
+			}, 50);
+
+			videoPlayer.style.display = "initial";
+			videoPlayer.style.opacity = 0;
 		} else {
-			this.setState({ demoButtonText: "View Product Demo" });
-			videoPlayer.style.display = "none";
-			videoPlayer.pause();
+			this.setState({ demoButtonText: "View 3D Product Render" });
+			setTimeout(() => {
+				videoPlayer.style.display = "none";
+				videoPlayer.pause();
+			}, 750);
+
+			videoPlayer.style.opacity = 0;
 		}
 
 		this.forceUpdate();
@@ -42,7 +52,7 @@ class LifeLine extends Component {
 					<source src={videoOGG} type="video/ogg" />
 					Your browser does not support the video tag.
 				</video>
-				<button className="hardware__demo_button" onClick={this.demoBtnCLick.bind(this)}>
+				<button id="demoBtn" className="hardware__demo_button" onClick={this.demoBtnCLick.bind(this)}>
 					<span>{this.state.demoButtonText}</span>
 				</button>
 			</div>

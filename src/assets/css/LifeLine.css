@@ -33,6 +33,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: #ddd;
 }
 
 .lifeline {
@@ -963,19 +964,43 @@ body {
 	width: calc(100% - 10rem);
 	z-index: 15;
 	box-shadow: 0 0 1rem var(--black);
-	transform: translate(-50%, -25rem);
+	transform: translate(-50%, 0);
 	/* skew(-10deg) */
 	display: grid;
 	grid-template-columns: max-content 1fr max-content;
 	opacity: 0;
 	visibility: hidden;
 	transition: all .25s ease;
+	margin-top: -25rem;
+}
+
+.notify--simple {
+	animation-name: notifyPulse;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	
+}
+
+@keyframes notifyPulse {
+	from {
+	  transform:  translateX(-50%) scale3d(1, 1, 1);
+	}
+  
+	50% {
+	  transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+	}
+  
+	to {
+	  transform: translateX(-50%) scale3d(1, 1, 1);
+	}
 }
 
 .notify--active {
 	opacity: 1;
 	visibility: visible;
-	transform: translateX(-50%);
+	margin-top: 0;
 }
 
 .notify + .notify {

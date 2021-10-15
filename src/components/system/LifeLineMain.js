@@ -117,6 +117,7 @@ class LifeLineMain extends Component {
 	toggleNotificationCenter(active) {
 		const notifs = this.state.notifications.notifs.length ? this.state.notifications.notifs : [...LifeLineNotificationCenter];
 		this.setState({
+			notification: undefined,
 			notifications: {
 				center: active,
 				notifs: notifs
@@ -167,7 +168,11 @@ class LifeLineMain extends Component {
 
 	toggleNotification(key) {
 		this.setState({
-			notification: key
+			notification: key,
+			notifications: {
+				...this.state.notifications,
+				center: false
+			}
 		})
 	}
 
@@ -220,7 +225,7 @@ class LifeLineMain extends Component {
 							})}
 						</div>
 
-						<div className={`notify${this.state.notification ? ` notify--active` : ``}`}>
+						<div className={`notify notify--simple${this.state.notification ? ` notify--active` : ``}`}>
 							<div className="notify__icon">
 								{this.state.notification ? <FontAwesomeIcon size={"3x"} icon={LifeLineNotifications.find(notif => notif.key === this.state.notification)?.icon} /> : ``}
 							</div>

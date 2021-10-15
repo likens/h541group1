@@ -10,17 +10,56 @@ export const KEY_APPS = 'apps';
 export const KEY_EMERGENCY = 'emergency';
 export const KEY_SETTINGS = 'settings';
 
-export const CONTACT_DISPLAY_NAME = "CONTACT_DISPLAY_NAME";
-
 export const LifeLineApps = {
 	key: KEY_APPS,
 	structure: [
-		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard />, instructions: "hello world" },
-		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure /> },
-		{ name: "Oxygen Saturation", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen /> },
-		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate /> },
-		{ name: "Electrocardiogram", key: "ekg", icon: faLaptopMedical, component: <LifeLineElectrocardiogram /> },
-		{ name: "Calendar", key: "calendar", icon: faCalendarAlt, component: <LifeLineCalendar /> }
+		{ 
+			name: "Dashboard", 
+			key: "dashboard", 
+			icon: faThLarge,
+			component: <LifeLineDashboard />, 
+			description: "The default view for the device once fully booted. Contains live or most recent reading of Electrocardiogram (specifically heart rate), Blood Pressure (Systolic & Diastolic), Blood Oxygen saturation (SP02), and a list of upcoming events/reminder.", 
+			interactions: "<ul><li>Snapshot- located in the center of the app, is a feature to send current or most recent health info to your doctor,hospital, or other authorized contact. When clicked, displays pop up prompt. </li><li>Notification Tray – located in top left corner of screen. When clicked, displays  current notifications, reminders, and events.</li><li>Navigation arrows – Located on the left and right sides of the screen. When clicked, cycles either forward or backward through apps.</li><li>Navigation Menus – Located at the bottom of the screen. When clicked opens up menus (and submenus) of the respective features (emergency contacts, apps list, and settings).</li></ul>" 
+		},
+		{ 
+			name: "Blood Pressure",
+			key: "bp", 
+			icon: faStethoscope, 
+			component: <LifeLineBloodPressure />,
+			description: "Application for measuring current systolic and diastolic blood pressure, as well as bpm.", 
+			interactions: "<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>" 
+		},
+		{ 
+			name: "Oxygen Saturation",
+			key: "oxy",
+			icon: faDotCircle,
+			component: <LifeLineOxygen />,
+			description: "Application for measuring current Oxygen saturation (SP02), as well as bpm.", 
+			interactions: "<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+		},
+		{ 
+			name: "Heart Rate", 
+			key: "hr", 
+			icon: faHeartbeat, 
+			component: <LifeLineHeartRate />,
+			description: "Application for measuring heart rate (bpm).", 
+			interactions: "<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+
+		},
+		{ 
+			name: "Electrocardiogram", 
+			key: "ekg", 
+			icon: faLaptopMedical, 
+			component: <LifeLineElectrocardiogram />,
+			description: "Application that displays what we consider to be a traditional ECG display (also displays BPM, SP02, and Respiratory count by minute."
+		},
+		{
+			name: "Calendar",
+			key: "calendar",
+			icon: faCalendarAlt,
+			component: <LifeLineCalendar />,
+			description: "An application that displays a calendar and list view of events regarding	medications, physical therapy, and any other upcoming events (such as doctor appointments)."
+		}
 	]
 }
 
@@ -263,11 +302,9 @@ export const BloodPressureSys = [110, 150];
 export const BloodPressureDia = [70, 100];
 export const BloodPressureHr = [45, 100];
 export const BloodPressureHistoryData = generateTestData(14, "sys", BloodPressureSys, "dia", BloodPressureDia, "hr", BloodPressureHr);
-
 export const OxygenSpo2 = [90, 100];
 export const OxygenHr = [45, 100];
 export const OxygenHistoryData = generateTestData(14, "spo2", OxygenSpo2, "hr", OxygenHr);
-
 export const HeartRateHr = [50, 150];
 export const HeartRateHistoryData = generateTestData(14, "hr", HeartRateHr);
 

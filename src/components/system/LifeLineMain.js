@@ -13,7 +13,8 @@ class LifeLineMain extends Component {
 				idx: 0,
 				component: LifeLineApps.structure[0].component,
 				name: LifeLineApps.structure[0].name,
-				instructions: LifeLineApps.structure[0].instructions
+				description: LifeLineApps.structure[0].description,
+				interactions: LifeLineApps.structure[0].interactions,
 			},
 			menu: undefined,
 			submenu: undefined,
@@ -24,7 +25,9 @@ class LifeLineMain extends Component {
 				notifs: LifeLineNotificationCenter
 			}
 		}
-		this.setInstructions(LifeLineApps.structure[0].name, LifeLineApps.structure[0].instructions);
+		this.setInstructions(LifeLineApps.structure[0].name, 
+							LifeLineApps.structure[0].description,
+							LifeLineApps.structure[0].interactions);
 	}
 
 	menuItemClick(item) {
@@ -42,11 +45,14 @@ class LifeLineMain extends Component {
 				idx: LifeLineApps.structure.findIndex(app => app.key === key),
 				component: LifeLineApps.structure.find(app => app.key === key).component,
 				name: LifeLineApps.structure.find(app => app.key === key).name,
-				instructions: LifeLineApps.structure.find(app => app.key === key).instructions
+				description: LifeLineApps.structure.find(app => app.key === key).description,
+				interactions: LifeLineApps.structure.find(app => app.key === key).interactions,
 			}
 		});
 		this.toggleMenu();
-		this.setInstructions(LifeLineApps.structure.find(app => app.key === key).name, LifeLineApps.structure.find(app => app.key === key).instructions);
+		this.setInstructions(LifeLineApps.structure.find(app => app.key === key).name,
+							LifeLineApps.structure.find(app => app.key === key).description,
+							LifeLineApps.structure.find(app => app.key === key).interactions);
 	}
 
 	getAppKey(next) {
@@ -135,9 +141,10 @@ class LifeLineMain extends Component {
 
 	}
 
-	setInstructions(name, body) {
+	setInstructions(name, description, interactions) {
 		document.getElementById("title").innerHTML = name ? name : ``;
-		document.getElementById("body").innerHTML = body ? body : ``;
+		document.getElementById("description").innerHTML = description ? description : ``;
+		document.getElementById("interactions").innerHTML = interactions ? interactions : ``;
 	}
 
 	getRandomModal() {

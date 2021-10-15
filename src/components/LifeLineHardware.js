@@ -7,7 +7,7 @@ class LifeLineHardware extends Component {
 		this.state = {
 			...this.state,
 			viewVideo: false,
-			scaleBufferX: 250,
+			scaleBufferX: 1250,
 			scaleBufferY: 500
 		};
 	}
@@ -35,6 +35,8 @@ class LifeLineHardware extends Component {
 
 			hwElm.style.transform = "translate(-50%, -50%) scale(" + ratio + ", " + ratio + ")";
 		});
+
+		window.dispatchEvent(new Event("resize"));
 	}
 
 	render() {

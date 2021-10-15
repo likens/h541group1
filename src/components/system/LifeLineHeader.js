@@ -11,9 +11,9 @@ class LifeLineHeader extends Component {
 			...this.state,
 			now: new Date(),
 			nowString: "",
-			timeString: "",
-			meridiemString: "",
-			zoneString: ""
+			timeString: "00:00",
+			meridiemString: "XX",
+			zoneString: "XXX"
 		};
 	}
 

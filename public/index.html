@@ -28,7 +28,44 @@
 				background: #222;
 				color: white;
 				padding: 2rem;
-				width: 100%;
+				width: 250px;
+				height: 100%;
+				transition: left 1.5s ease-in-out;
+			}
+
+			.instructions .instructions__interactions ul {
+				padding-left: 1em;
+			}
+
+			.instructions .instructions__interactions ul li {
+				margin-top: 1em;
+			}
+
+			.infoToggleBtn {
+				font-size: 2em;
+				line-height: 100%;
+				position: absolute;
+				right: 0;
+				transform: translate(125%, -25%) skew(-10deg);
+
+				padding-bottom: 0.1em;
+				background-color: var(--lifelineRed);
+				border: 0.1em solid;
+				border-color: var(--darkCharcoal);
+				cursor: pointer;
+				font-weight: var(--bold);
+				color: var(--white);
+				text-transform: uppercase;
+				text-shadow: 0 0 5px var(--charcoal);
+				max-width: max-content;
+				text-align: center !important;
+			}
+
+			.infoToggleBtn:hover {
+				color: var(--lifelineRed);
+				background-color: var(--white);
+				text-shadow: unset;
+				border-color: var(--darkCharcoal);
 			}
 
 			.instructions__app {
@@ -89,6 +126,7 @@
 		<div id="root"></div>
 
 		<div class="instructions" id="instructions">
+			<button id="infoToggleBtn" class="infoToggleBtn">&laquo;</button>
 			<div class="instructions__app">
 				<div class="instructions__title" id="title"></div>
 				<div class="instructions__description" id="description"></div>
@@ -101,13 +139,25 @@
 		</div>
 
 		<script>
-			const testModal = document.getElementById("testModal");
-			const testNotify = document.getElementById("testNotify");
-			testModal.addEventListener("click", function () {
-				document.getElementById("modalTest").click();
-			});
-			testNotify.addEventListener("click", function () {
-				document.getElementById("notifyTest").click();
+			// const testModal = document.getElementById("testModal");
+			// const testNotify = document.getElementById("testNotify");
+			// testModal.addEventListener("click", function () {
+			// 	document.getElementById("modalTest").click();
+			// });
+			// testNotify.addEventListener("click", function () {
+			// 	document.getElementById("notifyTest").click();
+			// });
+
+			var expanded = false;
+			const infoToggleBtn = document.getElementById("infoToggleBtn");
+			infoToggleBtn.addEventListener("click", function () {
+				if (expanded) {
+					document.getElementById("instructions").style.left = "-250px";
+				} else {
+					document.getElementById("instructions").style.left = "0";
+				}
+
+				expanded = !expanded;
 			});
 		</script>
 	</body>

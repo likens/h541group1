@@ -13,6 +13,13 @@ class LifeLineHardware extends Component {
 	}
 
 	componentDidMount() {
+		setTimeout(() => {
+			document.getElementById("splashGif").style.opacity = 0;
+			setTimeout(() => {
+				document.getElementById("splashGif").style.display = "none";
+			}, 1500);
+		}, 6500);
+
 		window.addEventListener("resize", () => {
 			let winWidth = window.outerWidth;
 			let winHeight = window.outerHeight;
@@ -26,8 +33,6 @@ class LifeLineHardware extends Component {
 				ratio -= 0.01;
 			}
 
-			console.log(elmWidth, winWidth, elmHeight, winHeight, this.state.scaleBuffer, ratio);
-
 			hwElm.style.transform = "translate(-50%, -50%) scale(" + ratio + ", " + ratio + ")";
 		});
 	}
@@ -35,6 +40,7 @@ class LifeLineHardware extends Component {
 	render() {
 		return (
 			<div id="hardwareFrame" className="hardware">
+				<div id="splashGif" className="splashImg"></div>
 				<div className="hardware__background" />
 				<LifeLineSoftware />
 			</div>

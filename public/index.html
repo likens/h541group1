@@ -24,13 +24,13 @@
 			.instructions {
 				position: fixed;
 				top: 0;
-				left: 0;
+				left: -250px;
 				background: #222;
 				color: white;
 				padding: 2rem;
 				width: 250px;
 				height: 100%;
-				transition: left 1.5s ease-in-out;
+				transition: left 0.75s ease-in-out;
 			}
 
 			.instructions .instructions__interactions ul {
@@ -139,14 +139,14 @@
 		</div>
 
 		<script>
-			// const testModal = document.getElementById("testModal");
-			// const testNotify = document.getElementById("testNotify");
-			// testModal.addEventListener("click", function () {
-			// 	document.getElementById("modalTest").click();
-			// });
-			// testNotify.addEventListener("click", function () {
-			// 	document.getElementById("notifyTest").click();
-			// });
+			const testModal = document.getElementById("testModal");
+			const testNotify = document.getElementById("testNotify");
+			testModal.addEventListener("click", function () {
+				document.getElementById("modalTest").click();
+			});
+			testNotify.addEventListener("click", function () {
+				document.getElementById("notifyTest").click();
+			});
 
 			var expanded = false;
 			const infoToggleBtn = document.getElementById("infoToggleBtn");

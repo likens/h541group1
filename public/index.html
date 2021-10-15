@@ -20,9 +20,49 @@
 
 			gtag("config", "G-DH94BC13XN");
 		</script>
+		<style>
+			.instructions {
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: #222;
+				color: white;
+				padding: 2rem;
+				width: 100%;
+			}
+
+			.instructions__app {
+				padding: 0 0 1rem;
+				display: grid;
+				grid-gap: 1rem;
+			}
+
+			.instructions__title {
+				font-weight: 700;
+				text-transform: uppercase;
+				font-style:italic;
+				font-size: 2rem;
+			}
+		</style>
 	</head>
+
 	<body>
+
 		<noscript>You need to enable JavaScript to run this app.</noscript>
+
 		<div id="root"></div>
+
+		<div class="instructions" id="instructions">
+			<div class="instructions__app">
+				<div class="instructions__title" id="title"></div>
+				<div class="instructions__body" id="body"></div>
+			</div>
+			<div class="instructions__clickables">
+				<button>Notification Test</button>
+				<button>Modal Test</button>
+			</div>
+		</div>
+
 	</body>
+
 </html>

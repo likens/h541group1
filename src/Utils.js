@@ -10,10 +10,12 @@ export const KEY_APPS = 'apps';
 export const KEY_EMERGENCY = 'emergency';
 export const KEY_SETTINGS = 'settings';
 
+export const CONTACT_DISPLAY_NAME = "CONTACT_DISPLAY_NAME";
+
 export const LifeLineApps = {
 	key: KEY_APPS,
 	structure: [
-		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard /> },
+		{ name: "Dashboard", key: "dashboard", icon: faThLarge, component: <LifeLineDashboard />, instructions: "hello world" },
 		{ name: "Blood Pressure", key: "bp", icon: faStethoscope, component: <LifeLineBloodPressure /> },
 		{ name: "Oxygen Saturation", key: "oxy", icon: faDotCircle, component: <LifeLineOxygen /> },
 		{ name: "Heart Rate", key: "hr", icon: faHeartbeat, component: <LifeLineHeartRate /> },
@@ -28,9 +30,12 @@ export const LifeLineEmergency = {
 		{ name: "911", key: "911", icon: faAmbulance, extra: true, edit: false, delete: false },
 		{ name: "hospital", key: "hospital", icon: faHospital, extra: true, edit: false, delete: false },
 		{ name: "doctor", key: "doctor", icon: faUserMd, extra: true, edit: false, delete: false },
-		{ name: "user1", key: "user1", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "user2", key: "user2", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "user3", key: "user3", icon: faUser, extra: true, edit: true, delete: true }
+		{ name: "Hospital Admin", key: "user1", icon: faUser, extra: true, edit: true, delete: true },
+		{ name: "Cardiologist Office", key: "user2", icon: faUser, extra: true, edit: true, delete: true },
+		{ name: "CVS Pharmacy", key: "user3", icon: faUser, extra: true, edit: true, delete: true },
+		{ name: "Spouse", key: "user4", icon: faUser, extra: true, edit: true, delete: true },
+		{ name: "Child", key: "user5", icon: faUser, extra: true, edit: true, delete: true },
+		{ name: "Grandchild", key: "user6", icon: faUser, extra: true, edit: true, delete: true }
 	]
 }
 
@@ -63,14 +68,14 @@ export const LifeLineModals = [
 	{
 		key: "contact",
 		heading: "Contact User",
-		body: "Would you like to contact '{CONTACT_DISPLAY_NAME}'?",
+		body: `Would you like to contact '${CONTACT_DISPLAY_NAME}'?`,
 		confirm: "Yes",
 		cancel: "No"
 	},
 	{
 		key: "delete",
 		heading: "Delete Contact",
-		body: "You are about to delete '{CONTACT_DISPLAY_NAME}'. Proceed?",
+		body: `You are about to delete '${CONTACT_DISPLAY_NAME}'. Proceed?`,
 		confirm: "Delete",
 		cancel: "Cancel"
 	},

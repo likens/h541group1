@@ -12,10 +12,8 @@ class LifeLineMain extends Component {
 				key: LifeLineApps.structure[0].key,
 				idx: 0,
 				component: LifeLineApps.structure[0].component,
-				instructions: {
-					title: undefined,
-					body: undefined
-				}
+				name: LifeLineApps.structure[0].name,
+				instructions: LifeLineApps.structure[0].instructions
 			},
 			menu: undefined,
 			submenu: undefined,
@@ -26,6 +24,7 @@ class LifeLineMain extends Component {
 				notifs: LifeLineNotificationCenter
 			}
 		}
+		this.setInstructions(LifeLineApps.structure[0].name, LifeLineApps.structure[0].instructions);
 	}
 
 	menuItemClick(item) {
@@ -41,10 +40,13 @@ class LifeLineMain extends Component {
 			app: {
 				key: key,
 				idx: LifeLineApps.structure.findIndex(app => app.key === key),
-				component: LifeLineApps.structure.find(app => app.key === key).component
+				component: LifeLineApps.structure.find(app => app.key === key).component,
+				name: LifeLineApps.structure.find(app => app.key === key).name,
+				instructions: LifeLineApps.structure.find(app => app.key === key).instructions
 			}
 		});
 		this.toggleMenu();
+		this.setInstructions(LifeLineApps.structure.find(app => app.key === key).name, LifeLineApps.structure.find(app => app.key === key).instructions);
 	}
 
 	getAppKey(next) {
@@ -131,6 +133,11 @@ class LifeLineMain extends Component {
 			});
 		}
 
+	}
+
+	setInstructions(name, body) {
+		document.getElementById("title").innerHTML = name ? name : ``;
+		document.getElementById("body").innerHTML = body ? body : ``;
 	}
 
 	render() {
@@ -358,36 +365,6 @@ class LifeLineMain extends Component {
 
 				
 				</div>
-
-					<div className="instructions">
-						<div className="instructions__header">
-							<div className="instructions__title"></div>
-							<div className="instructions__body"></div>
-						</div>
-						<div className="instructions__footer">
-							
-						</div>
-						{/* <ul>
-							<li>
-								<button>Click To Get A Med Notification</button>
-							</li>
-							<li>
-								<button>Click To Get APT Notification</button>
-							</li>
-							<li>
-								<button>Click To Get A Appt Notification</button>
-							</li>
-							<li>
-								<button>Click To Get A Med Modal</button>
-							</li>
-							<li>
-								<button>Click To Get A PT Modal</button>
-							</li>
-							<li>
-								<button>Click To Get A Appt Modal</button>
-							</li>
-						</ul> */}
-					</div>
 
 			</div>
 

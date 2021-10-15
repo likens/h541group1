@@ -33,9 +33,7 @@ export const LifeLineEmergency = {
 		{ name: "Hospital Admin", key: "user1", icon: faUser, extra: true, edit: true, delete: true },
 		{ name: "Cardiologist Office", key: "user2", icon: faUser, extra: true, edit: true, delete: true },
 		{ name: "CVS Pharmacy", key: "user3", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "Spouse", key: "user4", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "Child", key: "user5", icon: faUser, extra: true, edit: true, delete: true },
-		{ name: "Grandchild", key: "user6", icon: faUser, extra: true, edit: true, delete: true }
+		{ name: "Spouse", key: "user4", icon: faUser, extra: true, edit: true, delete: true }
 	]
 }
 
@@ -43,18 +41,23 @@ export const LifeLineSettings = {
 	key: KEY_SETTINGS,
 	structure:  [
 		{ name: "General", key: "general", extra: true, sub: [
-			{ name: "Information" },
-			{ name: "Storage" },
-			{ name: "Linked Accounts" },
+			{ name: "Information", form: "settingsInfo" },
+			{ name: "Storage", form: "settingsStorage" },
+			{ name: "Connections", form: "settingsConnections" },
+			{ name: "Languages", form: "settingsLanguages" }
 		] },
 		{ name: "Accessibility", key: "accessibility", extra: true, sub: [
-			{ name: "Light mode" },
-			{ name: "Dark mode" },
-			{ name: "Easy mode" },
-			{ name: "Mode Suggestions" },
-			{ name: "Enhancements" },
+			{ name: "Visual Modes", form: "settingsVisualModes" },
+			{ name: "Visibility Enhancements", form: "settingsVisibilityEnhancements" },
+			{ name: "Hearing Enhancements", form: "settingsHearingEnhancements" },
+			{ name: "Interaction Controls", form: "settingsInteractionControls" },
 		] },
-		{ name: "Connections" },
+		{ name: "Applications", key: "applications", extra: true, sub: [
+			{ name: "Blood Pressure", form: "settingsBloodPressure" },
+			{ name: "Oxygen Saturation", form: "settingsOxygenSaturation" },
+			{ name: "Heart Rate", form: "settingsHeartRate" },
+			{ name: "Calendar", form: "settingsCalendar" },
+		] },
 	]
 }
 
@@ -68,14 +71,14 @@ export const LifeLineModals = [
 	{
 		key: "contact",
 		heading: "Contact User",
-		body: `Would you like to contact '${CONTACT_DISPLAY_NAME}'?`,
+		body: `Would you like to contact 'name_goes_here'?`,
 		confirm: "Yes",
 		cancel: "No"
 	},
 	{
 		key: "delete",
 		heading: "Delete Contact",
-		body: `You are about to delete '${CONTACT_DISPLAY_NAME}'. Proceed?`,
+		body: `You are about to delete 'name_goes_here'. Proceed?`,
 		confirm: "Delete",
 		cancel: "Cancel"
 	},
@@ -136,6 +139,96 @@ export const LifeLineForms = [
 			{ type: "text", label: "Phone Number" },
 			{ type: "check", label: "Receive Heart Health Snapshot"}
 		]
+	},
+	{
+		key: "settingsInfo",
+		fields: [
+			{ type: "label", label: "Name", value: "Jimmothy Jimmothy" },
+			{ type: "label", label: "Email", value: "jimmothy@jimmothy.com" },
+			{ type: "label", label: "Phone", value: "(123) 456 - 7890"},
+			{ type: "label", label: "Address", value: "123 Smiley Lane, Happiness, HN, 12345-6789"}
+		]
+	},
+	{
+		key: "settingsStorage",
+		fields: [
+			{ type: "label", label: "Last Data Transfer", value: "7 days ago" },
+			{ type: "label", label: "Next Data Transfer", value: "7 days" },
+			{ type: "label", label: "Space Available", value: "20 GB / 120 GB"}
+		]
+	},
+	{
+		key: "settingsConnections",
+		fields: [
+			{ type: "text", label: "WiFi Name" },
+			{ type: "text", label: "WiFi Password" },
+			{ type: "button", label: "Bluetooth", value: "Pair Bluetooth" },
+			{ type: "check", label: "Enable GPS"}
+		]
+	},
+	{
+		key: "settingsLanguage",
+		fields: [
+			{ type: "radio", label: "Language", options: ["English", "Spanish", "Chinese", "Arabic", "French"] }
+		]
+	},
+	{
+		key: "settingsBloodPressure",
+		fields: [
+			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+		]
+	},
+	{
+		key: "settingsOxygenSaturation",
+		fields: [
+			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+		]
+	},
+	{
+		key: "settingsHeartRate",
+		fields: [
+			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+		]
+	},
+	{
+		key: "settingsCalendar",
+		fields: [
+			{ type: "radio", label: "Military Time", options: ["Yes", "No"] },
+			{ type: "radio", label: "Start Day of Week", options: ["Sunday", "Monday"]},
+			{ type: "check", label: "Enable Medications"},
+			{ type: "check", label: "Enable Physical Therapy" },
+			{ type: "check", label: "Appointments" }
+		]
+	},
+	{
+		key: "settingsVisualModes",
+		fields: [
+			{ type: "radio", label: "Color Mode", options: ["Dark", "Light", "Easy"] },
+			{ type: "button", label: "Mode Suggestion", value: "Take Quiz" },
+		]
+	},
+	{
+		key: "settingsVisibilityEnhancements",
+		fields: [
+			{ type: "radio", label: "Contrast", options: ["Standard", "High", "Low"] },
+			{ type: "radio", label: "Color Lens", options: ["Deuteranomaly", "Protanomaly", "Protanopia", "Deuteranopia", "Tritanomaly", "Tritanopia"] },
+			{ type: "radio", label: "Font Size", options: ["Normal", "Larger", "Largest"] },
+		]
+	},
+	{
+		key: "settingsHearingEnhancements",
+		fields: [
+			{ type: "radio", label: "Hearing Aid Support", options: ["No", "Yes"] },
+			{ type: "radio", label: "Amplify Sounds", options: ["No", "Yes"] },
+			{ type: "radio", label: "Narration", options: ["No", "Yes"] }
+		]
+	},
+	{
+		key: "settingsInteractionControls",
+		fields: [
+			{ type: "radio", label: "Enable Swiping", options: ["No", "Yes"] },
+			{ type: "radio", label: "Touch Delay", options: ["No", "Yes"] }
+		]
 	}
 ]
 
@@ -180,7 +273,7 @@ export const HeartRateHistoryData = generateTestData(14, "hr", HeartRateHr);
 
 function generateTestData(days, key1, data1, key2, data2, key3, data3) {
 	const data = [];
-	for(let i = 0; i <= days; i++) {
+	for(let i = 1; i <= days; i++) {
 		let obj = {
 			date: `Sep ${i}`,
 		}

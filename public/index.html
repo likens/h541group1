@@ -58,10 +58,21 @@
 				<div class="instructions__body" id="body"></div>
 			</div>
 			<div class="instructions__clickables">
-				<button>Notification Test</button>
-				<button>Modal Test</button>
+				<button id="testNotify">Notification Test</button>
+				<button id="testModal">Modal Test</button>
 			</div>
 		</div>
+
+		<script>
+			const testModal = document.getElementById("testModal");
+			const testNotify = document.getElementById("testNotify");
+			testModal.addEventListener("click", function() {
+				document.getElementById("modalTest").click();
+			});
+			testNotify.addEventListener("click", function() {
+				document.getElementById("notifyTest").click();
+			});
+		</script>
 
 	</body>
 

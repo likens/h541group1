@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretRight, faCaretLeft, faTimes, faPhone, faPencilAlt, faTrash, faCheck, faPlus, faCamera } from '@fortawesome/free-solid-svg-icons';
 import { LifeLineApps, LifeLineMenusStructure, LifeLineModals, LifeLineForms, LifeLineNotificationCenter, KEY_EMERGENCY, KEY_SETTINGS } from "../../Utils";
@@ -82,6 +82,7 @@ class LifeLineMain extends Component {
 	}
 
 	toggleSubmenu(key) {
+		console.log(key);
 		if (key && key === this.state.submenu) {
 			this.toggleSubmenu();
 		} else {
@@ -96,7 +97,7 @@ class LifeLineMain extends Component {
 			menu: undefined,
 			submenu: undefined,
 			modal: key,
-			form: key ? LifeLineModals.find(modal => modal.key === key)?.form : undefined
+			form: key ? LifeLineModals.find(modal => modal.key === key)?.form : undefined 
 		})
 	}
 
@@ -305,10 +306,11 @@ class LifeLineMain extends Component {
 															{item.sub?.map((sub, i) => {
 																return (
 																	<li key={i} className="menu__item">
-																		<div className="menu__link">
+																		<button className="menu__link"
+																			onClick={() => this.toggleModal(sub.modal)}>
 																			<span className="menu__link-icon"></span>
 																			<span className="menu__link-name">{sub.name}</span>
-																		</div>
+																		</button>
 																	</li>
 																)
 															})}
@@ -349,20 +351,33 @@ class LifeLineMain extends Component {
 											{LifeLineForms.find(form => form?.key === this.state.form)?.fields.map((field, i) => {
 												return (
 													<div key={i} className="field">
-														{field.type === "text" || field.type === "ddl" ? 
-															<label className="field__label">{field.label}</label>
+														{field.type === "text" || 
+														field.type === "ddl" || 
+														field.type === "radio" ||
+														field.type === "label" ||
+														field.type === "button" ? 
+															<label for={i} className="field__label">{field.label}</label>
 														: ``}
-														{field.type === "text" ? <input type="text" className="field__text" /> : ``}
-														{field.type === "ddl" ? 
-															<select className="field__ddl">
-																<option>Option1</option>
-																<option>Option2</option>
-																<option>Option3</option>
-															</select> : ``}
-														{field.type === "check" ? <input type="checkbox" className="field__check" /> : ``}
-														{field.type === "radio" ? <input type="radio" className="field__radio" /> : ``}
-														{field.type === "check" || field.type === "radio" ? 
-															<label className="field__label">{field.label}</label>
+														{field.type === "text" ? <input id={i} type="text" className="field__text" /> : ``}
+														{field.type === "label" ? <div className="field__value">{field.value}</div> : ``}
+														{field.type === "button" ? <button className="field__button">{field.value}</button> : ``}
+														{field.type === "radio" ? 
+															<div className="field__radio-opt">
+																{field.options.map((o, i) => {
+																	return (
+																		<Fragment>
+																			<input id={field.label+i} type="radio" name={field.label} className="field__radio" /> 
+																			<label for={field.label+i} key={i} className="field__radio-lbl">{o}</label>
+																		</Fragment>
+																	)
+																})}
+															</div>
+														: ``}
+														{field.type === "check" ? 
+															<Fragment>
+																<input id={i} checked={field.checked} type="checkbox" className="field__check" /> 
+																<label for={i} className="field__label">{field.label}</label>
+															</Fragment>
 														: ``}
 													</div>
 												)

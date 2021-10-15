@@ -80,22 +80,22 @@ export const LifeLineSettings = {
 	key: KEY_SETTINGS,
 	structure:  [
 		{ name: "General", key: "general", extra: true, sub: [
-			{ name: "Information", form: "settingsInfo" },
-			{ name: "Storage", form: "settingsStorage" },
-			{ name: "Connections", form: "settingsConnections" },
-			{ name: "Languages", form: "settingsLanguages" }
+			{ name: "Information", modal: "settingsInfo", form: "settingsInfo" },
+			{ name: "Storage", modal: "settingsStorage", form: "settingsStorage" },
+			{ name: "Connections", modal: "settingsConnections", form: "settingsConnections" },
+			{ name: "Languages", modal: "settingsLanguage", form: "settingsLanguage" }
 		] },
 		{ name: "Accessibility", key: "accessibility", extra: true, sub: [
-			{ name: "Visual Modes", form: "settingsVisualModes" },
-			{ name: "Visibility Enhancements", form: "settingsVisibilityEnhancements" },
-			{ name: "Hearing Enhancements", form: "settingsHearingEnhancements" },
-			{ name: "Interaction Controls", form: "settingsInteractionControls" },
+			{ name: "Visual Modes", modal: "settingsVisualModes", form: "settingsVisualModes" },
+			{ name: "Visibility Enhancements", modal: "settingsVisibilityEnhancements", form: "settingsVisibilityEnhancements" },
+			{ name: "Hearing Enhancements", modal: "settingsHearingEnhancements", form: "settingsHearingEnhancements" },
+			{ name: "Interaction Controls", modal: "settingsInteractionControls", form: "settingsInteractionControls" },
 		] },
 		{ name: "Applications", key: "applications", extra: true, sub: [
-			{ name: "Blood Pressure", form: "settingsBloodPressure" },
-			{ name: "Oxygen Saturation", form: "settingsOxygenSaturation" },
-			{ name: "Heart Rate", form: "settingsHeartRate" },
-			{ name: "Calendar", form: "settingsCalendar" },
+			{ name: "Blood Pressure", modal: "settingsBloodPressure", form: "settingsBloodPressure" },
+			{ name: "Oxygen Saturation", modal: "settingsOxygenSaturation", form: "settingsOxygenSaturation" },
+			{ name: "Heart Rate", modal: "settingsHeartRate", form: "settingsHeartRate" },
+			{ name: "Calendar", modal: "settingsCalendar", form: "settingsCalendar" },
 		] },
 	]
 }
@@ -105,6 +105,12 @@ export const LifeLineMenusStructure = [
 	{ name: "Apps", key: "apps", icon: faListUl, menu: LifeLineApps },
 	{ name: "Settings", key: "settings", icon: faCog, menu: LifeLineSettings }
 ]
+
+const settingsObj = {
+	heading: "Edit Settings",
+	confirm: "Save",
+	cancel: "Cancel"
+}
 
 export const LifeLineModals = [
 	{
@@ -159,6 +165,82 @@ export const LifeLineModals = [
 		heading: "Appointment Reminder",
 		body: "Your appointment with Dr. Stanielson will start soon.",
 		confirm: "Ok"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Information",
+		key: "settingsInfo",
+		form: "settingsInfo",
+		confirm: "Ok",
+		cancel: undefined
+	},
+	{
+		...settingsObj,
+		heading: "Edit Storage",
+		key: "settingsStorage",
+		form: "settingsStorage",
+		confirm: "Ok",
+		cancel: undefined
+	},
+	{
+		...settingsObj,
+		heading: "Edit Connections",
+		key: "settingsConnections",
+		form: "settingsConnections"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Languages",
+		key: "settingsLanguage",
+		form: "settingsLanguage"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Blood Pressure",
+		key: "settingsBloodPressure",
+		form: "settingsBloodPressure"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Oxygen Saturation",
+		key: "settingsOxygenSaturation",
+		form: "settingsOxygenSaturation"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Heart Rate",
+		key: "settingsHeartRate",
+		form: "settingsHeartRate"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Calendar",
+		key: "settingsCalendar",
+		form: "settingsCalendar"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Visual Modes",
+		key: "settingsVisualModes",
+		form: "settingsVisualModes"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Visibility Enhancements",
+		key: "settingsVisibilityEnhancements",
+		form: "settingsVisibilityEnhancements"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Hearing Enhancements",
+		key: "settingsHearingEnhancements",
+		form: "settingsHearingEnhancements"
+	},
+	{
+		...settingsObj,
+		heading: "Edit Interaction Controls",
+		key: "settingsInteractionControls",
+		form: "settingsInteractionControls"
 	}
 ]
 
@@ -214,19 +296,19 @@ export const LifeLineForms = [
 	{
 		key: "settingsBloodPressure",
 		fields: [
-			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+			{ type: "radio", label: "Historical Timeline", options: ["Last 2 Weeks", "Last 24 Hours", "Last Week", "Last 30 Days"] }
 		]
 	},
 	{
 		key: "settingsOxygenSaturation",
 		fields: [
-			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+			{ type: "radio", label: "Historical Timeline", options: ["Last 2 Weeks", "Last 24 Hours", "Last Week", "Last 30 Days"] }
 		]
 	},
 	{
 		key: "settingsHeartRate",
 		fields: [
-			{ type: "radio", label: "Historical Timeline", options: ["Last 24 Hours", "Last Week", "Last 2 Weeks", "Last 30 Days"] }
+			{ type: "radio", label: "Historical Timeline", options: ["Last 2 Weeks", "Last 24 Hours", "Last Week", "Last 30 Days"] }
 		]
 	},
 	{
@@ -234,9 +316,9 @@ export const LifeLineForms = [
 		fields: [
 			{ type: "radio", label: "Military Time", options: ["Yes", "No"] },
 			{ type: "radio", label: "Start Day of Week", options: ["Sunday", "Monday"]},
-			{ type: "check", label: "Enable Medications"},
-			{ type: "check", label: "Enable Physical Therapy" },
-			{ type: "check", label: "Appointments" }
+			{ type: "check", label: "Enable Medications", checked: true},
+			{ type: "check", label: "Enable Physical Therapy", checked: true},
+			{ type: "check", label: "Appointments", checked: true }
 		]
 	},
 	{
@@ -250,7 +332,7 @@ export const LifeLineForms = [
 		key: "settingsVisibilityEnhancements",
 		fields: [
 			{ type: "radio", label: "Contrast", options: ["Standard", "High", "Low"] },
-			{ type: "radio", label: "Color Lens", options: ["Deuteranomaly", "Protanomaly", "Protanopia", "Deuteranopia", "Tritanomaly", "Tritanopia"] },
+			{ type: "radio", label: "Color Lens", options: ["Deuteranomaly", "Protanopia", "Deuteranopia", "Tritanopia"] },
 			{ type: "radio", label: "Font Size", options: ["Normal", "Larger", "Largest"] },
 		]
 	},

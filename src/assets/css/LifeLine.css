@@ -295,7 +295,9 @@ body {
 .menu__btn,
 .modal__btn,
 .action__btn,
-.add__btn {
+.add__btn,
+.field__button,
+.field__radio-lbl {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -314,7 +316,10 @@ body {
 .menu__btn:hover,
 .modal__btn:hover,
 .action__btn:hover,
-.add__btn:hover {
+.add__btn:hover,
+.field__button:hover,
+.field__radio-lbl:hover,
+.field__radio:checked + .field__radio-lbl {
 	color: var(--charcoal);
 	background: var(--white);
 }
@@ -334,6 +339,22 @@ body {
 	font-style: italic;
 	text-transform: uppercase;
 	transform: skewX(10deg) translateY(-1px);
+}
+
+.field__button,
+.field__radio-lbl {
+	font-weight: var(--bold);
+	font-style: italic;
+	text-transform: uppercase;
+	max-width: max-content;
+	min-width: 10rem;
+	font-size: 1.2rem;
+	padding-right:1.5rem;
+	padding-left: 1rem;
+}
+
+.field__radio {
+	display: none;
 }
 
 .menu__drawer {
@@ -773,6 +794,16 @@ body {
 .field__check + .field__label,
 .field__radio + .field__label {
 	text-align: left;
+}
+
+.field__value {
+	text-align: left;
+}
+
+.field__radio-opt {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 1rem;
 }
 
 .add__btn {

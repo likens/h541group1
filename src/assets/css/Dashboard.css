@@ -145,9 +145,12 @@
 	background: var(--ash);
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) skew(-10deg);
 	padding: 0;
-	border-radius: 1rem;
+}
+
+.dash--snap * {
+	transform: skew(0deg);
 }
 
 .snap__btn {

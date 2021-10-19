@@ -47,7 +47,7 @@ export const LifeLineApps = {
 			component: <LifeLineBloodPressure />,
 			description: "Application for measuring current systolic and diastolic blood pressure, as well as bpm.",
 			interactions:
-				"<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+				"<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
 		},
 		{
 			name: "Oxygen Saturation",
@@ -56,7 +56,7 @@ export const LifeLineApps = {
 			component: <LifeLineOxygen />,
 			description: "Application for measuring current Oxygen saturation (SP02), as well as bpm.",
 			interactions:
-				"<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+				"<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
 		},
 		{
 			name: "Heart Rate",
@@ -65,14 +65,15 @@ export const LifeLineApps = {
 			component: <LifeLineHeartRate />,
 			description: "Application for measuring heart rate (bpm).",
 			interactions:
-				"<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the	reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
+				"<ul><li>Start Measurement – initializes device measurement, after 5 seconds displays the reading to the user. </li><li>Show/Hide History – Expands or closes a line graph that represents the last 2 weeks of readings for the respective measurement.</li></ul>"
 		},
 		{
 			name: "Electrocardiogram",
 			key: "ekg",
 			icon: faLaptopMedical,
 			component: <LifeLineElectrocardiogram />,
-			description: "Application that displays what we consider to be a traditional ECG display (also displays BPM, SP02, and Respiratory count by minute."
+			description: "Application that displays what we consider to be a traditional ECG display (also displays BPM, SP02, and Respiratory count by minute.",
+			interactions: "<ul><li>No interactions can be found on this screen.</li></ul>"
 		},
 		{
 			name: "Calendar",

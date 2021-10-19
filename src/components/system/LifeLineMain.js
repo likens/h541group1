@@ -150,7 +150,7 @@ class LifeLineMain extends Component {
 
 	setInstructions(name, description, interactions) {
 		document.getElementById("title").innerHTML = name ? name : ``;
-		document.getElementById("description").innerHTML = description ? `${description}${interactions ? `<br /><br /><strong>Interactions include:</strong>` : ``}` : ``;
+		document.getElementById("description").innerHTML = description ? `${description}${interactions ? `<br /><br />` : ``}` : ``;
 		document.getElementById("interactions").innerHTML = interactions ? interactions : ``;
 	}
 

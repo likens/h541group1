@@ -11,7 +11,8 @@ class LifeLine extends Component {
 		this.state = {
 			...this.state,
 			viewVideo: true,
-			demoButtonText: "View 3D Product Render"
+			demoButtonText: "View 3D Product Render",
+			renderViewTime: 0
 		};
 	}
 
@@ -26,6 +27,7 @@ class LifeLine extends Component {
 
 			setTimeout(() => {
 				videoPlayer.style.opacity = 1;
+				this.setState({ renderViewTime: Math.round(performance.now()) });
 			}, 50);
 
 			videoPlayer.style.display = "initial";
@@ -38,6 +40,10 @@ class LifeLine extends Component {
 			}, 750);
 
 			videoPlayer.style.opacity = 0;
+
+			window.gtag("event", "view_render", {
+				view_time: (Math.round(performance.now()) - this.state.renderViewTime) / 1000
+			});
 		}
 
 		this.forceUpdate();

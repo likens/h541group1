@@ -15,6 +15,7 @@ class LifeLineMain extends Component {
 				description: LifeLineApps.structure[0].description,
 				interactions: LifeLineApps.structure[0].interactions
 			},
+			viewTime: Math.round(performance.now()),
 			menu: undefined,
 			submenu: undefined,
 			modal: undefined,
@@ -37,6 +38,12 @@ class LifeLineMain extends Component {
 	}
 
 	goToApp(key) {
+		window.gtag("event", "load_view", {
+			from_view: this.state.app.name,
+			time_on_from_view: (Math.round(performance.now()) - this.state.viewTime) / 1000,
+			to_view: LifeLineApps.structure.find((app) => app.key === key).name
+		});
+
 		this.setState({
 			app: {
 				key: key,
@@ -45,7 +52,8 @@ class LifeLineMain extends Component {
 				name: LifeLineApps.structure.find((app) => app.key === key).name,
 				description: LifeLineApps.structure.find((app) => app.key === key).description,
 				interactions: LifeLineApps.structure.find((app) => app.key === key).interactions
-			}
+			},
+			viewTime: Math.round(performance.now())
 		});
 		this.toggleMenu();
 		this.setInstructions(
@@ -53,10 +61,6 @@ class LifeLineMain extends Component {
 			LifeLineApps.structure.find((app) => app.key === key).description,
 			LifeLineApps.structure.find((app) => app.key === key).interactions
 		);
-
-		window.gtag("event", "load_view", {
-			view_name: LifeLineApps.structure.find((app) => app.key === key).name
-		});
 	}
 
 	getAppKey(next) {

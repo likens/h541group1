@@ -156,6 +156,7 @@
 				document.getElementById("notifyTest").click();
 			});
 
+			window.expandedTime = Math.round(performance.now());
 			window.expanded = false;
 			const infoToggleBtn = document.getElementById("infoToggleBtn");
 			infoToggleBtn.addEventListener("click", function () {
@@ -174,6 +175,14 @@
 					document.getElementById("testModal").style.left = "100%";
 					document.getElementById("demoBtn").style.left = "100%";
 				}
+
+				gtag("event", "menu_state", {
+					from_state: expanded ? "expanded" : "collapsed",
+					to_state: !expanded ? "expanded" : "collapsed",
+					time_in_from_state: (Math.round(performance.now()) - expandedTime) / 1000
+				});
+
+				expandedTime = Math.round(performance.now());
 
 				expanded = !expanded;
 				window.dispatchEvent(new Event("resize"));

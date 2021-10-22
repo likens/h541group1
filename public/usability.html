@@ -34,7 +34,7 @@
 
 			.table {
 				max-width: 120rem;
-				margin: 3rem auto;
+				margin: 5rem auto;
 				border: 1px solid green;
 			}
 
@@ -43,17 +43,25 @@
 				grid-template-columns: repeat(5, 1fr);
 			}
 
+			.tr--gray,
+			.tc--gray {
+				background: #ddd;
+			}
+
 			.tc {
 				grid-column-end: 1 / -1;
 				border: 1px solid green;
 				padding: 1rem;
 			}
 
+			.tc--bold {
+				font-weight: bold;
+			}
+
 			.tc--header {
 				font-weight: bold;
-				text-transform: uppercase;
 				text-align: center;
-				font-size: 3rem;
+				font-size: 2.4rem;
 			}
 
 			.tc--5 {
@@ -64,17 +72,17 @@
 				grid-column-end: span 2;
 			}
 
-			.tr--gray {
-				background: #ddd;
+			.tc--sm {
+				font-size: 1.4rem;
 			}
 
 			ul, ol {
-				margin: 0;
-				padding: 1rem 0 0 2rem;
+				/* margin: 0;
+				padding: 1rem 0 0 2rem; */
 			}
 
 			li {
-				padding: 0 0 1rem;
+				/* padding: 0 0 1rem; */
 			}
 
 		</style>
@@ -100,10 +108,10 @@
 				<div class="tc">Responsibilities</div>
 			</div>
 			<div class="tr">
-				<div class="tc">LifeLine prototype device</div>
-				<div class="tc">The goal is to improve the usability of  the prototype and correct any interface errors. To determine if the Life Line device is usable and allows patients and medical health professionals to achieve specific tasks.</div>
-				<div class="tc">Nine anonymous users</div>
-				<div class="tc">
+				<div class="tc tc--sm">LifeLine prototype device</div>
+				<div class="tc tc--sm">The goal is to improve the usability of  the prototype and correct any interface errors. To determine if the LifeLine device is usable and allows patients and medical health professionals to achieve specific tasks.</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm">
 					<ol>
 						<li>Measuring Blood Pressure/Viewing Historic BP data.</li>
 						<li>Navigating to the Electrocardiogram App Screen</li>
@@ -112,7 +120,7 @@
 						<li>Navigate to Visibility Enhancements in Accessibility, Select High Contrast and Larger Font then Save.</li>
 					</ol>
 				</div>
-				<div class="tc">
+				<div class="tc tc--sm">
 					The team responsibility is to discover and efficiently record product errors and participants feedback.  
 					<ul>
 						<li>To delivery the survey</li>
@@ -126,15 +134,15 @@
 				<div class="tc">Location & Dates</div>
 			</div>
 			<div class="tr">
-				<div class="tc tc--2">We are performing this test to determine if the product delivers an effective and enjoyable user experience.</div>
-				<div class="tc tc--2">
+				<div class="tc tc--2 tc--sm">We are performing this test to determine if the product delivers an effective and enjoyable user experience.</div>
+				<div class="tc tc--2 tc--sm">
 					<ul>
 						<li>Laptop</li>
 						<li>Mobile</li>
 						<li>Chrome</li>
 					</ul>
 				</div>
-				<div class="tc">
+				<div class="tc tc--sm">
 					10/18/21 - Zoom, Slack
 					<br/>
 					10/21/21 - Zoom
@@ -144,11 +152,453 @@
 				<div class="tc tc--5">Procedure</div>
 			</div>
 			<div class="tr">
-				<div class="tc tc--gray tc--bold">To find and recruit participants</div>
-				<div class="tc tc--gray tc--bold">Deliver the survey to participants</div>
-				<div class="tc tc--gray tc--bold">Evaluate survey results</div>
-				<div class="tc tc--gray tc--bold">Design recommendations based on findings and research</div>
-				<div class="tc tc--gray tc--bold">Final report of prototype changes and possible future enhancements</div>
+				<div class="tc tc--gray tc--bold tc--sm">To find and recruit participants</div>
+				<div class="tc tc--gray tc--bold tc--sm">Deliver the survey to participants</div>
+				<div class="tc tc--gray tc--bold tc--sm">Evaluate survey results</div>
+				<div class="tc tc--gray tc--bold tc--sm">Design recommendations based on findings and research</div>
+				<div class="tc tc--gray tc--bold tc--sm">Final report of prototype changes and possible future enhancements</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Measuring Blood Pressure/Viewing Historic BP data</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Does the user know how to view historic BP data and start the application?</li>
+						<li>Do they want to use this feature for the future and can they trust its data?</li>
+						<li>Does this feature help them record blood pressure and can they see they understand the data visually?</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>
+							Navigate to the Blood Pressure application by either:
+							<ul>
+								<li>Clicking the left or right navigation arrow buttons until you reach the appropriate application</li>
+								<li>Open the Apps menu and select Blood Pressure</li>
+							</ul>
+						</li>
+						<li>Select Start Measurement, wait 5 seconds for measurement to finish</li>
+						<li>Select Show History</li>
+						<li>Task complete when graph slides up</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if the interface is accessible and clearly presents blood pressure information.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 2 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Follow instructions to complete tasks</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm">Proceed to section 3 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Navigating to the Electrocardiogram App Screen</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Does the user understand the value of having an electrocardiogram feature?</li>
+						<li>Can they understand and use the data from the electrocardiogram?</li>
+						<li>Does the user know how to activate its features?</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>
+							Navigate to the Electrocardiogram application by either:
+							<ul>
+								<li>Clicking the left or right navigation arrow buttons until you reach the appropriate application</li>
+								<li>Open the Apps menu and select Electrocardiogram</li>
+							</ul>
+						</li>
+						<li>Task complete when "live" graphs load completely</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">The electrocardiogram section of the survey will target graphs reliability and address any errors.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 3 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Follow instructions to complete tasks</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm">Proceed to section 4 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Using the Calendar App to View Appointments/Medication/Physical Therapy</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Do users understand the value of this feature and can they trust it to maintain their health?</li>
+						<li>Does the calendar help them keep a routine for medication delivery?</li>
+						<li>Do users understand how to read the calendar and maintain important health related dates? </li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>
+							Navigate to the Calendar application by either:
+							<ul>
+								<li>Select any day on the calendar</li>
+								<li>Task complete when any Medications/PT/Appointments information loads</li>
+							</ul>
+						</li>
+						<li>Task complete when "live" graphs load completely</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if users can use the calendar feature and visually helps them keep track of health related tasks.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 4 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Follow instructions to complete tasks</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm">Proceed to section 5 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Add or Edit an Emergency Contact</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Does the user understand the importance of adding and editing Emergency contact?</li>
+						<li>Does this help them trust the device to meet their needs?</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>Click the “Emergency” tab at the bottom of the screen</li>
+						<li>Select an existing emergency contact (besides 911/Hospital/Doctor) or Select + ADD</li>
+						<li>Fill out the Edit/Add Contact Modal</li>
+						<li>Task complete when user clicks Save</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if the add and edit function of emergency contacts is easy to use. Including providing users an extra sense of security and trust towards the device.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 5 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Follow instructions to complete tasks</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm">Proceed to section 6 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Navigate to Visibility Enhancements in Accessibility</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Do users trust and understand how to find accessibility features?</li>
+						<li>Does it meet their accessibility needs?</li>
+						<li>The goal is to provide users access to accessibility tools.</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>Click the “Settings” tab at the bottom of the screen</li>
+						<li>Click “Accessibility” sub-menu</li>
+						<li>Select “Visibility Enhancements”</li>
+						<li>Select “High” for the Contrast setting, Select Larger for the Font Size</li>
+						<li>Task complete when user clicks save</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if a user can access accessibility features quickly and easily. It will determine if the prototype can make an enjoyable experience for those with limited vision and hearing capabilities.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 6 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Follow instructions to complete tasks</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm">Proceed to section 7 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Measuring Oxygen Saturation and Viewing the Historical Data</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Do users understand how to measure their oxygen saturation and see its history within the application?</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>Attempt to measure your oxygen saturation and view its historical data on your own terms</li>
+						<li>Task is considered completed when the historical data is viewed after a measurement has been taken</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if a user can measure their oxygen saturation and access the information easily.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 7 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm tc--2">Proceed to section 8 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Change the System's Language</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Do users understand how to change the prototype language and do they trust its usability?</li>
+						<li>Will users use this feature to perform a task?</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>Attempt to change the Language of the System/Device to something different than English.</li>
+						<li>Task is considered completed when the user saves the updated Language.</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if a user can effectively change the device language and be able to do the task again.</div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 8 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm tc--2">Proceed to section 9 of 10</div>
+			</div>
+		</div>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Take a Snapshot of Heart Health</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Test Objectives</div>
+				<div class="tc tc--1">Participants</div>
+				<div class="tc tc--2">Test Tasks</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--sm tc--2">
+					<ul>
+						<li>Does the user know how to take a snapshot of their health?</li>
+						<li>Does the user understand the value of the snapshot feature?</li>
+						<li>Will this feature help them achieve a goal or complete a task?</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Nine anonymous users comprised of 5 patients, 3 nurses, and 1 doctor</div>
+				<div class="tc tc--sm tc--2">
+					<ol>
+						<li>Attempt to use the snapshot feature to send your current heart health info to anyone authorized to receive it.</li>
+						<li>Task is considered completed when the user sends the snapshot data and the popup window closes.</li>
+					</ol>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2 tc--sm">This survey section will address if a user understands how to use the snapshot device. This will determine if the snapshot application can be used and benefit a user experience. </div>
+				<div class="tc tc--2 tc--sm">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc tc--sm">Online via Chrome Browser from 10/19/21 - 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold tc--sm">Introduce to section 9 of 10</div>
+				<div class="tc tc--gray tc--bold tc--sm">Complete tasks with best of your ability</div>
+				<div class="tc tc--gray tc--bold tc--sm">Answer questions about effort taken for task</div>
+				<div class="tc tc--gray tc--bold tc--sm tc--2">Proceed to section 10 of 10</div>
 			</div>
 		</div>
 

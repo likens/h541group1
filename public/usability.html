@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/lifeline-logo-icon-light.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="Web site created using create-react-app" />
+		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+		<title>LifeLine - H541 - Usability Tables</title>
+
+		<style>
+			*,
+			:after,
+			:before {
+				box-sizing: border-box;
+				user-select: none;
+			}
+
+			html {
+				font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+				font-size: 62.5%;
+				-webkit-text-size-adjust: 100%;
+			}
+
+			body {
+				font-size: 1.6rem;
+				line-height: 1.25;
+				margin: 0;
+				padding: 0;
+				min-height: 100vh;
+			}
+
+			.table {
+				max-width: 120rem;
+				margin: 3rem auto;
+				border: 1px solid green;
+			}
+
+			.tr {
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+			}
+
+			.tc {
+				grid-column-end: 1 / -1;
+				border: 1px solid green;
+				padding: 1rem;
+			}
+
+			.tc--header {
+				font-weight: bold;
+				text-transform: uppercase;
+				text-align: center;
+				font-size: 3rem;
+			}
+
+			.tc--5 {
+				grid-column-end: span 5;
+			}
+
+			.tc--2 {
+				grid-column-end: span 2;
+			}
+
+			.tr--gray {
+				background: #ddd;
+			}
+
+			ul, ol {
+				margin: 0;
+				padding: 1rem 0 0 2rem;
+			}
+
+			li {
+				padding: 0 0 1rem;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="table">
+			<div class="tr tr--gray">
+				<div class="tc tc--header tc--5">Usability Test Plan: LifeLine Device</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Authors: H541 Group 1</div>
+				<div class="tc tc--2">Contact Details: https://h541group1.netlify.app</div>
+				<div class="tc tc--1">Final Date: 10/21/21</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc">Product Under Test</div>
+				<div class="tc">Test Objectives</div>
+				<div class="tc">Participants</div>
+				<div class="tc">Test Tasks</div>
+				<div class="tc">Responsibilities</div>
+			</div>
+			<div class="tr">
+				<div class="tc">LifeLine prototype device</div>
+				<div class="tc">The goal is to improve the usability of  the prototype and correct any interface errors. To determine if the Life Line device is usable and allows patients and medical health professionals to achieve specific tasks.</div>
+				<div class="tc">Nine anonymous users</div>
+				<div class="tc">
+					<ol>
+						<li>Measuring Blood Pressure/Viewing Historic BP data.</li>
+						<li>Navigating to the Electrocardiogram App Screen</li>
+						<li>Using the Calendar App to view Medication/Physical Therapy/ or Appointment information.</li>
+						<li>Add or Edit an Emergency Contact (complete once they click OK on the modal).</li>
+						<li>Navigate to Visibility Enhancements in Accessibility, Select High Contrast and Larger Font then Save.</li>
+					</ol>
+				</div>
+				<div class="tc">
+					The team responsibility is to discover and efficiently record product errors and participants feedback.  
+					<ul>
+						<li>To delivery the survey</li>
+						<li>Inform participants about the prototype</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--2">Business Case</div>
+				<div class="tc tc--2">Equipment</div>
+				<div class="tc">Location & Dates</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--2">We are performing this test to determine if the product delivers an effective and enjoyable user experience.</div>
+				<div class="tc tc--2">
+					<ul>
+						<li>Laptop</li>
+						<li>Mobile</li>
+						<li>Chrome</li>
+					</ul>
+				</div>
+				<div class="tc">
+					10/18/21 - Zoom, Slack
+					<br/>
+					10/21/21 - Zoom
+				</div>
+			</div>
+			<div class="tr tr--gray">
+				<div class="tc tc--5">Procedure</div>
+			</div>
+			<div class="tr">
+				<div class="tc tc--gray tc--bold">To find and recruit participants</div>
+				<div class="tc tc--gray tc--bold">Deliver the survey to participants</div>
+				<div class="tc tc--gray tc--bold">Evaluate survey results</div>
+				<div class="tc tc--gray tc--bold">Design recommendations based on findings and research</div>
+				<div class="tc tc--gray tc--bold">Final report of prototype changes and possible future enhancements</div>
+			</div>
+		</div>
+
+	</body>
+</html>

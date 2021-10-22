@@ -119,3 +119,9 @@ li {
 	color: #ad0000;
 	text-shadow: unset;
 }
+
+.navPane .label.active a {
+	background-color: #fff;
+	color: #ad0000;
+	text-shadow: unset;
+}

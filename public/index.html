@@ -20,6 +20,7 @@
 
 			gtag("config", "G-DH94BC13XN");
 		</script>
+		<!-- End Google Analytics -->
 		<style>
 			.instructions {
 				position: fixed;
@@ -155,6 +156,7 @@
 				document.getElementById("notifyTest").click();
 			});
 
+			window.expandedTime = Math.round(performance.now());
 			window.expanded = false;
 			const infoToggleBtn = document.getElementById("infoToggleBtn");
 			infoToggleBtn.addEventListener("click", function () {
@@ -174,9 +176,66 @@
 					document.getElementById("demoBtn").style.left = "100%";
 				}
 
+				gtag("event", "menu_state", {
+					from_state: expanded ? "expanded" : "collapsed",
+					to_state: !expanded ? "expanded" : "collapsed",
+					time_in_from_state: (Math.round(performance.now()) - expandedTime) / 1000
+				});
+
+				expandedTime = Math.round(performance.now());
+
 				expanded = !expanded;
 				window.dispatchEvent(new Event("resize"));
 			});
 		</script>
 	</body>
+
+	<script>
+		//Add custom Google Analytics events
+		function addGAEvents() {
+			var elements = document.querySelectorAll("body *");
+
+			for (var i = 0; i < elements.length; i++) {
+				var link = elements[i];
+				//Only add an event if the element has either a click event or an href
+				if (link.click || link.getAttribute("href") || typeof link.onclick == "function") {
+					addListener(link);
+				}
+			}
+		}
+
+		//Add a new click event listener to record GA custom events
+		function addListener(link) {
+			//Add event listener
+			link.addEventListener("click", function (event) {
+				if (event.target != link) {
+					//Exit from bubbled click events
+					//return;
+				}
+
+				var linkIsNavigation = false;
+
+				var textTag = "";
+				var text = link.innerText;
+				text = text.replace(/\s\s+/g, " ");
+				text = text.replace(/\n+/g, " ");
+				textTag += text + " (" + link.tagName + ")";
+
+				let viewId = document.querySelector(".apps").firstChild.className;
+
+				gtag("event", "click", {
+					text_tag: textTag,
+					elm_id: link.id,
+					view_id: viewId
+				});
+			});
+		}
+
+		addGAEvents();
+
+		gtag("event", "load", {
+			url: window.location.href,
+			load_time: Math.round(performance.now()) / 1000
+		});
+	</script>
 </html>

@@ -63,11 +63,59 @@ body {
 	font-size: 1.4rem;
 }
 
-ul, ol {
+ul,
+ol {
 	/* margin: 0;
 	padding: 1rem 0 0 2rem; */
 }
 
 li {
 	/* padding: 0 0 1rem; */
+}
+
+.navPane {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 2em;
+}
+
+.navPane .label {
+	padding: 0;
+	margin: 0;
+}
+
+.navPane .label {
+	width: 100%;
+	position: relative;
+	margin-bottom: 0.5em;
+	transform: skew(-10deg);
+	padding: 0.1em 0.5em;
+}
+
+.navPane .label a {
+	display: inline-block;
+	width: 100%;
+	background-color: #ad0000;
+	font-size: 1em;
+	border: 0.1em solid;
+	border-color: #111;
+	cursor: pointer;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	text-shadow: 0 0 5px #222;
+	text-align: center;
+	text-decoration: none;
+	padding: 0.25em 0.5em;
+}
+
+.navPane .label a:visited {
+	text-decoration: none;
+}
+
+.navPane .label a:hover {
+	background-color: #fff;
+	color: #ad0000;
+	text-shadow: unset;
 }

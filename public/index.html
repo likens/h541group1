@@ -85,15 +85,14 @@
 				font-size: 2rem;
 			}
 
-			.notifGenBtn,
-			.modalGenBtn {
+			.floating-button {
 				background-color: var(--lifelineRed);
-				width: 210px;
+				width: 230px;
 				height: auto;
 				z-index: 1000002;
 				position: fixed;
 				top: 15%;
-				left: calc(100% + 210px);
+				left: calc(100% + 230px);
 				transform: translate(-75%, -100%) skew(-10deg);
 				border: 0.2em solid;
 				border-color: var(--darkCharcoal);
@@ -109,16 +108,20 @@
 				padding: 0.5em 3.5em 0.5em 0.75em;
 				text-align: center !important;
 				transition: left 0.75s ease-in-out;
-				transition-delay: 0.2s;
+				transition-delay: 0.3s;
 			}
 
 			.modalGenBtn {
 				transform: translate(-75%, 25%) skew(-10deg);
+				transition-delay: 0.2s;
+			}
+
+			.usabilityReportBtn {
+				transform: translate(-75%, 150%) skew(-10deg);
 				transition-delay: 0.1s;
 			}
 
-			.notifGenBtn:hover,
-			.modalGenBtn:hover {
+			.floating-button:hover {
 				color: var(--lifelineRed);
 				background-color: var(--white);
 				text-shadow: unset;
@@ -141,8 +144,9 @@
 				<div class="instructions__interactions" id="interactions"></div>
 			</div>
 			<div class="instructions__clickables">
-				<button class="notifGenBtn" id="testNotify">Generate Notification</button>
-				<button class="modalGenBtn" id="testModal">Generate Modal</button>
+				<button class="notifGenBtn floating-button" id="testNotify">Generate Notification</button>
+				<button class="modalGenBtn floating-button" id="testModal">Generate Modal</button>
+				<a class="usabilityReportBtn floating-button" id="viewReport" href="usability/full-report.html">View Usability Report</a>
 			</div>
 		</div>
 
@@ -164,15 +168,17 @@
 					document.getElementById("instructions").style.left = "-275px";
 					document.getElementById("infoToggleBtn").innerHTML = "&raquo;";
 
-					document.getElementById("testNotify").style.left = "calc(100% + 210px)";
-					document.getElementById("testModal").style.left = "calc(100% + 210px)";
+					testNotify.style.left = "calc(100% + 230px)";
+					testModal.style.left = "calc(100% + 230px)";
+					document.getElementById("viewReport").style.left = "calc(100% + 230px)";
 					document.getElementById("demoBtn").style.left = "calc(100% + 275px)";
 				} else {
 					document.getElementById("instructions").style.left = "0";
 					document.getElementById("infoToggleBtn").innerHTML = "&laquo;";
 
-					document.getElementById("testNotify").style.left = "100%";
-					document.getElementById("testModal").style.left = "100%";
+					testNotify.style.left = "100%";
+					testModal.style.left = "100%";
+					document.getElementById("viewReport").style.left = "100%";
 					document.getElementById("demoBtn").style.left = "100%";
 				}
 

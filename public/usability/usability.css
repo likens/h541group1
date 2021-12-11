@@ -81,6 +81,7 @@ ol, ul {
 	top: 0;
 	left: 0;
 	padding: 2em;
+	height: 100%;
 	overflow: auto;
 }
 

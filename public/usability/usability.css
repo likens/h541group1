@@ -25,7 +25,7 @@ ol, ul {
 
 .table {
 	max-width: 120rem;
-	margin: 10rem 5rem 10rem 30rem;
+	margin: 4rem 5rem 10rem 30rem;
 	border: 1px solid #111;
 }
 
@@ -80,7 +80,8 @@ ol, ul {
 	position: fixed;
 	top: 0;
 	left: 0;
-	margin: 2em;
+	padding: 2em;
+	overflow: auto;
 }
 
 .navPane .label {

@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# LifeLine Medical Device Prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GitHub repository located @ https://github.com/likens/h541project1 \
+View prototype live @ https://h541project1.netlify.app
+
+See below for instructions on running for yourself! This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
